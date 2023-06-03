@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "ScribeATCPluginBase/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ScribeATCPluginBase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ScribeATCPluginBase.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ScribeATCPluginBase/1.0.0": {
+      "type": "project",
+      "path": "../../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
+      "msbuildProject": "../../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "ScribeATCPluginBase >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\deser\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+              "projectPath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

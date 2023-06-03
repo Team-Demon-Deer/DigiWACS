@@ -1,0 +1,15 @@
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\bin\Release\net7.0\DigiWACS-Server.exe
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\bin\Release\net7.0\DigiWACS-Server.deps.json
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\bin\Release\net7.0\DigiWACS-Server.runtimeconfig.json
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\bin\Release\net7.0\DigiWACS-Server.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\bin\Release\net7.0\DigiWACS-Server.pdb
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.csproj.AssemblyReference.cache
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.AssemblyInfoInputs.cache
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.AssemblyInfo.cs
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.csproj.CoreCompileInputs.cache
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\refint\DigiWACS-Server.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.pdb
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\DigiWACS-Server.genruntimeconfig.cache
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Server\obj\Release\net7.0\ref\DigiWACS-Server.dll
