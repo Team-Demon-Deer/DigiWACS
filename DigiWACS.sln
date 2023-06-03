@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiWACS-PluginBase", "DigiWACS-PluginBase\DigiWACS-PluginBase.csproj", "{3253C141-E232-483E-845A-2F2C3E367591}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiWACS-Client", "DigiWACS-Client\DigiWACS-Client.csproj", "{587B8E18-D38E-424F-85F9-BB416553E703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiWACS-Server", "DigiWACS-Server\DigiWACS-Server.csproj", "{54038C4A-4C81-496B-AFD5-784A62884C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "Plugins\TestPlugin\TestPlugin.csproj", "{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{BAC6B659-E99D-49C5-9BC9-868A3EBB0D86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3253C141-E232-483E-845A-2F2C3E367591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3253C141-E232-483E-845A-2F2C3E367591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3253C141-E232-483E-845A-2F2C3E367591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{587B8E18-D38E-424F-85F9-BB416553E703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587B8E18-D38E-424F-85F9-BB416553E703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587B8E18-D38E-424F-85F9-BB416553E703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587B8E18-D38E-424F-85F9-BB416553E703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54038C4A-4C81-496B-AFD5-784A62884C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54038C4A-4C81-496B-AFD5-784A62884C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54038C4A-4C81-496B-AFD5-784A62884C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54038C4A-4C81-496B-AFD5-784A62884C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A} = {BAC6B659-E99D-49C5-9BC9-868A3EBB0D86}
+		{3253C141-E232-483E-845A-2F2C3E367591} = {BAC6B659-E99D-49C5-9BC9-868A3EBB0D86}
+	EndGlobalSection
+EndGlobal
