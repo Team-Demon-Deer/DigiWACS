@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/.idea
+/modules.xml
+/contentModel.xl
+# VS Studio ignored Files
+/.vs
