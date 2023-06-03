@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\
-ScribeATC_Client
+DigiWACS_Client
 none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\App.xaml
-11407045341
+21694536717
 
-3-1233169557
-198439189002
-MainWindow.xaml;
+4-1436992220
+217223254560
+MainWindow.xaml;PluginPage.xaml;
 
 False
 

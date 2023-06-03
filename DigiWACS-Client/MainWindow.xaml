@@ -3,10 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DigiWACS_Client"
+        xmlns:wpf="clr-namespace:Mapsui.UI.Wpf;assembly=Mapsui.UI.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DigiWACS" Height="450" Width="800">
     <Grid>
-
+        <wpf:MapControl x:Name="MapControl1">
+        </wpf:MapControl>
+        <DockPanel x:Name="DockPanel">
+            <Button x:Name="NewWindowButton"
+                    Height="30" Width="100"
+                    ClickMode="Press"
+                    Click="NewWindowButton_OnClick">
+                New Window
+            </Button>
+        </DockPanel>
     </Grid>
 </Window>

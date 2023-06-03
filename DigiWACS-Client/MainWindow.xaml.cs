@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using DigiWACS_Client;
+using Mapsui.UI.Wpf;
 
 namespace DigiWACS_Client
 {
@@ -23,6 +13,15 @@ namespace DigiWACS_Client
 		public MainWindow()
 		{
 			InitializeComponent();
+			MapControl1.Map?.Layers.Add(Mapsui.Utilities.OpenStreetMap.CreateTileLayer());
+		}
+		private void NewWindowButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			Console.Write("New Window Button clicked.");
+			PluginPage newWindow = new PluginPage();
+			newWindow.InitializeComponent();
+			newWindow.ShowsNavigationUI = false;
+			Console.Write("New window creation attempted.");
 		}
 	}
 }
