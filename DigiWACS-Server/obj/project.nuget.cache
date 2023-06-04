@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8JOwty9Z5bDBAgGfCHXWdgyDPmKqPqAl/4T3g+Lj6iONlz5ANncXebl80bVIst5Pqu23UcMwy+4Ca9rwwwztKQ==",
+  "dgSpecHash": "awmtYgv8Pg6kgF/TulGTdDiC8rFApYMADDuSw+wO4yO6J/idrdJEXBjcNMiom+UlOZx8Ne2XokGD+EjWBwBfBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-Server\\DigiWACS-Server.csproj",
+  "projectFilePath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deser\\.nuget\\packages\\grpc.tools\\2.54.0\\grpc.tools.2.54.0.nupkg.sha512"
   ],

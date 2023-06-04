@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net7.0-windows7.0": {
       "Grpc.Tools/2.54.0": {
         "type": "package",
         "build": {
@@ -64,7 +64,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net7.0-windows7.0": [
       "Grpc.Tools >= 2.54.0"
     ]
   },
@@ -74,26 +74,26 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+      "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
       "projectName": "DigiWACS-PluginBase",
-      "projectPath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+      "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
       "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\obj\\",
+      "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net7.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "projectReferences": {}
         }
       },
@@ -104,8 +104,8 @@
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net7.0-windows7.0": {
+        "targetAlias": "net7.0-windows",
         "dependencies": {
           "Grpc.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

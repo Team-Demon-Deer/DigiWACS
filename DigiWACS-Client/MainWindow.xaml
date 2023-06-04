@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="DigiWACS" Height="450" Width="800">
     <Grid>
-        <wpf:MapControl x:Name="MapControl1">
-        </wpf:MapControl>
+        <wpf:MapControl x:Name="MapControl1" />
         <DockPanel x:Name="DockPanel">
             <Button x:Name="NewWindowButton"
                     Height="30" Width="100"

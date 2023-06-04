@@ -6,9 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiWACS-Client", "DigiWACS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiWACS-Server", "DigiWACS-Server\DigiWACS-Server.csproj", "{54038C4A-4C81-496B-AFD5-784A62884C46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "Plugins\TestPlugin\TestPlugin.csproj", "{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{BAC6B659-E99D-49C5-9BC9-868A3EBB0D86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "PluginsProjects\TestPlugin\TestPlugin.csproj", "{AF72F5EC-7BB0-4641-B878-6449D6A9F9EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,12 +28,12 @@ Global
 		{54038C4A-4C81-496B-AFD5-784A62884C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54038C4A-4C81-496B-AFD5-784A62884C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54038C4A-4C81-496B-AFD5-784A62884C46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF72F5EC-7BB0-4641-B878-6449D6A9F9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF72F5EC-7BB0-4641-B878-6449D6A9F9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF72F5EC-7BB0-4641-B878-6449D6A9F9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF72F5EC-7BB0-4641-B878-6449D6A9F9EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3151A7E2-77B3-4DCC-A905-BC7604D1F00A} = {BAC6B659-E99D-49C5-9BC9-868A3EBB0D86}
+		{AF72F5EC-7BB0-4641-B878-6449D6A9F9EC} = {BAC6B659-E99D-49C5-9BC9-868A3EBB0D86}
 	EndGlobalSection
 EndGlobal

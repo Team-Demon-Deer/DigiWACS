@@ -1,19 +1,19 @@
 ﻿DigiWACS-Client
 
 
-exe
+winexe
 C#
 .cs
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Debug\net7.0-windows\
-DigiWACS_Client
+C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\obj\Debug\net7.0-windows\
+DigiWACS.Client
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\App.xaml
+C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\App.xaml
 21694536717
 
-4-1436992220
-217223254560
+5-2076515658
+228-1601444055
 MainWindow.xaml;PluginPage.xaml;
 
 False
