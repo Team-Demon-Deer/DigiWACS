@@ -1,8 +1,9 @@
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace DigiWACSPluginBase;
+namespace DigiWACS.PluginBase;
 
+// Classes taken from https://makolyte.com/csharp-generic-plugin-loader/
 public class GenericAssemblyLoadContext<T> : AssemblyLoadContext where T : class
 {
 	private AssemblyDependencyResolver _resolver;
@@ -10,7 +11,6 @@ public class GenericAssemblyLoadContext<T> : AssemblyLoadContext where T : class
 
 	public GenericAssemblyLoadContext(string pluginPath) : base(isCollectible: true)
 	{
-
 		var pluginInterfaceAssembly = typeof(T).Assembly.FullName;
 		assembliesToNotLoadIntoContext = GetReferencedAssemblyFullNames(pluginInterfaceAssembly);
 		assembliesToNotLoadIntoContext.Add(pluginInterfaceAssembly);

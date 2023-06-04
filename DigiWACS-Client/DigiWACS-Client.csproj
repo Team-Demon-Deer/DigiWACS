@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>WinExe</OutputType>
+        <OutputType>Exe</OutputType>
         <TargetFramework>net7.0-windows</TargetFramework>
-        <RootNamespace>DigiWACS_Client</RootNamespace>
+        <RootNamespace>DigiWACS.Client</RootNamespace>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
@@ -15,6 +15,10 @@
       </PackageReference>
       <PackageReference Include="Mapsui" Version="3.0.2" />
       <PackageReference Include="Mapsui.Wpf" Version="3.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
     </ItemGroup>
 
 </Project>

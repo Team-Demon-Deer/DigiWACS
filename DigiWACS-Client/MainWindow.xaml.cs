@@ -1,9 +1,7 @@
-﻿using System;
+﻿using System.Diagnostics;
 using System.Windows;
-using DigiWACS_Client;
-using Mapsui.UI.Wpf;
 
-namespace DigiWACS_Client
+namespace DigiWACS.Client
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -17,11 +15,15 @@ namespace DigiWACS_Client
 		}
 		private void NewWindowButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			Console.Write("New Window Button clicked.");
-			PluginPage newWindow = new PluginPage();
-			newWindow.InitializeComponent();
-			newWindow.ShowsNavigationUI = false;
-			Console.Write("New window creation attempted.");
+			Trace.WriteLine("New Window Button clicked.");
+			PluginWindow newWindow = new PluginWindow();
+			newWindow.Show();
+			Trace.WriteLine("New window creation attempted.");
 		}
+
+		private void PluginTestButton_OnClick(object sender, RoutedEventArgs e)
+		{
+
+;		}
 	}
 }

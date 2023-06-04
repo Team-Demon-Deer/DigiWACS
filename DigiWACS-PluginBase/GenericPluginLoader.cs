@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DigiWACSPluginBase;
+namespace DigiWACS.PluginBase;
 
 // Classes taken from https://makolyte.com/csharp-generic-plugin-loader/
 public class GenericPluginLoader<T> where T : class
 {
-	private readonly List<GenericAssemblyLoadContext<T>> loadContexts = new List<GenericAssemblyLoadContext<T>>();
+	private readonly List<GenericAssemblyLoadContext<T>> _loadContexts = new List<GenericAssemblyLoadContext<T>>();
 	public List<T> LoadAll(string pluginPath, string filter="*.dll", params object[] constructorArgs)
 	{
 		List<T> plugins = new List<T>();
@@ -15,20 +15,19 @@ public class GenericPluginLoader<T> where T : class
 		foreach (var filePath in Directory.EnumerateFiles(pluginPath, filter, SearchOption.AllDirectories))
 		{
 			var plugin = Load(filePath, constructorArgs);
-
+			
 			if(plugin != null)
 			{
 				plugins.Add(plugin);
 			}
 		}
-
 		return plugins;
 	}
 	private T Load(string pluginPath, params object[] constructorArgs)
 	{
 		var loadContext = new GenericAssemblyLoadContext<T>(pluginPath);
 
-		loadContexts.Add(loadContext);
+		_loadContexts.Add(loadContext);
 
 		var assembly = loadContext.LoadFromAssemblyPath(pluginPath);
 
@@ -42,7 +41,7 @@ public class GenericPluginLoader<T> where T : class
 	}
 	public void UnloadAll()
 	{
-		foreach(var loadContext in loadContexts)
+		foreach(var loadContext in _loadContexts)
 		{
 			loadContext.Unload();
 		}

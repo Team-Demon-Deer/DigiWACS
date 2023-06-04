@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tarO2VB2GFSCJcfZifbELqNuF2zyqXCVZ0qbBANROXcG8qtG71xFmIoRPbGfnwZzVsrAU3ZQb9uZr+QTgGLW8Q==",
+  "dgSpecHash": "EIVz2q2k9jhwD/6P9fESfps2MHCreW/Im8z1W/InUPsosHIJ73/U0w3HEy4/a+57bzrYtJ7QzFBr4O+FN7eN9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\deser\\.nuget\\packages\\grpc.tools\\2.54.0\\grpc.tools.2.54.0.nupkg.sha512"
+  ],
   "logs": []
 }

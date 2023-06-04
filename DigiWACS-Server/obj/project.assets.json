@@ -8,6 +8,16 @@
           "build/Grpc.Tools.props": {},
           "build/Grpc.Tools.targets": {}
         }
+      },
+      "DigiWACS.PluginBase/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/DigiWACS.PluginBase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DigiWACS.PluginBase.dll": {}
+        }
       }
     }
   },
@@ -61,10 +71,16 @@
         "tools/windows_x86/grpc_csharp_plugin.exe",
         "tools/windows_x86/protoc.exe"
       ]
+    },
+    "DigiWACS.PluginBase/1.0.0": {
+      "type": "project",
+      "path": "../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
+      "msbuildProject": "../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "DigiWACS.PluginBase >= 1.0.0",
       "Grpc.Tools >= 2.54.0"
     ]
   },
@@ -94,7 +110,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+              "projectPath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -8,9 +8,11 @@
     ".NETCoreApp,Version=v7.0": {
       "DigiWACS-Client/1.0.0": {
         "dependencies": {
+          "DigiWACSPluginBase": "1.0.0",
           "Grpc.Tools": "2.54.0",
           "Mapsui": "3.0.2",
-          "Mapsui.Wpf": "3.0.2"
+          "Mapsui.Wpf": "3.0.2",
+          "DigiWACSPluginBase.Reference": "1.0.0.0"
         },
         "runtime": {
           "DigiWACS-Client.dll": {}
@@ -346,6 +348,19 @@
             "fileVersion": "0.4.145.0"
           }
         }
+      },
+      "DigiWACSPluginBase/1.0.0": {
+        "runtime": {
+          "DigiWACSPluginBase.dll": {}
+        }
+      },
+      "DigiWACSPluginBase.Reference/1.0.0.0": {
+        "runtime": {
+          "DigiWACSPluginBase.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -592,6 +607,16 @@
       "sha512": "sha512-yScOoTS2X+RSlb9S6l7mLsoNGHXRLl+Qk+OzYziD3lsn+OQZPQura6Bfwi/n6w/C9c/nn9mnOm/AZ+GbVCQLmQ==",
       "path": "topten.richtextkit/0.4.145",
       "hashPath": "topten.richtextkit.0.4.145.nupkg.sha512"
+    },
+    "DigiWACSPluginBase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DigiWACSPluginBase.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

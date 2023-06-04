@@ -1,4 +1,4 @@
-﻿<Window x:Class="DigiWACS_Client.MainWindow"
+﻿<Window x:Class="DigiWACS.Client.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -15,6 +15,12 @@
                     ClickMode="Press"
                     Click="NewWindowButton_OnClick">
                 New Window
+            </Button>
+            <Button x:Name="PluginTestButton"
+                    Height="30" Width="100"
+                    ClickMode="Press"
+                    Click="PluginTestButton_OnClick">
+                Plugin Test
             </Button>
         </DockPanel>
     </Grid>

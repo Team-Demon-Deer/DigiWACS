@@ -1,10 +1,10 @@
-using System.Windows.Controls;
+using System.Windows;
 
-namespace DigiWACS_Client;
+namespace DigiWACS.Client;
 
-public partial class PluginPage : Page
+public partial class PluginWindow : Window
 {
-	public PluginPage()
+	public PluginWindow()
 	{
 		InitializeComponent();
 	}

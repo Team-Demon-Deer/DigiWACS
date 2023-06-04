@@ -2,20 +2,20 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "DigiWACSPluginBase/1.0.0": {
+      "DigiWACS.PluginBase/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/DigiWACSPluginBase.dll": {}
+          "bin/placeholder/DigiWACS.PluginBase.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DigiWACSPluginBase.dll": {}
+          "bin/placeholder/DigiWACS.PluginBase.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "DigiWACSPluginBase/1.0.0": {
+    "DigiWACS.PluginBase/1.0.0": {
       "type": "project",
       "path": "../../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
       "msbuildProject": "../../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj"
@@ -23,7 +23,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "DigiWACSPluginBase >= 1.0.0"
+      "DigiWACS.PluginBase >= 1.0.0"
     ]
   },
   "packageFolders": {

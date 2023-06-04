@@ -1,11 +1,11 @@
 ﻿DigiWACS-Client
 
 
-winexe
+exe
 C#
 .cs
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\
-DigiWACS_Client
+DigiWACS.Client
 none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
@@ -13,8 +13,8 @@ C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\App.xaml
 21694536717
 
 4-1436992220
-217223254560
+218-1618733230
 MainWindow.xaml;PluginPage.xaml;
 
-False
+True
 

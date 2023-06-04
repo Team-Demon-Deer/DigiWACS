@@ -1,6 +1,11 @@
-namespace DigiWACSPluginBase;
+using System.Reflection;
+
+namespace DigiWACS.PluginBase;
 
 public interface IClientPlugin
 {
-	void Process(string message);
+	void OnPluginLoad(Assembly pluginAssembly)
+	{
+		
+	}
 }

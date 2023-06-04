@@ -4,8 +4,15 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>DigiWACSPluginBase</AssemblyName>
-        <RootNamespace>DigiWACSPluginBase</RootNamespace>
+        <AssemblyName>DigiWACS.PluginBase</AssemblyName>
+        <RootNamespace>DigiWACS.PluginBase</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Grpc.Tools" Version="2.54.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
 
 </Project>
