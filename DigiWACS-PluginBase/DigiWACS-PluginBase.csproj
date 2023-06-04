@@ -4,7 +4,6 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>DigiWACS.PluginBase</AssemblyName>
         <RootNamespace>DigiWACS.PluginBase</RootNamespace>
     </PropertyGroup>
 

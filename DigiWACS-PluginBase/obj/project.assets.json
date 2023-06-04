@@ -75,7 +75,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
-      "projectName": "DigiWACS.PluginBase",
+      "projectName": "DigiWACS-PluginBase",
       "projectPath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
       "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\deser\\RiderProjects\\ScribeATC\\DigiWACS-PluginBase\\obj\\",

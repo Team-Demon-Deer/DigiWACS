@@ -1,13 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<EnableDynamicLoading>true</EnableDynamicLoading>
+	</PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
-    </ItemGroup>
-
+	<ItemGroup>
+	  <ProjectReference Include="..\..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj">
+		  <Private>false</Private>
+		  <ExcludeAssets>runtime</ExcludeAssets>
+	  </ProjectReference>
+	</ItemGroup>
+	
 </Project>

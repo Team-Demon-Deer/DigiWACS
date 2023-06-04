@@ -10,20 +10,20 @@ namespace DigiWACS.Client
 	{
 		public MainWindow()
 		{
+			Debug.WriteLine("MainWindow()");
 			InitializeComponent();
 			MapControl1.Map?.Layers.Add(Mapsui.Utilities.OpenStreetMap.CreateTileLayer());
 		}
 		private void NewWindowButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			Trace.WriteLine("New Window Button clicked.");
+			Debug.WriteLine("NewWindowButton_OnClick()");
 			PluginWindow newWindow = new PluginWindow();
 			newWindow.Show();
-			Trace.WriteLine("New window creation attempted.");
 		}
 
 		private void PluginTestButton_OnClick(object sender, RoutedEventArgs e)
-		{
-
-;		}
+		{	
+			Debug.WriteLine("PluginTestButton_OnClick()");
+		}
 	}
 }

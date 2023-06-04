@@ -7,7 +7,6 @@ C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-window
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\MainWindow.g.cs
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\App.g.cs
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\DigiWACS-Client_MarkupCompile.cache
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\DigiWACS-Client_MarkupCompile.lref
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\MainWindow.baml
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\DigiWACS-Client.g.resources
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\DigiWACS-Client.GeneratedMSBuildEditorConfig.editorconfig
@@ -48,5 +47,5 @@ C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\bin\Release\net7.0-window
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\DigiWACS-Client.csproj.CopyComplete
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\PluginPage.g.cs
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\obj\Release\net7.0-windows\PluginPage.baml
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\bin\Release\net7.0-windows\DigiWACSPluginBase.dll
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\bin\Release\net7.0-windows\DigiWACSPluginBase.pdb
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\bin\Release\net7.0-windows\DigiWACS-PluginBase.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-Client\bin\Release\net7.0-windows\DigiWACS-PluginBase.pdb

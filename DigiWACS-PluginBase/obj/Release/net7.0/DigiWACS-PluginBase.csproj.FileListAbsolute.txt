@@ -3,10 +3,10 @@ C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\Di
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\DigiWACS-PluginBase.AssemblyInfoInputs.cache
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\DigiWACS-PluginBase.AssemblyInfo.cs
 C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\DigiWACS-PluginBase.csproj.CoreCompileInputs.cache
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\bin\Release\net7.0\DigiWACSPluginBase.deps.json
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\bin\Release\net7.0\DigiWACSPluginBase.dll
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\bin\Release\net7.0\DigiWACSPluginBase.pdb
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\DigiWACSPluginBase.dll
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\refint\DigiWACSPluginBase.dll
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\DigiWACSPluginBase.pdb
-C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\ref\DigiWACSPluginBase.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\bin\Release\net7.0\DigiWACS-PluginBase.deps.json
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\bin\Release\net7.0\DigiWACS-PluginBase.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\bin\Release\net7.0\DigiWACS-PluginBase.pdb
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\DigiWACS-PluginBase.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\refint\DigiWACS-PluginBase.dll
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\DigiWACS-PluginBase.pdb
+C:\Users\deser\RiderProjects\ScribeATC\DigiWACS-PluginBase\obj\Release\net7.0\ref\DigiWACS-PluginBase.dll

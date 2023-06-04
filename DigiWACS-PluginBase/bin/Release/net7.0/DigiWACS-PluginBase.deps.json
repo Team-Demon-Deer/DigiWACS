@@ -6,19 +6,19 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DigiWACSPluginBase/1.0.0": {
+      "DigiWACS-PluginBase/1.0.0": {
         "dependencies": {
           "Grpc.Tools": "2.54.0"
         },
         "runtime": {
-          "DigiWACSPluginBase.dll": {}
+          "DigiWACS-PluginBase.dll": {}
         }
       },
       "Grpc.Tools/2.54.0": {}
     }
   },
   "libraries": {
-    "DigiWACSPluginBase/1.0.0": {
+    "DigiWACS-PluginBase/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

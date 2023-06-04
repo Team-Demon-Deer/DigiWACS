@@ -9,14 +9,14 @@
           "build/Grpc.Tools.targets": {}
         }
       },
-      "DigiWACS.PluginBase/1.0.0": {
+      "DigiWACS-PluginBase/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/DigiWACS.PluginBase.dll": {}
+          "bin/placeholder/DigiWACS-PluginBase.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DigiWACS.PluginBase.dll": {}
+          "bin/placeholder/DigiWACS-PluginBase.dll": {}
         }
       }
     }
@@ -72,7 +72,7 @@
         "tools/windows_x86/protoc.exe"
       ]
     },
-    "DigiWACS.PluginBase/1.0.0": {
+    "DigiWACS-PluginBase/1.0.0": {
       "type": "project",
       "path": "../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
       "msbuildProject": "../DigiWACS-PluginBase/DigiWACS-PluginBase.csproj"
@@ -80,7 +80,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "DigiWACS.PluginBase >= 1.0.0",
+      "DigiWACS-PluginBase >= 1.0.0",
       "Grpc.Tools >= 2.54.0"
     ]
   },
