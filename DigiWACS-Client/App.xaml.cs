@@ -16,16 +16,16 @@ public partial class App : Application {
 		.SetBasePath(Directory.GetCurrentDirectory())
 		.AddEnvironmentVariables()
 		.AddJsonFile("appsettings.json")
-		.AddUserSecrets(Assembly.GetExecutingAssembly(),
-			true) //must be last in builder so it overrides appsettings.json
+		.AddUserSecrets(Assembly.GetExecutingAssembly(), true) //must be last in builder so it overrides appsettings.json
 		.Build();
 
 	public static readonly GenericPluginLoader<ClientPlugin> ClientPluginLoader = new();
-
+	public static List<ClientPlugin> LoadedClientPlugins { get; private set; } =
+		ClientPluginLoader.LoadAll(Config.GetConnectionString("PluginsPath"));
+	
 	public App() {
 		Trace.WriteLine(Config.GetConnectionString("PluginsPath"));
 	}
 
-	public static List<ClientPlugin> LoadedClientPlugins { get; private set; } =
-		ClientPluginLoader.LoadAll(Config.GetConnectionString("PluginsPath"));
+
 }
