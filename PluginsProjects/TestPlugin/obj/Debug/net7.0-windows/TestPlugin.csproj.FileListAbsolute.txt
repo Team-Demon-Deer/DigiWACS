@@ -15,7 +15,6 @@ C:\Users\deser\RiderProjects\DigiWACS\Plugins\net7.0-windows\TestPlugin.deps.jso
 C:\Users\deser\RiderProjects\DigiWACS\Plugins\net7.0-windows\TestPlugin.runtimeconfig.json
 C:\Users\deser\RiderProjects\DigiWACS\Plugins\net7.0-windows\TestPlugin.dll
 C:\Users\deser\RiderProjects\DigiWACS\Plugins\net7.0-windows\TestPlugin.pdb
-C:\Users\deser\RiderProjects\DigiWACS\PluginsProjects\TestPlugin\obj\Debug\net7.0-windows\TestPlugin.csproj.CopyComplete
 C:\Users\deser\RiderProjects\DigiWACS\PluginsProjects\TestPlugin\obj\Debug\net7.0-windows\TestPlugin.dll
 C:\Users\deser\RiderProjects\DigiWACS\PluginsProjects\TestPlugin\obj\Debug\net7.0-windows\refint\TestPlugin.dll
 C:\Users\deser\RiderProjects\DigiWACS\PluginsProjects\TestPlugin\obj\Debug\net7.0-windows\TestPlugin.pdb
@@ -25,3 +24,7 @@ C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\TestPlugin\net7.0-windows\T
 C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\TestPlugin\net7.0-windows\TestPlugin.runtimeconfig.json
 C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\TestPlugin\net7.0-windows\TestPlugin.dll
 C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\TestPlugin\net7.0-windows\TestPlugin.pdb
+C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\net7.0-windows\TestPlugin.deps.json
+C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\net7.0-windows\TestPlugin.runtimeconfig.json
+C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\net7.0-windows\TestPlugin.dll
+C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\net7.0-windows\TestPlugin.pdb

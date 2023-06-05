@@ -1,9 +1,6 @@
 ﻿using System.Diagnostics;
-using System.Linq;
 using System.Windows;
-using DigiWACS.PluginBase;
 using Mapsui.Utilities;
-
 
 namespace DigiWACS.Client;
 
@@ -23,6 +20,5 @@ public partial class MainWindow : Window {
 		newWindow.Show();
 	}
 
-	private void PluginTestButton_OnClick(object sender, RoutedEventArgs e) {
-	}
+	private void PluginTestButton_OnClick(object sender, RoutedEventArgs e) { }
 }

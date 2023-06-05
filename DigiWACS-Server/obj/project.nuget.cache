@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "KyxqJbgxZ0GhBptQeo+p3GxJ+TyJOi/Zz02z8LnYDOAKceDxDkac8tSNA+xXFTV8WMTrqhVNJzs4UG7YCZFQUA==",
+  "dgSpecHash": "ec+PdQ4IYknXlneSEEvJssOURn+KoYXOQBnuFSEvy6uW2vhNXWrYjSKr7AuSDl8nRNFY/U9QjNV4Sg/r6MbC4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\deser\\.nuget\\packages\\google.protobuf\\3.23.2\\google.protobuf.3.23.2.nupkg.sha512",
+    "C:\\Users\\deser\\.nuget\\packages\\grpc.core.api\\2.53.0\\grpc.core.api.2.53.0.nupkg.sha512",
+    "C:\\Users\\deser\\.nuget\\packages\\grpc.net.client\\2.53.0\\grpc.net.client.2.53.0.nupkg.sha512",
+    "C:\\Users\\deser\\.nuget\\packages\\grpc.net.common\\2.53.0\\grpc.net.common.2.53.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\grpc.tools\\2.54.0\\grpc.tools.2.54.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
@@ -13,7 +17,9 @@
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
+    "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\deser\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],

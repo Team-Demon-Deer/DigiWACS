@@ -1,7 +1,4 @@
-
-
 namespace DigiWACS.PluginBase;
-
 
 public class ClientPlugin {
 	public string name;

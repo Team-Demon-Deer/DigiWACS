@@ -1,0 +1,6 @@
+﻿services:
+  digiwacs-server:
+    image: digiwacs-server
+    build:
+      context: .
+      dockerfile: DigiWACS-Server/Dockerfile

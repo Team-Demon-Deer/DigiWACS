@@ -17,6 +17,7 @@ public class GenericPluginLoader<T> where T : class {
 			Console.WriteLine(e);
 			throw;
 		}
+
 		return plugins;
 	}
 
