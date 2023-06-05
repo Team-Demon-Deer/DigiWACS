@@ -1,5 +1,5 @@
 ﻿DigiWACS-Client
-
+1.0.0.0
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\App.xaml
 21694536717
 
-5-574438529
+91827216008
 2341808937516
 MainWindow.xaml;PluginPage.xaml;
 
