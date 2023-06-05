@@ -6,13 +6,17 @@ public class GenericPluginLoader<T> where T : class {
 
 	public List<T> LoadAll(string pluginPath, string filter = "*.dll", params object[] constructorArgs) {
 		var plugins = new List<T>();
+		try {
+			foreach (var filePath in Directory.EnumerateFiles(pluginPath, filter, SearchOption.AllDirectories)) {
+				var plugin = Load(filePath, constructorArgs);
 
-		foreach (var filePath in Directory.EnumerateFiles(pluginPath, filter, SearchOption.AllDirectories)) {
-			var plugin = Load(filePath, constructorArgs);
-
-			if (plugin != null) plugins.Add(plugin);
+				if (plugin != null) plugins.Add(plugin);
+			}
 		}
-
+		catch (Exception e) {
+			Console.WriteLine(e);
+			throw;
+		}
 		return plugins;
 	}
 
