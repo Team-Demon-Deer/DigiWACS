@@ -22,6 +22,7 @@ static class Program {
 		ServerPluginLoader.LoadAll(Config.GetConnectionString("PluginsPath"));
 
 	static void Main(string[] args) {
+		//Todo: Start up the gRPC Greeterservice so it can be discovered or what ever.
 		Console.ReadLine();
 	}
 }
