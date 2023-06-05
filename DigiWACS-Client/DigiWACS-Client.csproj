@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
         <TargetFramework>net7.0-windows</TargetFramework>
+        <UserSecretsId>78662075-d871-4abc-86a3-db625ce8bae3</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,6 +19,7 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
         <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>

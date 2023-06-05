@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3RVCgqx5Ba1OAKclXJBpikHHqA//CtxjwwZckAIOPRknlcr3wSVMDfhVUO0kkzPePb2CGyFyOwifV/8tyW28Iw==",
+  "dgSpecHash": "sDuEFdEC980/MaIEEVGbZTCE2rUOv+ZuEhVclaTPkaM7TSdhYWwa94KUGY53OX3OvWADLiTORTnG8aFPPaHWVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Client\\DigiWACS-Client.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\7.0.0\\microsoft.extensions.configuration.environmentvariables.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\7.0.0\\microsoft.extensions.configuration.fileextensions.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.configuration.json\\7.0.0\\microsoft.extensions.configuration.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\7.0.0\\microsoft.extensions.configuration.usersecrets.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",

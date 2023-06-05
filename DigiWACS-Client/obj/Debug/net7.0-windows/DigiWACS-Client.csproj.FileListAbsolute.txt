@@ -60,3 +60,4 @@ C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\bin\Debug\net7.0-windows\M
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\bin\Debug\net7.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\bin\Debug\net7.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\bin\Debug\net7.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
