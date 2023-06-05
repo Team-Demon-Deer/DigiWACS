@@ -6,16 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "DigiWACS-PluginBase/1.0.0": {
+      "TestPlugin/1.0.0": {
         "dependencies": {
-          "Grpc.Tools": "2.54.0",
+          "DigiWACS-PluginBase": "1.0.0",
           "Mono.Addins": "1.4.1"
         },
         "runtime": {
-          "DigiWACS-PluginBase.dll": {}
+          "TestPlugin.dll": {}
         }
       },
-      "Grpc.Tools/2.54.0": {},
       "Mono.Addins/1.4.1": {
         "dependencies": {
           "System.Collections.Immutable": "6.0.0",
@@ -38,17 +37,10 @@
     }
   },
   "libraries": {
-    "DigiWACS-PluginBase/1.0.0": {
+    "TestPlugin/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Grpc.Tools/2.54.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-E+c9vTTSM1AHX5085MeF4J6QS0qACiz0Svm2zk+/F6gjuSo178gMLn7n6jMOSdF6OEHde5Cm86ouD8X49SrVbA==",
-      "path": "grpc.tools/2.54.0",
-      "hashPath": "grpc.tools.2.54.0.nupkg.sha512"
     },
     "Mono.Addins/1.4.1": {
       "type": "package",

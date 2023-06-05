@@ -1,6 +1,10 @@
+
+
 namespace DigiWACS.PluginBase;
 
+
 public class ClientPlugin {
+	public string name;
 	public virtual void OnPluginLoad() { }
 
 	//Theorized Mouse Actions

@@ -1,7 +1,9 @@
 ﻿using System.Diagnostics;
-using System.IO;
+using System.Linq;
 using System.Windows;
+using DigiWACS.PluginBase;
 using Mapsui.Utilities;
+
 
 namespace DigiWACS.Client;
 
@@ -10,7 +12,7 @@ namespace DigiWACS.Client;
 /// </summary>
 public partial class MainWindow : Window {
 	public MainWindow() {
-		Trace.WriteLine("MainWindow()");
+		Trace.WriteLine("MainWindow() Start");
 		InitializeComponent();
 		MapControl1.Map?.Layers.Add(OpenStreetMap.CreateTileLayer());
 	}

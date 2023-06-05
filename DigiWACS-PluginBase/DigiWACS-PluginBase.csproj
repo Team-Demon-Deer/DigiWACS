@@ -7,6 +7,14 @@
         <RootNamespace>DigiWACS.PluginBase</RootNamespace>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\PluginBase\</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\PluginBase\</OutputPath>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="Grpc.Tools" Version="2.54.0">
             <PrivateAssets>all</PrivateAssets>

@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj"/>
+        <ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <AssemblyVersion>0.0.1</AssemblyVersion>
@@ -9,11 +8,11 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins</OutputPath>
+      <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\</OutputPath>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins</OutputPath>
+      <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>

@@ -10,3 +10,6 @@ C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-PluginBase\obj\Debug\net7.0-windo
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-PluginBase\obj\Debug\net7.0-windows\refint\DigiWACS-PluginBase.dll
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-PluginBase\obj\Debug\net7.0-windows\DigiWACS-PluginBase.pdb
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-PluginBase\obj\Debug\net7.0-windows\ref\DigiWACS-PluginBase.dll
+C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\PluginBase\net7.0-windows\DigiWACS-PluginBase.deps.json
+C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\PluginBase\net7.0-windows\DigiWACS-PluginBase.dll
+C:\Users\deser\RiderProjects\DigiWACS\Plugins\addins\PluginBase\net7.0-windows\DigiWACS-PluginBase.pdb
