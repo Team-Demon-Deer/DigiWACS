@@ -22,6 +22,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
     </ItemGroup>
 
@@ -34,7 +35,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Protobuf Include="..\Protos\*.proto" GrpcServices="Server" link="Protos\*.proto"/>
+        <Protobuf Include="..\Protos\*.proto" GrpcServices="Server" link="Protos\*.proto" />
     </ItemGroup>
 
 </Project>

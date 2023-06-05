@@ -15,11 +15,11 @@
                     Click="NewWindowButton_OnClick">
                 New Window
             </Button>
-            <Button x:Name="PluginTestButton"
+            <Button x:Name="gRPCConnectButton"
                     Height="30" Width="100"
                     ClickMode="Press"
-                    Click="PluginTestButton_OnClick">
-                Plugin Test
+                    Click="gRPCConnect_OnClick">
+                gRPC Connect
             </Button>
         </DockPanel>
     </Grid>

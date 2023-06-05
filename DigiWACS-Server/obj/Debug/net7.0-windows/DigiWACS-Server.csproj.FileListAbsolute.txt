@@ -30,3 +30,4 @@ C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Server\bin\Debug\net7.0-windows\M
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Server\bin\Debug\net7.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Server\bin\Debug\net7.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Server\bin\Debug\net7.0-windows\Google.Protobuf.dll
+C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Server\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.EnvironmentVariables.dll

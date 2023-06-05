@@ -1,6 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
+using Grpc.Net.Client;
 using Mapsui.Utilities;
+using Microsoft.Extensions.Configuration;
+using static DigiWACS.Client.App;
 
 namespace DigiWACS.Client;
 
@@ -20,5 +24,13 @@ public partial class MainWindow : Window {
 		newWindow.Show();
 	}
 
-	private void PluginTestButton_OnClick(object sender, RoutedEventArgs e) { }
+	private void gRPCConnect_OnClick(object sender, RoutedEventArgs e) {
+		try {
+			gRPC_Client.CreateChannel(Config.GetConnectionString("SeverConnection"));
+		}
+		catch (Exception exception) {
+			Console.WriteLine(exception);
+			throw;
+		}
+	}
 }
