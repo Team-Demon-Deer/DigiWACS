@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace DigiWACS.Server {
+namespace DigiWACS {
   public static partial class Greeter
   {
     static readonly string __ServiceName = "Greet.Greeter";
@@ -46,12 +46,12 @@ namespace DigiWACS.Server {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::DigiWACS.Server.HelloRequest> __Marshaller_Greet_HelloRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.Server.HelloRequest.Parser));
+    static readonly grpc::Marshaller<global::DigiWACS.HelloRequest> __Marshaller_Greet_HelloRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.HelloRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::DigiWACS.Server.HelloReply> __Marshaller_Greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.Server.HelloReply.Parser));
+    static readonly grpc::Marshaller<global::DigiWACS.HelloReply> __Marshaller_Greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.HelloReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::DigiWACS.Server.HelloRequest, global::DigiWACS.Server.HelloReply> __Method_SayHello = new grpc::Method<global::DigiWACS.Server.HelloRequest, global::DigiWACS.Server.HelloReply>(
+    static readonly grpc::Method<global::DigiWACS.HelloRequest, global::DigiWACS.HelloReply> __Method_SayHello = new grpc::Method<global::DigiWACS.HelloRequest, global::DigiWACS.HelloReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SayHello",
@@ -61,7 +61,7 @@ namespace DigiWACS.Server {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::DigiWACS.Server.GreetReflection.Descriptor.Services[0]; }
+      get { return global::DigiWACS.GreetReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Client for Greeter</summary>
@@ -92,22 +92,22 @@ namespace DigiWACS.Server {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::DigiWACS.Server.HelloReply SayHello(global::DigiWACS.Server.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::DigiWACS.HelloReply SayHello(global::DigiWACS.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SayHello(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::DigiWACS.Server.HelloReply SayHello(global::DigiWACS.Server.HelloRequest request, grpc::CallOptions options)
+      public virtual global::DigiWACS.HelloReply SayHello(global::DigiWACS.HelloRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SayHello, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::DigiWACS.Server.HelloReply> SayHelloAsync(global::DigiWACS.Server.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::DigiWACS.HelloReply> SayHelloAsync(global::DigiWACS.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SayHelloAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::DigiWACS.Server.HelloReply> SayHelloAsync(global::DigiWACS.Server.HelloRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::DigiWACS.HelloReply> SayHelloAsync(global::DigiWACS.HelloRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SayHello, null, options, request);
       }

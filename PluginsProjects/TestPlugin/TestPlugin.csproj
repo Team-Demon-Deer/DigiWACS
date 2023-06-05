@@ -8,11 +8,11 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\</OutputPath>
+        <OutputPath>..\..\Plugins\TestPlugin\Release</OutputPath>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <OutputPath>C:\Users\deser\RiderProjects\DigiWACS\Plugins\TestPlugin\</OutputPath>
+        <OutputPath>..\..\Plugins\TestPlugin\Debug</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>
