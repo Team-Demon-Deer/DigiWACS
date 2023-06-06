@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -22,8 +23,8 @@ public partial class App : Application {
 	public static readonly GenericPluginLoader<ClientPlugin> ClientPluginLoader = new();
 	public static List<ClientPlugin> LoadedClientPlugins { get; private set; } =
 		ClientPluginLoader.LoadAll(Config.GetConnectionString("PluginsPath"));
-	
+
 	public App() {
-		Trace.WriteLine(Config.GetConnectionString("PluginsPath"));
+		Console.WriteLine(Config.GetConnectionString("PluginsPath"));
 	}
 }

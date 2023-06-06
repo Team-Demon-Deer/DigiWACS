@@ -66,3 +66,4 @@ C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\obj\Debug\net7.0-windows\r
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\obj\Debug\net7.0-windows\DigiWACS-Client.pdb
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\obj\Debug\net7.0-windows\DigiWACS-Client.genruntimeconfig.cache
 C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\obj\Debug\net7.0-windows\ref\DigiWACS-Client.dll
+C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-Client\bin\Debug\net7.0-windows\DigiWACS-Client.dll.config

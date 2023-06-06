@@ -60,7 +60,7 @@ namespace DigiWACS.Client {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DigiWACS-Client;component/pluginpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DigiWACS-Client;V1.0.0.0;component/pluginpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PluginPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

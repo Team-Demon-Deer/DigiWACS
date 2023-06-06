@@ -35,11 +35,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Plugins\"/>
+        <Folder Include="Plugins\" />
     </ItemGroup>
     
     <ItemGroup>
-        <Protobuf Include="..\Protos\*.proto" GrpcServices="Client" link="Protos\*.proto"/>
+        <Protobuf Include="..\Protos\*.proto" GrpcServices="Client" link="Protos\*.proto" />
     </ItemGroup>
 
 </Project>
