@@ -6,20 +6,18 @@
 		xmlns:wpf="clr-namespace:Mapsui.UI.Wpf;assembly=Mapsui.UI.Wpf"
 		mc:Ignorable="d"
 		Title="DigiWACS" Height="450" Width="800">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top" VerticalContentAlignment="Stretch">
-            <MenuItem Header="_File">
-                <MenuItem Header="_New Connection" />
-                <MenuItem Header="_Open Connection" />
-                <MenuItem Header="_Save Connection" />
-                <Separator />
-                <MenuItem Header="_Exit" />
-            </MenuItem>
-            <MenuItem Header="Test Commands">
-                <MenuItem Header="NewWindow" Click="NewWindowButton_OnClick" />
-                <MenuItem Header="gRPC Connect" Click="gRPCConnect_OnClick" />
-            </MenuItem>
-        </Menu>
-        <wpf:MapControl x:Name="MapControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-    </DockPanel>
+	<DockPanel>
+		<Menu DockPanel.Dock="Top" VerticalContentAlignment="Stretch">
+			<MenuItem Header="_File">
+				<MenuItem Header="_Connection..." />
+				<Separator />
+				<MenuItem Header="_Exit" />
+			</MenuItem>
+			<MenuItem Header="Test Commands">
+				<MenuItem Header="NewWindow" Click="NewWindowButton_OnClick" />
+				<MenuItem Header="gRPC Connect" Click="gRPCConnect_OnClick" />
+			</MenuItem>
+		</Menu>
+		<wpf:MapControl x:Name="MapControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+	</DockPanel>
 </Window>
