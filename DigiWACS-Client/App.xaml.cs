@@ -26,5 +26,6 @@ public partial class App : Application {
 
 	public App() {
 		Console.WriteLine(Config.GetConnectionString("PluginsPath"));
+
 	}
 }

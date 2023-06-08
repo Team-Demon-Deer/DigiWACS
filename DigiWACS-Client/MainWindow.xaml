@@ -9,7 +9,11 @@
 	<DockPanel>
 		<Menu DockPanel.Dock="Top" VerticalContentAlignment="Stretch">
 			<MenuItem Header="_File">
-				<MenuItem Header="_Connection..." />
+				<MenuItem Header="_Reconnect..." Click="Reconnect_Click">
+					<!-- TODO: Some how how the last connection name to reconnect -->
+				</MenuItem>
+                <MenuItem Header="_New Connection" Click="NewConnection_Click" />
+                <MenuItem Header="_Manage Connections" Click="ManageConnections_Click" />
 				<Separator />
 				<MenuItem Header="_Exit" />
 			</MenuItem>

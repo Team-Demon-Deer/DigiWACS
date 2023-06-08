@@ -39,4 +39,14 @@ public partial class MainWindow : Window {
 			throw;
 		}
 	}
+
+	private void Reconnect_Click( object sender, RoutedEventArgs e ) {
+
+	}
+	private void NewConnection_Click( object sender, RoutedEventArgs e ) {
+
+	}
+	private void ManageConnections_Click( object sender, RoutedEventArgs e ) {
+
+	}
 }
