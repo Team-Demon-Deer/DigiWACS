@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "41KMD+F13zalgHom1QvIMBUYbEMm6znCakVVJd2asLqKVQAEbfbHikEvVYCAM4TCqG4xzovBmAjONqWPhxgW0Q==",
+  "dgSpecHash": "6T4URCL3mQlL0jsoHNRqLxG/TGbe+2R7GjAOtqELLIDfiFeihKb2P0s+9w974iDzanEi+d/kd/vL0P86vAw+ew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+  "projectFilePath": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\deser\\.nuget\\packages\\grpc.tools\\2.54.0\\grpc.tools.2.54.0.nupkg.sha512"
+    "/home/egriffith/.nuget/packages/grpc.tools/2.54.0/grpc.tools.2.54.0.nupkg.sha512"
   ],
   "logs": []
 }

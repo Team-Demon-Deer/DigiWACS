@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DigiWACS.PluginBase
-build_property.ProjectDir = C:\Users\deser\RiderProjects\DigiWACS\DigiWACS-PluginBase\
+build_property.ProjectDir = /home/egriffith/git/DigiWACS/DigiWACS-PluginBase/

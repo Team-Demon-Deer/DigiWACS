@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OsS7sVXrjGUQYovC9PoPgaYteCM23O6e+rmnqPvr/kyrLvBPPY5qy+gHz6Zv+EzeXCqDZrWdke0AkwpjpTjSFQ==",
+  "dgSpecHash": "Kcs2SneaED2jay/kyjH0qECaph0roBwSRejc22B5YFtizOse9+/AsZt8tOeCNlTag56mgy8wd9fc+TjbpssC2w==",
   "success": true,
-  "projectFilePath": "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj",
+  "projectFilePath": "/home/egriffith/git/DigiWACS/DigiWACS-Server/DigiWACS-Server.csproj",
   "expectedPackageFiles": [
     "/home/egriffith/.nuget/packages/google.api.commonprotos/2.10.0/google.api.commonprotos.2.10.0.nupkg.sha512",
     "/home/egriffith/.nuget/packages/google.protobuf/3.23.2/google.protobuf.3.23.2.nupkg.sha512",

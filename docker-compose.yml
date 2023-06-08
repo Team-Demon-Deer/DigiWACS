@@ -2,5 +2,32 @@
   digiwacs-server:
     image: digiwacs-server
     build:
-      context: .
-      dockerfile: DigiWACS-Server/Dockerfile
+      context: ./DigiWACS-Server
+      dockerfile: Dockerfile
+    ports:
+      - 8001:8001
+  postgrpc-server:
+    image: postgrpc
+    build:
+      context: ./postgrpc
+      dockerfile: Dockerfile
+    ports:
+      - 50051:50051
+    environment:
+      - HOST=0.0.0.0
+      - PORT=50051
+      - PGDBNAME=scribedb
+      - PGHOST=postgis
+      - PGPASSWORD=mysecretpassword
+      - PGUSER=digiwacs
+      - PGSSLMODE=disable
+  postgis:
+    image: kartoza/postgis
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=scribedb
+      - POSTGRES_USER=digiwacs
+    volumes:
+      - ${PWD}/Scribe/DCScribe.Postgres/Documentation/DatabaseScripts/setup-db.sql:/docker-entrypoint-initdb.d/setup-db.sql

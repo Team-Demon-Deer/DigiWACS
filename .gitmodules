@@ -1,0 +1,6 @@
+[submodule "postgrpc"]
+	path = postgrpc
+	url = https://github.com/boilerplatter/postgrpc
+[submodule "Scribe"]
+	path = Scribe
+	url = https://github.com/DCS-gRPC/Scribe.git

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj": {}
+    "/home/egriffith/git/DigiWACS/DigiWACS-Server/DigiWACS-Server.csproj": {}
   },
   "projects": {
-    "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {
+    "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
+        "projectUniqueName": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
         "projectName": "DigiWACS-PluginBase",
-        "projectPath": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
+        "projectPath": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
         "packagesPath": "/home/egriffith/.nuget/packages/",
-        "outputPath": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/obj/",
+        "outputPath": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/egriffith/.nuget/NuGet/NuGet.Config"
@@ -65,14 +65,14 @@
         }
       }
     },
-    "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj": {
+    "/home/egriffith/git/DigiWACS/DigiWACS-Server/DigiWACS-Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj",
+        "projectUniqueName": "/home/egriffith/git/DigiWACS/DigiWACS-Server/DigiWACS-Server.csproj",
         "projectName": "DigiWACS-Server",
-        "projectPath": "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj",
+        "projectPath": "/home/egriffith/git/DigiWACS/DigiWACS-Server/DigiWACS-Server.csproj",
         "packagesPath": "/home/egriffith/.nuget/packages/",
-        "outputPath": "/home/egriffith/DigiWACS-master/DigiWACS-Server/obj/",
+        "outputPath": "/home/egriffith/git/DigiWACS/DigiWACS-Server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/egriffith/.nuget/NuGet/NuGet.Config"
@@ -88,8 +88,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {
-                "projectPath": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj"
+              "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {
+                "projectPath": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj"
               }
             }
           }

@@ -1,6 +1,0 @@
-obj/Debug/net7.0-windows/Protos/Postgres.cs \
-obj/Debug/net7.0-windows/Protos/PostgresGrpc.cs: /home/egriffith/.nuget/packages/grpc.tools/2.54.0/build/native/include/google/protobuf/struct.proto\
- google/api/http.proto\
- /home/egriffith/.nuget/packages/grpc.tools/2.54.0/build/native/include/google/protobuf/descriptor.proto\
- google/api/annotations.proto\
- Protos/postgres.proto

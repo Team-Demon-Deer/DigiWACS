@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {}
+    "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+    "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+        "projectUniqueName": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
         "projectName": "DigiWACS-PluginBase",
-        "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
-        "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\obj\\",
+        "projectPath": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
+        "packagesPath": "/home/egriffith/.nuget/packages/",
+        "outputPath": "/home/egriffith/git/DigiWACS/DigiWACS-PluginBase/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/egriffith/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/egriffith/.dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }
