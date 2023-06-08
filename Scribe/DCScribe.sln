@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCScribe", "DCScribe\DCScribe.csproj", "{03F22573-3C03-477F-99FE-91EFE1FCF7F6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{331A0FA4-8C38-4BEA-B9CB-6A02B225FAB8} = {331A0FA4-8C38-4BEA-B9CB-6A02B225FAB8}
+		{F37A95F3-00DA-4AA5-BC49-10BDB8A45FAD} = {F37A95F3-00DA-4AA5-BC49-10BDB8A45FAD}
+		{589285F5-928E-4879-9F5C-107000FC06A4} = {589285F5-928E-4879-9F5C-107000FC06A4}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{53F30AFB-3588-472F-B503-CAA9EFC5B175}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCScribe.Grpc", "DCScribe.Grpc\DCScribe.Grpc.csproj", "{589285F5-928E-4879-9F5C-107000FC06A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCScribe.Postgres", "DCScribe.Postgres\DCScribe.Postgres.csproj", "{F37A95F3-00DA-4AA5-BC49-10BDB8A45FAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCScribe.Shared", "DCScribe.Shared\DCScribe.Shared.csproj", "{331A0FA4-8C38-4BEA-B9CB-6A02B225FAB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DCScribe.Encyclopedia", "DCScribe.Encyclopedia\DCScribe.Encyclopedia.csproj", "{6C4BA31F-14AA-4539-997A-9114FFA6FC8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03F22573-3C03-477F-99FE-91EFE1FCF7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F22573-3C03-477F-99FE-91EFE1FCF7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F22573-3C03-477F-99FE-91EFE1FCF7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F22573-3C03-477F-99FE-91EFE1FCF7F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{589285F5-928E-4879-9F5C-107000FC06A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{589285F5-928E-4879-9F5C-107000FC06A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{589285F5-928E-4879-9F5C-107000FC06A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{589285F5-928E-4879-9F5C-107000FC06A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37A95F3-00DA-4AA5-BC49-10BDB8A45FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37A95F3-00DA-4AA5-BC49-10BDB8A45FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37A95F3-00DA-4AA5-BC49-10BDB8A45FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37A95F3-00DA-4AA5-BC49-10BDB8A45FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{331A0FA4-8C38-4BEA-B9CB-6A02B225FAB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331A0FA4-8C38-4BEA-B9CB-6A02B225FAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331A0FA4-8C38-4BEA-B9CB-6A02B225FAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331A0FA4-8C38-4BEA-B9CB-6A02B225FAB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C4BA31F-14AA-4539-997A-9114FFA6FC8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4BA31F-14AA-4539-997A-9114FFA6FC8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4BA31F-14AA-4539-997A-9114FFA6FC8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4BA31F-14AA-4539-997A-9114FFA6FC8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6B7E67A-431D-441F-AABB-97E9D010E92A}
+	EndGlobalSection
+EndGlobal
