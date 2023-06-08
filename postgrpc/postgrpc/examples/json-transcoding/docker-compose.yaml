@@ -1,0 +1,30 @@
+version: "3.9" 
+services:
+  postgrpc:
+    build:
+      context: ../../../
+      dockerfile: postgrpc/Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - HOST=0.0.0.0
+      - PGHOST=postgres
+      - PGDBNAME=postgres
+      - PGUSER=postgres
+      - PGPASSWORD=supersecretpassword
+      - RUST_LOG=info
+      - TERMINATION_PERIOD=1000
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=supersecretpassword
+  envoy:
+    image: envoyproxy/envoy:v1.22.5
+    command: envoy -c /envoy.yaml
+    depends_on:
+      - postgrpc
+    ports:
+      - "50051:8080"
+    volumes:
+      - ./envoy.yaml:/envoy.yaml
+      - ./postgrpc.pb:/proto/postgrpc.pb
