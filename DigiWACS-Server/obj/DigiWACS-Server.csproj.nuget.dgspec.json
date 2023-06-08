@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj": {}
+    "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+    "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+        "projectUniqueName": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
         "projectName": "DigiWACS-PluginBase",
-        "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
-        "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\obj\\",
+        "projectPath": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj",
+        "packagesPath": "/home/egriffith/.nuget/packages/",
+        "outputPath": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/egriffith/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,36 +61,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/egriffith/.dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj": {
+    "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
+        "projectUniqueName": "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj",
         "projectName": "DigiWACS-Server",
-        "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
-        "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\obj\\",
+        "projectPath": "/home/egriffith/DigiWACS-master/DigiWACS-Server/DigiWACS-Server.csproj",
+        "packagesPath": "/home/egriffith/.nuget/packages/",
+        "outputPath": "/home/egriffith/DigiWACS-master/DigiWACS-Server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/egriffith/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/home/egriffith/.dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
-                "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj"
+              "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj": {
+                "projectPath": "/home/egriffith/DigiWACS-master/DigiWACS-PluginBase/DigiWACS-PluginBase.csproj"
               }
             }
           }
@@ -107,9 +104,21 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "Google.Api.CommonProtos": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
             "Google.Protobuf": {
               "target": "Package",
               "version": "[3.23.2, )"
+            },
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.49.0, )"
+            },
+            "Grpc.AspNetCore.Server.Reflection": {
+              "target": "Package",
+              "version": "[2.53.0, )"
             },
             "Grpc.Net.Client": {
               "target": "Package",
@@ -142,11 +151,14 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/egriffith/.dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }

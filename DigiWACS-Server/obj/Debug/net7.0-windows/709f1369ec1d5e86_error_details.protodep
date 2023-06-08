@@ -1,0 +1,2 @@
+obj/Debug/net7.0-windows/ErrorDetails.cs: /home/egriffith/.nuget/packages/grpc.tools/2.54.0/build/native/include/google/protobuf/duration.proto\
+ ../Protos/google/rpc/error_details.proto

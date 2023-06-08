@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Postgr";
+
+package postgres.v1;
+
+import "google/protobuf/struct.proto";
+import "google/api/annotations.proto";
+
+
+service Postgres {
+  // query the postgres database, streaming rows as they are processed
+  rpc Query (QueryRequest) returns (stream google.protobuf.Struct) {
+    option (google.api.http) = {
+      post: "/query"
+    };
+  }
+}
+
+// dynamically-typed query payload
+message QueryRequest {
+  string statement = 1;
+  repeated google.protobuf.Value values = 2;
+}

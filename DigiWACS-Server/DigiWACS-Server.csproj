@@ -1,41 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net7.0-windows</TargetFramework>
-        <RootNamespace>DigiWACS.Server</RootNamespace>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    </PropertyGroup>
+  <PropertyGroup>
+	<TargetFramework>net7.0-windows</TargetFramework>
+	<Nullable>enable</Nullable>
+	<ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <Content Include="..\.dockerignore">
-            <Link>.dockerignore</Link>
-        </Content>
-    </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="../Protos/postgres.proto" GrpcServices="Client" link="Protos/postgres.proto" />
+    <Protobuf Include="../Protos/**\*.proto" GrpcServices="Both" link="Protos/Greet.proto" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Google.Protobuf" Version="3.23.2" />
+  <ItemGroup>
+	<PackageReference Include="Google.Api.CommonProtos" Version="2.10.0"/>
+	<PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+	<PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.53.0" />
+	<PackageReference Include="Google.Protobuf" Version="3.23.2" />
         <PackageReference Include="Grpc.Net.Client" Version="2.53.0" />
         <PackageReference Include="Grpc.Tools" Version="2.54.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
-    </ItemGroup>
+	<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Plugins\" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Protobuf Include="..\Protos\**\*.proto" GrpcServices="Server" link="Protos\%(RecursiveDir)%(Filename)%(Extension)" />
-    </ItemGroup>
+  <ItemGroup>
+	<ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
+  </ItemGroup>
 
 </Project>
