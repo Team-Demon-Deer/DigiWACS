@@ -2,8 +2,8 @@
   digiwacs-server:
     image: digiwacs-server
     build:
-      context: ./DigiWACS-Server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: DigiWACS-Server/Dockerfile
     ports:
       - 8001:8001
   postgrpc-server:
