@@ -31,8 +31,8 @@ public partial class MainWindow : Window {
 
 	private void gRPCConnect_OnClick( object sender, RoutedEventArgs e) {
 		try {
-			string reply = gRPC_Client.GreeterMessage( "https://localhost:7001" ).ToString();
-			Trace.WriteLine( reply );
+			//string reply = gRPC_Client.GreeterMessage( "https://localhost:7001" ).ToString();
+			//Trace.WriteLine( reply );
 		}
 		catch (Exception exception) {
 			Console.WriteLine(exception);

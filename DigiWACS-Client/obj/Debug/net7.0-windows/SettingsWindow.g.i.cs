@@ -53,7 +53,7 @@ namespace DigiWACS.Client {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DigiWACS-Client;V1.0.0.0;component/settingswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DigiWACS-Client;component/settingswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SettingsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

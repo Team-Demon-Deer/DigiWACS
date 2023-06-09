@@ -1,10 +1,9 @@
 using System.Diagnostics;
-using System.Net;
 using System.Threading.Tasks;
 using Grpc.Net.Client;
 
 namespace DigiWACS.Client;
-
+/*
 public static class gRPC_Client {
 	public static async Task<GrpcChannel> CreateChannel(string Address) {
 		Debug.WriteLine($"Creating gRPC Channel to {Address}");
@@ -30,3 +29,4 @@ public static class gRPC_Client {
 		return reply.Message;
 	}
 }
+*/
