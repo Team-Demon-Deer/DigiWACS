@@ -11,14 +11,12 @@ namespace DigiWACS.Services;
 public class UnitsService : Units.UnitsBase
 {
     private readonly ILogger<UnitsService> _logger;
-    public UnitsService(ILogger<UnitsService> logger)
-    {
+    public UnitsService(ILogger<UnitsService> logger) {
         _logger = logger;
     }
 
-
     public override Task<SingleUnitPositionReply> GetPosition(SingleUnitPositionRequest request, ServerCallContext context) {
-   	string stmt = String.Format("SELECT st_x(st_transform(position::geometry, 4326)), st_y(st_transform(position::geometry, 4326)), altitude, speed, name as UnitName FROM public.units WHERE id = {0}", request.Id);	
+   		string stmt = String.Format("PREPARE GetUnitPosition(int) AS SELECT st_x(st_transform(position::geometry, 4326)), st_y(st_transform(position::geometry, 4326)), altitude, speed, name as UnitName FROM public.units WHERE id = $1 LIMIT 1; EXECUTE GetUnitPosition({0});", request.Id);	
     	var input= new QueryRequest { Statement=stmt};
 	    var channel = GrpcChannel.ForAddress("http://172.17.0.1:50051");
 	    var client = new Postgres.PostgresClient(channel);
