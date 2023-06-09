@@ -17,5 +17,6 @@ message SingleUnitPositionReply {
     double long = 2;
     double altitude = 3;
     double speed = 4;
-    string unitName = 5;
+    double heading = 5;
+    string unitName = 6;
 }

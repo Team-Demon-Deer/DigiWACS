@@ -16,7 +16,7 @@ public class UnitsService : Units.UnitsBase
     }
 
     public override Task<SingleUnitPositionReply> GetPosition(SingleUnitPositionRequest request, ServerCallContext context) {
-   		string stmt = String.Format("PREPARE GetUnitPosition(int) AS SELECT st_x(st_transform(position::geometry, 4326)), st_y(st_transform(position::geometry, 4326)), altitude, speed, name as UnitName FROM public.units WHERE id = $1 LIMIT 1; EXECUTE GetUnitPosition({0});", request.Id);	
+   		string stmt = String.Format("SELECT st_y(st_transform(position::geometry, 4326)), st_x(st_transform(position::geometry, 4326)), altitude, speed, heading, name as UnitName FROM public.units WHERE id = {0} LIMIT 1", request.Id);	
     	var input= new QueryRequest { Statement=stmt};
 	    var channel = GrpcChannel.ForAddress("http://172.17.0.1:50051");
 	    var client = new Postgres.PostgresClient(channel);
@@ -36,10 +36,11 @@ public class UnitsService : Units.UnitsBase
 	
 	
     return Task.FromResult(new SingleUnitPositionReply {
-            Lat = rows[0].Fields["st_x"].NumberValue,
+      Lat = rows[0].Fields["st_x"].NumberValue,
 	    Long = rows[0].Fields["st_y"].NumberValue,
-	    Altitude = rows[0].Fields["altitude"].NumberValue,
-	    Speed = rows[0].Fields["speed"].NumberValue,
+	    Altitude = rows[0].Fields["altitude"].NumberValue * 3.280839895,
+	    Speed = rows[0].Fields["speed"].NumberValue * 1.9438452,
+	    Heading = rows[0].Fields["heading"].NumberValue,
 	    UnitName = rows[0].Fields["unitname"].StringValue
     });
 	} else {
