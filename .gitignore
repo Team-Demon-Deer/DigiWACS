@@ -8,3 +8,13 @@
 /contentModel.xl
 # VS Studio ignored Files
 /.vs/
+*.user
+
+/DigiWACS-Server/bin
+/DigiWACS-Server/obj
+/DigiWACS-Client/bin
+/DigiWACS-Client/obj
+/*/obj
+
+[Bb]in/
+[Oo]bj/
