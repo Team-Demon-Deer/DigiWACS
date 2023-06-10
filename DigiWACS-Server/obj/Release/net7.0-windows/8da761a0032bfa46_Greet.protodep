@@ -1,2 +1,0 @@
-obj\Release\net7.0-windows/Greet.cs \
-obj\Release\net7.0-windows/GreetGrpc.cs: ../Protos/Greet.proto
