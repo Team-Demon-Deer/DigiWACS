@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\PluginsProjects\\TestPlugin\\TestPlugin.csproj",
+      "projectUniqueName": "C:\\Users\\deser\\github\\DigiWACS\\PluginsProjects\\TestPlugin\\TestPlugin.csproj",
       "projectName": "TestPlugin",
-      "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\PluginsProjects\\TestPlugin\\TestPlugin.csproj",
+      "projectPath": "C:\\Users\\deser\\github\\DigiWACS\\PluginsProjects\\TestPlugin\\TestPlugin.csproj",
       "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\PluginsProjects\\TestPlugin\\obj\\",
+      "outputPath": "C:\\Users\\deser\\github\\DigiWACS\\PluginsProjects\\TestPlugin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
-              "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+            "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+              "projectPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
               "excludeAssets": "runtime"
             }
           }

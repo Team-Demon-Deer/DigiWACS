@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace DigiWACS {
-  public static partial class Greeter
+  public static partial class Units
   {
-    static readonly string __ServiceName = "Greet.Greeter";
+    static readonly string __ServiceName = "DigiWACS.Units";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,17 +46,17 @@ namespace DigiWACS {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::DigiWACS.HelloRequest> __Marshaller_Greet_HelloRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.HelloRequest.Parser));
+    static readonly grpc::Marshaller<global::DigiWACS.SingleUnitPositionRequest> __Marshaller_DigiWACS_SingleUnitPositionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.SingleUnitPositionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::DigiWACS.HelloReply> __Marshaller_Greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.HelloReply.Parser));
+    static readonly grpc::Marshaller<global::DigiWACS.SingleUnitPositionReply> __Marshaller_DigiWACS_SingleUnitPositionReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.SingleUnitPositionReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::DigiWACS.HelloRequest, global::DigiWACS.HelloReply> __Method_SayHello = new grpc::Method<global::DigiWACS.HelloRequest, global::DigiWACS.HelloReply>(
+    static readonly grpc::Method<global::DigiWACS.SingleUnitPositionRequest, global::DigiWACS.SingleUnitPositionReply> __Method_GetPosition = new grpc::Method<global::DigiWACS.SingleUnitPositionRequest, global::DigiWACS.SingleUnitPositionReply>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "SayHello",
-        __Marshaller_Greet_HelloRequest,
-        __Marshaller_Greet_HelloReply);
+        "GetPosition",
+        __Marshaller_DigiWACS_SingleUnitPositionRequest,
+        __Marshaller_DigiWACS_SingleUnitPositionReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -64,58 +64,58 @@ namespace DigiWACS {
       get { return global::DigiWACS.GreetReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Client for Greeter</summary>
-    public partial class GreeterClient : grpc::ClientBase<GreeterClient>
+    /// <summary>Client for Units</summary>
+    public partial class UnitsClient : grpc::ClientBase<UnitsClient>
     {
-      /// <summary>Creates a new client for Greeter</summary>
+      /// <summary>Creates a new client for Units</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public GreeterClient(grpc::ChannelBase channel) : base(channel)
+      public UnitsClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for Greeter that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for Units that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public GreeterClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public UnitsClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected GreeterClient() : base()
+      protected UnitsClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected GreeterClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected UnitsClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::DigiWACS.HelloReply SayHello(global::DigiWACS.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::DigiWACS.SingleUnitPositionReply GetPosition(global::DigiWACS.SingleUnitPositionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return SayHello(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPosition(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::DigiWACS.HelloReply SayHello(global::DigiWACS.HelloRequest request, grpc::CallOptions options)
+      public virtual global::DigiWACS.SingleUnitPositionReply GetPosition(global::DigiWACS.SingleUnitPositionRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_SayHello, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_GetPosition, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::DigiWACS.HelloReply> SayHelloAsync(global::DigiWACS.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::DigiWACS.SingleUnitPositionReply> GetPositionAsync(global::DigiWACS.SingleUnitPositionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return SayHelloAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPositionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::DigiWACS.HelloReply> SayHelloAsync(global::DigiWACS.HelloRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::DigiWACS.SingleUnitPositionReply> GetPositionAsync(global::DigiWACS.SingleUnitPositionRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_SayHello, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_GetPosition, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override GreeterClient NewInstance(ClientBaseConfiguration configuration)
+      protected override UnitsClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new GreeterClient(configuration);
+        return new UnitsClient(configuration);
       }
     }
 

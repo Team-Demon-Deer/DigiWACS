@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace DigiWACS {
-  public static partial class Greeter
+  public static partial class Units
   {
-    static readonly string __ServiceName = "Greet.Greeter";
+    static readonly string __ServiceName = "DigiWACS.Units";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,17 +46,17 @@ namespace DigiWACS {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::DigiWACS.HelloRequest> __Marshaller_Greet_HelloRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.HelloRequest.Parser));
+    static readonly grpc::Marshaller<global::DigiWACS.SingleUnitPositionRequest> __Marshaller_DigiWACS_SingleUnitPositionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.SingleUnitPositionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::DigiWACS.HelloReply> __Marshaller_Greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.HelloReply.Parser));
+    static readonly grpc::Marshaller<global::DigiWACS.SingleUnitPositionReply> __Marshaller_DigiWACS_SingleUnitPositionReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::DigiWACS.SingleUnitPositionReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::DigiWACS.HelloRequest, global::DigiWACS.HelloReply> __Method_SayHello = new grpc::Method<global::DigiWACS.HelloRequest, global::DigiWACS.HelloReply>(
+    static readonly grpc::Method<global::DigiWACS.SingleUnitPositionRequest, global::DigiWACS.SingleUnitPositionReply> __Method_GetPosition = new grpc::Method<global::DigiWACS.SingleUnitPositionRequest, global::DigiWACS.SingleUnitPositionReply>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "SayHello",
-        __Marshaller_Greet_HelloRequest,
-        __Marshaller_Greet_HelloReply);
+        "GetPosition",
+        __Marshaller_DigiWACS_SingleUnitPositionRequest,
+        __Marshaller_DigiWACS_SingleUnitPositionReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -64,25 +64,80 @@ namespace DigiWACS {
       get { return global::DigiWACS.GreetReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Greeter</summary>
-    [grpc::BindServiceMethod(typeof(Greeter), "BindService")]
-    public abstract partial class GreeterBase
+    /// <summary>Base class for server-side implementations of Units</summary>
+    [grpc::BindServiceMethod(typeof(Units), "BindService")]
+    public abstract partial class UnitsBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::DigiWACS.HelloReply> SayHello(global::DigiWACS.HelloRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::DigiWACS.SingleUnitPositionReply> GetPosition(global::DigiWACS.SingleUnitPositionRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
     }
 
+    /// <summary>Client for Units</summary>
+    public partial class UnitsClient : grpc::ClientBase<UnitsClient>
+    {
+      /// <summary>Creates a new client for Units</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public UnitsClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for Units that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public UnitsClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected UnitsClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected UnitsClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::DigiWACS.SingleUnitPositionReply GetPosition(global::DigiWACS.SingleUnitPositionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetPosition(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::DigiWACS.SingleUnitPositionReply GetPosition(global::DigiWACS.SingleUnitPositionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetPosition, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::DigiWACS.SingleUnitPositionReply> GetPositionAsync(global::DigiWACS.SingleUnitPositionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetPositionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::DigiWACS.SingleUnitPositionReply> GetPositionAsync(global::DigiWACS.SingleUnitPositionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetPosition, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override UnitsClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new UnitsClient(configuration);
+      }
+    }
+
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static grpc::ServerServiceDefinition BindService(GreeterBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(UnitsBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SayHello, serviceImpl.SayHello).Build();
+          .AddMethod(__Method_GetPosition, serviceImpl.GetPosition).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -90,9 +145,9 @@ namespace DigiWACS {
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, GreeterBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, UnitsBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::DigiWACS.HelloRequest, global::DigiWACS.HelloReply>(serviceImpl.SayHello));
+      serviceBinder.AddMethod(__Method_GetPosition, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::DigiWACS.SingleUnitPositionRequest, global::DigiWACS.SingleUnitPositionReply>(serviceImpl.GetPosition));
     }
 
   }

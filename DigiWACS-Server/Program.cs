@@ -1,28 +1,18 @@
-﻿using System.Net;
-using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
-using System.Threading.Channels;
-using DigiWACS.PluginBase;
-using DigiWACS.Server.Services;
-using Grpc.Net.Client;
-using Microsoft.Extensions.Configuration;
+using DigiWACS.Services;
 
-namespace DigiWACS.Server;
+var builder = WebApplication.CreateBuilder(args);
 
-static class Program {
-	public static IConfigurationRoot Config = new ConfigurationBuilder()
-		.SetBasePath(Directory.GetCurrentDirectory())
-		.AddEnvironmentVariables()
-		.AddJsonFile("appsettings.json")
-		.AddUserSecrets(Assembly.GetExecutingAssembly(), true) //must be last in builder so it overrides appsettings.json
-		.Build();
+// Additional configuration is required to successfully run gRPC on macOS.
+// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
+// Add services to the container.
+builder.Services.AddGrpc();
+builder.Services.AddGrpcReflection();
 
-	public static readonly GenericPluginLoader<ServerPlugin> ServerPluginLoader = new();
-	public static List<ServerPlugin> LoadedServerPlugins { get; private set; } =
-		ServerPluginLoader.LoadAll(Config.GetConnectionString("PluginsPath"));
+var app = builder.Build();
+app.Urls.Add("http://0.0.0.0:8001");
+// Configure the HTTP request pipeline.
+app.MapGrpcService<UnitsService>();
+app.MapGrpcReflectionService();
+app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
-	static void Main(string[] args) {
-		//Todo: Start up the gRPC Greeterservice so it can be discovered or what ever.
-		Console.ReadLine();
-	}
-}
+app.Run();

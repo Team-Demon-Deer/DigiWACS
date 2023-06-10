@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {}
+    "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+    "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+        "projectUniqueName": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
         "projectName": "DigiWACS-PluginBase",
-        "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+        "projectPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
         "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\obj\\",
+        "outputPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+  "postgrpc",
+  "postguard",
+]

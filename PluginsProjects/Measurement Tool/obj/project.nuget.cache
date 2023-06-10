@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mj8yjlWC9mEJ5f3biiLZjkSRiZNeR+STuxvAKfKWoFGcm93TvxvPgifkPOlCMSx/2tdZLSoooLNolc+F6mUokQ==",
+  "dgSpecHash": "uHQtQSb6EQpKNCEmiIKDKL8kCuXifukE8wm4fl6psTkVeZ+f+BLrkgNZPZaMzAjgIk4KnTvssw9OSOuK854QcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\PluginsProjects\\Measurement Tool\\Measurement Tool.csproj",
+  "projectFilePath": "C:\\Users\\deser\\github\\DigiWACS\\PluginsProjects\\Measurement Tool\\Measurement Tool.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

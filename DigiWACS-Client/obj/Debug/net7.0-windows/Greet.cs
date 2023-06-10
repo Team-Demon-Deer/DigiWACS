@@ -24,31 +24,34 @@ namespace DigiWACS {
     static GreetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgtHcmVldC5wcm90bxIFR3JlZXQiHAoMSGVsbG9SZXF1ZXN0EgwKBG5hbWUY",
-            "ASABKAkiHQoKSGVsbG9SZXBseRIPCgdtZXNzYWdlGAEgASgJMj0KB0dyZWV0",
-            "ZXISMgoIU2F5SGVsbG8SEy5HcmVldC5IZWxsb1JlcXVlc3QaES5HcmVldC5I",
-            "ZWxsb1JlcGx5QguqAghEaWdpV0FDU2IGcHJvdG8z"));
+            "CgtHcmVldC5wcm90bxIIRGlnaVdBQ1MiJwoZU2luZ2xlVW5pdFBvc2l0aW9u",
+            "UmVxdWVzdBIKCgJpZBgBIAEoBSJ4ChdTaW5nbGVVbml0UG9zaXRpb25SZXBs",
+            "eRILCgNsYXQYASABKAESDAoEbG9uZxgCIAEoARIQCghhbHRpdHVkZRgDIAEo",
+            "ARINCgVzcGVlZBgEIAEoARIPCgdoZWFkaW5nGAUgASgBEhAKCHVuaXROYW1l",
+            "GAYgASgJMl4KBVVuaXRzElUKC0dldFBvc2l0aW9uEiMuRGlnaVdBQ1MuU2lu",
+            "Z2xlVW5pdFBvc2l0aW9uUmVxdWVzdBohLkRpZ2lXQUNTLlNpbmdsZVVuaXRQ",
+            "b3NpdGlvblJlcGx5QguqAghEaWdpV0FDU2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::DigiWACS.HelloRequest), global::DigiWACS.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::DigiWACS.HelloReply), global::DigiWACS.HelloReply.Parser, new[]{ "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::DigiWACS.SingleUnitPositionRequest), global::DigiWACS.SingleUnitPositionRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::DigiWACS.SingleUnitPositionReply), global::DigiWACS.SingleUnitPositionReply.Parser, new[]{ "Lat", "Long", "Altitude", "Speed", "Heading", "UnitName" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class HelloRequest : pb::IMessage<HelloRequest>
+  public sealed partial class SingleUnitPositionRequest : pb::IMessage<SingleUnitPositionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<HelloRequest> _parser = new pb::MessageParser<HelloRequest>(() => new HelloRequest());
+    private static readonly pb::MessageParser<SingleUnitPositionRequest> _parser = new pb::MessageParser<SingleUnitPositionRequest>(() => new SingleUnitPositionRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<HelloRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<SingleUnitPositionRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -64,7 +67,7 @@ namespace DigiWACS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloRequest() {
+    public SingleUnitPositionRequest() {
       OnConstruction();
     }
 
@@ -72,45 +75,45 @@ namespace DigiWACS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloRequest(HelloRequest other) : this() {
-      name_ = other.name_;
+    public SingleUnitPositionRequest(SingleUnitPositionRequest other) : this() {
+      id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloRequest Clone() {
-      return new HelloRequest(this);
+    public SingleUnitPositionRequest Clone() {
+      return new SingleUnitPositionRequest(this);
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Name {
-      get { return name_; }
+    public int Id {
+      get { return id_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        id_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as HelloRequest);
+      return Equals(other as SingleUnitPositionRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(HelloRequest other) {
+    public bool Equals(SingleUnitPositionRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Name != other.Name) return false;
+      if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -118,7 +121,7 @@ namespace DigiWACS {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -137,9 +140,9 @@ namespace DigiWACS {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -151,9 +154,9 @@ namespace DigiWACS {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -165,8 +168,8 @@ namespace DigiWACS {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -176,12 +179,12 @@ namespace DigiWACS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(HelloRequest other) {
+    public void MergeFrom(SingleUnitPositionRequest other) {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.Id != 0) {
+        Id = other.Id;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -198,8 +201,8 @@ namespace DigiWACS {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Name = input.ReadString();
+          case 8: {
+            Id = input.ReadInt32();
             break;
           }
         }
@@ -217,8 +220,8 @@ namespace DigiWACS {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            Name = input.ReadString();
+          case 8: {
+            Id = input.ReadInt32();
             break;
           }
         }
@@ -228,16 +231,16 @@ namespace DigiWACS {
 
   }
 
-  public sealed partial class HelloReply : pb::IMessage<HelloReply>
+  public sealed partial class SingleUnitPositionReply : pb::IMessage<SingleUnitPositionReply>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<HelloReply> _parser = new pb::MessageParser<HelloReply>(() => new HelloReply());
+    private static readonly pb::MessageParser<SingleUnitPositionReply> _parser = new pb::MessageParser<SingleUnitPositionReply>(() => new SingleUnitPositionReply());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<HelloReply> Parser { get { return _parser; } }
+    public static pb::MessageParser<SingleUnitPositionReply> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -253,7 +256,7 @@ namespace DigiWACS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloReply() {
+    public SingleUnitPositionReply() {
       OnConstruction();
     }
 
@@ -261,45 +264,115 @@ namespace DigiWACS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloReply(HelloReply other) : this() {
-      message_ = other.message_;
+    public SingleUnitPositionReply(SingleUnitPositionReply other) : this() {
+      lat_ = other.lat_;
+      long_ = other.long_;
+      altitude_ = other.altitude_;
+      speed_ = other.speed_;
+      heading_ = other.heading_;
+      unitName_ = other.unitName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloReply Clone() {
-      return new HelloReply(this);
+    public SingleUnitPositionReply Clone() {
+      return new SingleUnitPositionReply(this);
     }
 
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 1;
-    private string message_ = "";
+    /// <summary>Field number for the "lat" field.</summary>
+    public const int LatFieldNumber = 1;
+    private double lat_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Message {
-      get { return message_; }
+    public double Lat {
+      get { return lat_; }
       set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        lat_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "long" field.</summary>
+    public const int LongFieldNumber = 2;
+    private double long_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double Long {
+      get { return long_; }
+      set {
+        long_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "altitude" field.</summary>
+    public const int AltitudeFieldNumber = 3;
+    private double altitude_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double Altitude {
+      get { return altitude_; }
+      set {
+        altitude_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "speed" field.</summary>
+    public const int SpeedFieldNumber = 4;
+    private double speed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double Speed {
+      get { return speed_; }
+      set {
+        speed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "heading" field.</summary>
+    public const int HeadingFieldNumber = 5;
+    private double heading_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double Heading {
+      get { return heading_; }
+      set {
+        heading_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unitName" field.</summary>
+    public const int UnitNameFieldNumber = 6;
+    private string unitName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string UnitName {
+      get { return unitName_; }
+      set {
+        unitName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as HelloReply);
+      return Equals(other as SingleUnitPositionReply);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(HelloReply other) {
+    public bool Equals(SingleUnitPositionReply other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Message != other.Message) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Lat, other.Lat)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Long, other.Long)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Altitude, other.Altitude)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Speed, other.Speed)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Heading, other.Heading)) return false;
+      if (UnitName != other.UnitName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -307,7 +380,12 @@ namespace DigiWACS {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (Lat != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Lat);
+      if (Long != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Long);
+      if (Altitude != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Altitude);
+      if (Speed != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Speed);
+      if (Heading != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Heading);
+      if (UnitName.Length != 0) hash ^= UnitName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -326,9 +404,29 @@ namespace DigiWACS {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Message.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Message);
+      if (Lat != 0D) {
+        output.WriteRawTag(9);
+        output.WriteDouble(Lat);
+      }
+      if (Long != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(Long);
+      }
+      if (Altitude != 0D) {
+        output.WriteRawTag(25);
+        output.WriteDouble(Altitude);
+      }
+      if (Speed != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(Speed);
+      }
+      if (Heading != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(Heading);
+      }
+      if (UnitName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(UnitName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -340,9 +438,29 @@ namespace DigiWACS {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Message.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Message);
+      if (Lat != 0D) {
+        output.WriteRawTag(9);
+        output.WriteDouble(Lat);
+      }
+      if (Long != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(Long);
+      }
+      if (Altitude != 0D) {
+        output.WriteRawTag(25);
+        output.WriteDouble(Altitude);
+      }
+      if (Speed != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(Speed);
+      }
+      if (Heading != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(Heading);
+      }
+      if (UnitName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(UnitName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -354,8 +472,23 @@ namespace DigiWACS {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      if (Lat != 0D) {
+        size += 1 + 8;
+      }
+      if (Long != 0D) {
+        size += 1 + 8;
+      }
+      if (Altitude != 0D) {
+        size += 1 + 8;
+      }
+      if (Speed != 0D) {
+        size += 1 + 8;
+      }
+      if (Heading != 0D) {
+        size += 1 + 8;
+      }
+      if (UnitName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UnitName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -365,12 +498,27 @@ namespace DigiWACS {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(HelloReply other) {
+    public void MergeFrom(SingleUnitPositionReply other) {
       if (other == null) {
         return;
       }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
+      if (other.Lat != 0D) {
+        Lat = other.Lat;
+      }
+      if (other.Long != 0D) {
+        Long = other.Long;
+      }
+      if (other.Altitude != 0D) {
+        Altitude = other.Altitude;
+      }
+      if (other.Speed != 0D) {
+        Speed = other.Speed;
+      }
+      if (other.Heading != 0D) {
+        Heading = other.Heading;
+      }
+      if (other.UnitName.Length != 0) {
+        UnitName = other.UnitName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -387,8 +535,28 @@ namespace DigiWACS {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Message = input.ReadString();
+          case 9: {
+            Lat = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            Long = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            Altitude = input.ReadDouble();
+            break;
+          }
+          case 33: {
+            Speed = input.ReadDouble();
+            break;
+          }
+          case 41: {
+            Heading = input.ReadDouble();
+            break;
+          }
+          case 50: {
+            UnitName = input.ReadString();
             break;
           }
         }
@@ -406,8 +574,28 @@ namespace DigiWACS {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            Message = input.ReadString();
+          case 9: {
+            Lat = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            Long = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            Altitude = input.ReadDouble();
+            break;
+          }
+          case 33: {
+            Speed = input.ReadDouble();
+            break;
+          }
+          case 41: {
+            Heading = input.ReadDouble();
+            break;
+          }
+          case 50: {
+            UnitName = input.ReadString();
             break;
           }
         }

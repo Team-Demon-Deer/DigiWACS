@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sOKWg+1ed2dK4W+FlL1LH/J+9vbtp3qmLofK1J3YJToqDTi4npeOw6vw1v46FykfetUZEz7jn5XbzFXfzSnvpA==",
+  "dgSpecHash": "+QT4Om1PX1v75ur9y0NJbvA9R+CRVtW56TU+GfKLQte4HXIrN0w+w1RbomQvJKQNOdX+gM/H6PLxjt1yh/ogvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Client\\DigiWACS-Client.csproj",
+  "projectFilePath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Client\\DigiWACS-Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deser\\.nuget\\packages\\brutile\\4.0.0\\brutile.4.0.0.nupkg.sha512",
     "C:\\Users\\deser\\.nuget\\packages\\fizzler\\1.2.0\\fizzler.1.2.0.nupkg.sha512",

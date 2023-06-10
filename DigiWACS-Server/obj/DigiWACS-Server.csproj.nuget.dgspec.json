@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj": {}
+    "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+    "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+        "projectUniqueName": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
         "projectName": "DigiWACS-PluginBase",
-        "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
+        "projectPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj",
         "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\obj\\",
+        "outputPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj": {
+    "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
+        "projectUniqueName": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
         "projectName": "DigiWACS-Server",
-        "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
+        "projectPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Server\\DigiWACS-Server.csproj",
         "packagesPath": "C:\\Users\\deser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-Server\\obj\\",
+        "outputPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deser\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,14 +85,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "c:\\program files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
-                "projectPath": "C:\\Users\\deser\\RiderProjects\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj"
+              "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj": {
+                "projectPath": "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-PluginBase\\DigiWACS-PluginBase.csproj"
               }
             }
           }
@@ -110,6 +111,14 @@
             "Google.Protobuf": {
               "target": "Package",
               "version": "[3.23.2, )"
+            },
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.49.0, )"
+            },
+            "Grpc.AspNetCore.Server.Reflection": {
+              "target": "Package",
+              "version": "[2.53.0, )"
             },
             "Grpc.Net.Client": {
               "target": "Package",
@@ -142,6 +151,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
