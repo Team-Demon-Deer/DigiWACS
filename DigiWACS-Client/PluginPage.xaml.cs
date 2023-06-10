@@ -6,6 +6,6 @@ namespace DigiWACS.Client;
 public partial class PluginWindow : Window {
 	public PluginWindow() {
 		InitializeComponent();
-		foreach (var plugin in LoadedClientPlugins) plugin.OnPluginLoad();
+		//foreach (var plugin in LoadedClientPlugins) plugin.OnPluginLoad();
 	}
 }

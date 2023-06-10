@@ -4,10 +4,11 @@ using DigiWACS.PluginBase;
 
 namespace TestPlugin;
 
-public class TestPlugin : ClientPlugin {
-	public new string name = "Test Plugin";
+public class TestPlugin : IClientPlugin {
+	string IClientPlugin.Name { get => "Test Plugin"; }
+	string IClientPlugin.Description { get => "Test Plugin"; }
 
-	public override void OnPluginLoad() {
+	public void OnPluginLoad() {
 		Trace.WriteLine($"{Assembly.GetExecutingAssembly().GetName()} : OnPluginLoad()");
 	}
 }

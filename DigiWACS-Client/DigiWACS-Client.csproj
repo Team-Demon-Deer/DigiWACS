@@ -1,45 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>WinExe</OutputType>
-        <RootNamespace>DigiWACS.Client</RootNamespace>
-        <Nullable>enable</Nullable>
-        <UseWPF>true</UseWPF>
-        <TargetFramework>net7.0-windows</TargetFramework>
-        <UserSecretsId>78662075-d871-4abc-86a3-db625ce8bae3</UserSecretsId>
-    </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<RootNamespace>DigiWACS.Client</RootNamespace>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<UserSecretsId>78662075-d871-4abc-86a3-db625ce8bae3</UserSecretsId>
+		<ApplicationIcon>Resources\DigiWACS-icon.ico</ApplicationIcon>
+	</PropertyGroup>
+		
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.23.2" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.53.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.54.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Mapsui" Version="3.0.2" />
+		<PackageReference Include="Mapsui.Wpf" Version="3.0.2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
 
-    <ItemGroup>
-        <PackageReference Include="Google.Protobuf" Version="3.23.2" />
-        <PackageReference Include="Grpc.Net.Client" Version="2.53.0" />
-        <PackageReference Include="Grpc.Tools" Version="2.54.0">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Mapsui" Version="3.0.2" />
-        <PackageReference Include="Mapsui.Wpf" Version="3.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
-    </ItemGroup>
+		<ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
+		
+			<None Update="appsettings.json">
+				<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			</None>
 
-    <ItemGroup>
-        <ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Update="appsettings.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Plugins\" />
-    </ItemGroup>
-    
-    <ItemGroup>
-        <Protobuf Include="..\Protos\*.proto" GrpcServices="Client" link="Protos\*.proto" />
-    </ItemGroup>
+		<Folder Include="Plugins\" />
+		
+		<Protobuf Include="..\Protos\**\*.proto" GrpcServices="Client" link="Protos\%(RecursiveDir)%(Filename)%(Extension)" />
+		
+		<Content Include="Resources\DigiWACS-icon.ico" />
+	</ItemGroup>
 
 </Project>
