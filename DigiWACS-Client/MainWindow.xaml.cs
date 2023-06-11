@@ -15,13 +15,19 @@ namespace DigiWACS.Client;
 ///     Interaction logic for MainWindow.xaml
 /// </summary>
 public partial class MainWindow : Window {
+	public delegate void TestedEventHandler( object source, EventArgs eventArgs );
+	public event TestedEventHandler TestedEvent;
+
 	public MainWindow() {
 		Trace.WriteLine("MainWindow() Start");
 		InitializeComponent();
 		MapControl1.Map?.Layers.Add(OpenStreetMap.CreateTileLayer());
 
+		var Event_Test = new Event_Test();
+		TestedEvent += Event_Test.OnTestedEvent;
 		//MapControl1.Map?.Layers.Add( TestEntity );
 	}
+
 
 	private void NewWindowButton_OnClick(object sender, RoutedEventArgs e) {
 		Trace.WriteLine("NewWindowButton_OnClick()");
@@ -39,6 +45,11 @@ public partial class MainWindow : Window {
 			throw;
 		}
 	}
+
+	private void TestEvent_OnClick( object sender, RoutedEventArgs e ) {
+		OnTestedEvent();
+	}
+	protected virtual void OnTestedEvent() { if( TestedEvent != null) TestedEvent( this, EventArgs.Empty); }
 
 	private void Reconnect_Click( object sender, RoutedEventArgs e ) {
 

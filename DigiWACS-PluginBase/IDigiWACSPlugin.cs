@@ -2,7 +2,6 @@ namespace DigiWACS.PluginBase;
 
 public interface IDigiWACSPlugin {
 	public DigiWACSPluginInfo Info { get; }
-
 	void OnPluginLoad();
 }
 
@@ -32,5 +31,6 @@ public struct DigiWACSPluginInfo {
 }
 public enum PluginType {
 	Client,
-	Server
+	Server,
+	Both
 }

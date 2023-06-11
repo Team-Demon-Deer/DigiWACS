@@ -19,8 +19,9 @@
 			</MenuItem>
 			<MenuItem Header="Test Commands">
 				<MenuItem Header="NewWindow" Click="NewWindowButton_OnClick" />
-				<MenuItem Header="gRPC Connect" Click="gRPCConnect_OnClick" />
-			</MenuItem>
+                <MenuItem Header="gRPC Connect" Click="gRPCConnect_OnClick" />
+                <MenuItem Header="Test Event" Click="TestEvent_OnClick" />
+            </MenuItem>
 		</Menu>
 		<wpf:MapControl x:Name="MapControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 	</DockPanel>

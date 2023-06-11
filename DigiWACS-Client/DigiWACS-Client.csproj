@@ -26,11 +26,11 @@
 
 		<ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
 		
-			<None Update="Resources\appsettings.json">
+			<None Update="Properties\appsettings.json">
 				<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 			</None>
 
-		<Folder Include="..\Plugins\" />
+		<Folder Include="Plugins\" />
 		
 		<Protobuf Include="..\Protos\**\*.proto" GrpcServices="Client" link="Protos\%(RecursiveDir)%(Filename)%(Extension)" />
 		
