@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Windows;
-using Grpc.Net.Client;
-using Mapsui;
-using Mapsui.Layers;
 using Mapsui.Utilities;
-using Microsoft.Extensions.Configuration;
-using static DigiWACS.Client.App;
 
 namespace DigiWACS.Client;
 
@@ -17,11 +11,12 @@ namespace DigiWACS.Client;
 public partial class MainWindow : Window {
 	public delegate void TestedEventHandler( object source, EventArgs eventArgs );
 	public event TestedEventHandler TestedEvent;
+	private MapManagement MapManager = new MapManagement();
 
 	public MainWindow() {
 		Trace.WriteLine("MainWindow() Start");
 		InitializeComponent();
-		MapControl1.Map?.Layers.Add(OpenStreetMap.CreateTileLayer());
+		MapManager.MapManagementInitialize( MapControl1 );
 
 		var Event_Test = new Event_Test();
 		TestedEvent += Event_Test.OnTestedEvent;
