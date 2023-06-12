@@ -52,8 +52,6 @@ public partial class MainWindow : Window {
 
 	}
 	private void SettingsMenuItem_Click( object sender, RoutedEventArgs e ) {
-		OpenSettingsMenu();
 	}
-	protected virtual void OpenSettingsMenu() { if ( OpenSettingsMenu != null ) OpenSettingsMenu(); }
 }
 
