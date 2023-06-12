@@ -8,6 +8,7 @@
 		<TargetFramework>net7.0-windows</TargetFramework>
 		<UserSecretsId>78662075-d871-4abc-86a3-db625ce8bae3</UserSecretsId>
 		<ApplicationIcon>Resources\DigiWACS-icon.ico</ApplicationIcon>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
 	</PropertyGroup>
 		
 	<ItemGroup>
@@ -17,13 +18,13 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Mapsui" Version="3.0.2" />
-		<PackageReference Include="Mapsui.Wpf" Version="3.0.2" />
+		<PackageReference Include="Mapsui" Version="4.0.0-rc.3" />
+		<PackageReference Include="Mapsui.Wpf" Version="4.0.0-rc.3" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
-
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<ProjectReference Include="..\DigiWACS-PluginBase\DigiWACS-PluginBase.csproj" />
 		
 			<None Update="Properties\appsettings.json">
