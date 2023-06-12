@@ -13,8 +13,21 @@ using System.Reflection;
 
 namespace DigiWACS.Client {
 	public class MapManagement {
+<<<<<<< Updated upstream
 		public Map InitializeMap() {
 			var map = new Map();	
+=======
+		private IMapControl _mapControl;
+
+		public void MapManagementInitialize( IMapControl mapControl ) {
+			_mapControl = mapControl;
+			mapControl.Map = CreateMap();
+		}
+
+		public static Map CreateMap() {
+			var map = new Map();
+
+>>>>>>> Stashed changes
 			map.Layers.Add( OpenStreetMap.CreateTileLayer() );
 			map.Layers.Add( CreatePointLayer() );
 			map.Home = n => n.CenterOnAndZoomTo( map.Layers[ 1 ].Extent!.Centroid, n.Resolutions[ 5 ] );

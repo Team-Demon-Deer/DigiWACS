@@ -25,8 +25,6 @@ public partial class MainWindow : Window {
 
 	private void NewWindowButton_OnClick(object sender, RoutedEventArgs e) {
 		Trace.WriteLine("NewWindowButton_OnClick()");
-		var newWindow = new PluginWindow();
-		newWindow.Show();
 	}
 
 	private void gRPCConnect_OnClick( object sender, RoutedEventArgs e) {
@@ -54,4 +52,13 @@ public partial class MainWindow : Window {
 	private void ManageConnections_Click( object sender, RoutedEventArgs e ) {
 
 	}
+<<<<<<< Updated upstream
 }
+=======
+
+	private void SettingsMenuItem_Click( object sender, RoutedEventArgs e ) {
+		OpenSettingsMenu();
+	}
+	protected virtual void OpenSettingsMenu() { if ( OpenSettingsMenu != null ) OpenSettingsMenu(); }
+}
+>>>>>>> Stashed changes
