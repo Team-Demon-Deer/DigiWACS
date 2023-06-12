@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows;
-using Mapsui.Utilities;
 
 namespace DigiWACS.Client;
 
@@ -52,13 +51,9 @@ public partial class MainWindow : Window {
 	private void ManageConnections_Click( object sender, RoutedEventArgs e ) {
 
 	}
-<<<<<<< Updated upstream
-}
-=======
-
 	private void SettingsMenuItem_Click( object sender, RoutedEventArgs e ) {
 		OpenSettingsMenu();
 	}
 	protected virtual void OpenSettingsMenu() { if ( OpenSettingsMenu != null ) OpenSettingsMenu(); }
 }
->>>>>>> Stashed changes
+
