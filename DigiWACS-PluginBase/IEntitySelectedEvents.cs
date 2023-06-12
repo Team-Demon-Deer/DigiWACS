@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DigiWACS.PluginBase {
 	public class SelectedEntitiesArgs : EventArgs {
 		// TODO: Make sure that this can return an array of 1 item or multiple items.

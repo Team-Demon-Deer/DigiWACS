@@ -5,8 +5,9 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:wpf="clr-namespace:Mapsui.UI.Wpf;assembly=Mapsui.UI.Wpf"
 		mc:Ignorable="d"
+        DataContext="{StaticResource MainViewModel}"
 		Title="DigiWACS" Height="450" Width="800">
-	<DockPanel>
+    <DockPanel>
 		<Menu DockPanel.Dock="Top" VerticalContentAlignment="Stretch">
 			<MenuItem Header="_File">
 				<MenuItem Header="_Reconnect..." Click="Reconnect_Click">
@@ -14,7 +15,9 @@
 				</MenuItem>
                 <MenuItem Header="_New Connection" Click="NewConnection_Click" />
                 <MenuItem Header="_Manage Connections" Click="ManageConnections_Click" />
-				<Separator />
+                <Separator />
+                <MenuItem Header="_Settings" Click="SettingsMenuItem_Click"/>
+                <Separator />
 				<MenuItem Header="_Exit" />
 			</MenuItem>
 			<MenuItem Header="Test Commands">
@@ -23,6 +26,6 @@
                 <MenuItem Header="Test Event" Click="TestEvent_OnClick" />
             </MenuItem>
 		</Menu>
-		<wpf:MapControl x:Name="MapControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+		<wpf:MapControl Binding="MapControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 	</DockPanel>
 </Window>

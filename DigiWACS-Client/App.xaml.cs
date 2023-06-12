@@ -22,10 +22,11 @@ public partial class App : Application {
 		.AddUserSecrets(Assembly.GetExecutingAssembly(), true) //must be last in builder so it overrides appsettings.json
 		.Build();
 
+	/*
 	public static readonly GenericPluginLoader<IDigiWACSPlugin> ClientPluginLoader = new();
 	public static List<IDigiWACSPlugin> LoadedClientPlugins { get; private set; } =
 		ClientPluginLoader.LoadAll(Config.GetConnectionString("PluginsPath"));
-
+	*/
 
 	public App() {
 		Console.WriteLine(Config.GetConnectionString("PluginsPath"));

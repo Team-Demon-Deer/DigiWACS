@@ -10,7 +10,7 @@
 		<ApplicationIcon>Resources\DigiWACS-icon.ico</ApplicationIcon>
 		<EnableWindowsTargeting>true</EnableWindowsTargeting>
 	</PropertyGroup>
-		
+	
 	<ItemGroup>
 		<PackageReference Include="Google.Protobuf" Version="3.23.2" />
 		<PackageReference Include="Grpc.Net.Client" Version="2.53.0" />
