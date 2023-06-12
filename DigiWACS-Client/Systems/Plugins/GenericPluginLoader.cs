@@ -1,4 +1,9 @@
-﻿namespace DigiWACS.PluginBase;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace DigiWACS.PluginBase;
 
 // Classes taken from https://makolyte.com/csharp-generic-plugin-loader/
 public class GenericPluginLoader<T> where T : class {
