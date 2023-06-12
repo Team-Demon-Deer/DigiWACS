@@ -32,7 +32,7 @@ namespace DigiWACS.Client {
 		}
 
 		private IEnumerable<IFeature> GetCitiesFromEmbeddedResource() {
-			var path = "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Client\\Resources\\Cities.json";
+			var path = "C:\\ProgramData\\DigiWACS\\DigiWACS-Client\\Resources\\Cities.json";
 			var stream = File.OpenRead( path );
 			var cities = DeserializeFromStream<City>( stream );
 
@@ -64,7 +64,7 @@ namespace DigiWACS.Client {
 			// For this sample we get the bitmap from an embedded resouce
 			// but you could get the data stream from the web or anywhere
 			// else.
-			var path = "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Client\\Resources\\home.png"; // Designed by Freepik http://www.freepik.com
+			var path = "C:\\ProgramData\\DigiWACS\\DigiWACS-Client\\Resources\\home.png"; // Designed by Freepik http://www.freepik.com
 			var bitmapId = GetBitmapIdForEmbeddedResource( path );
 			var bitmapHeight = 176; // To set the offset correct we need to know the bitmap height
 			return new SymbolStyle { BitmapId = bitmapId, SymbolScale = 0.20, SymbolOffset = new Offset( 0, bitmapHeight * 0.5 ) };
