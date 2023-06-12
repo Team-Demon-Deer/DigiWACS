@@ -1,54 +1,43 @@
 ﻿using Mapsui;
-using Mapsui.Utilities;
+using Mapsui.Extensions;
 using Mapsui.Layers;
+using Mapsui.Projections;
 using Mapsui.Styles;
-using Mapsui.Providers;
+using Mapsui.Tiling;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System;
-using Mapsui.UI;
 using System.Linq;
-using Mapsui.Projection;
 using System.Reflection;
 
 namespace DigiWACS.Client {
 	public class MapManagement {
-		private IMapControl _mapControl;
-
-		public void MapManagementInitialize( IMapControl mapControl ) {
-			_mapControl = mapControl;
-			mapControl.Map = CreateMap();
-
-		}
-
-		public static Map CreateMap() {
-			var map = new Map();
-
+		public Map InitializeMap() {
+			var map = new Map();	
 			map.Layers.Add( OpenStreetMap.CreateTileLayer() );
 			map.Layers.Add( CreatePointLayer() );
-			map.Home = n => n.NavigateTo( map.Layers[ 1 ].Envelope.Centroid, map.Resolutions[ 5 ] );
+			map.Home = n => n.CenterOnAndZoomTo( map.Layers[ 1 ].Extent!.Centroid, n.Resolutions[ 5 ] );
+
 			return map;
 		}
 
-		private static MemoryLayer CreatePointLayer() {
+		private MemoryLayer CreatePointLayer() {
 			return new MemoryLayer {
 				Name = "Points",
 				IsMapInfoLayer = true,
-				DataSource = new MemoryProvider( GetCitiesFromEmbeddedResource() ),
+				Features = GetCitiesFromEmbeddedResource(),
 				Style = CreateBitmapStyle()
 			};
 		}
 
-		private static IEnumerable<IFeature> GetCitiesFromEmbeddedResource() {
+		private IEnumerable<IFeature> GetCitiesFromEmbeddedResource() {
 			var path = "C:\\Users\\deser\\github\\DigiWACS\\DigiWACS-Client\\Resources\\Cities.json";
 			var stream = File.OpenRead( path );
 			var cities = DeserializeFromStream<City>( stream );
 
 			return cities.Select( c => {
-				var feature = new Feature();
-				var point = SphericalMercator.FromLonLat( c.Lng, c.Lat );
-				feature.Geometry = point;
+				var feature = new PointFeature(SphericalMercator.FromLonLat(c.Lng, c.Lat).ToMPoint());
 				feature[ "name" ] = c.Name;
 				feature[ "country" ] = c.Country;
 				return feature;

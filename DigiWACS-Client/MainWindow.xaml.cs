@@ -16,8 +16,7 @@ public partial class MainWindow : Window {
 	public MainWindow() {
 		Trace.WriteLine("MainWindow() Start");
 		InitializeComponent();
-		MapManager.MapManagementInitialize( MapControl1 );
-
+		MapControl1.Map = MapManager.InitializeMap();
 		var Event_Test = new Event_Test();
 		TestedEvent += Event_Test.OnTestedEvent;
 		//MapControl1.Map?.Layers.Add( TestEntity );
