@@ -23,12 +23,14 @@ namespace DigiWACS.Client {
 	                int bitmapid = BitmapRegistry.Instance.Register(image);
 			var map = new Map();
 			map!.Layers.Add( OpenStreetMap.CreateTileLayer() );
-			map.Layers.Add(CreateAnimatedPointLayer(new LabelStyle {
-				ForeColor = Mapsui.Styles.Color.Black,
-				BackColor = new Mapsui.Styles.Brush(Mapsui.Styles.Color.Transparent),
-				LabelColumn = "name",
-			}));
-			map.Home = n => n.CenterOnAndZoomTo(SphericalMercator.FromLonLat(37.359, 45.006).ToMPoint(), n.Resolutions[ 18 ] );
+			map.Layers.Add( CreateAnimatedPointLayer(new ThemeStyle ( f => { return CreateBitmapStyle(f, bitmapid); })));
+			 map.Layers.Add(CreateAnimatedPointLayer(new LabelStyle {
+                                ForeColor = Mapsui.Styles.Color.Black,
+                                BackColor = new Mapsui.Styles.Brush(Mapsui.Styles.Color.Transparent),
+                                LabelColumn = "name",
+                        }));
+
+			map.Home = n => n.CenterOnAndZoomTo(SphericalMercator.FromLonLat(37.359, 45.006).ToMPoint(), n.Resolutions[ 12 ] );
 			return map;
 		}
 
