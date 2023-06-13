@@ -7,9 +7,10 @@ using System.IO;
 using System.Runtime.Loader;
 
 namespace DigiWACS.Client.Systems.Plugins;
+/*
 
-internal class PluginManagement {
-	private static PluginManagement instance;
+internal class PluginManagementV1 {
+	private static PluginManagementV1 instance;
 
 	public void PluginLoader( string path ) {
 		string[] pluginPaths = new string[] { path };
@@ -86,3 +87,4 @@ internal class PluginManagement {
 		}
 	}
 
+*/

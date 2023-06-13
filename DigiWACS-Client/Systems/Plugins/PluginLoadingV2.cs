@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace DigiWACS.Client.Systems.Plugins;
 
+/*
+
 public class GenericPluginLoader<T> where T : class {
 	private readonly List<GenericAssemblyLoadContext<T>> _loadContexts = new();
 
@@ -87,3 +89,5 @@ public class GenericAssemblyLoadContext<T> : AssemblyLoadContext where T : class
 		return IntPtr.Zero;
 	}
 }
+
+*/
