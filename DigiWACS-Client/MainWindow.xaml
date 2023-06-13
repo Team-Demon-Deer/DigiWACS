@@ -5,26 +5,25 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:wpf="clr-namespace:Mapsui.UI.Wpf;assembly=Mapsui.UI.Wpf"
 		mc:Ignorable="d"
-        DataContext="{StaticResource MainViewModel}"
 		Title="DigiWACS" Height="450" Width="800">
-    <DockPanel>
+	<DockPanel>
 		<Menu DockPanel.Dock="Top" VerticalContentAlignment="Stretch">
 			<MenuItem Header="_File">
 				<MenuItem Header="_Reconnect..." Click="Reconnect_Click">
 					<!-- TODO: Some how how the last connection name to reconnect -->
 				</MenuItem>
-                <MenuItem Header="_New Connection" Click="NewConnection_Click" />
-                <MenuItem Header="_Manage Connections" Click="ManageConnections_Click" />
-                <Separator />
-                <MenuItem Header="_Settings" Click="SettingsMenuItem_Click"/>
-                <Separator />
+				<MenuItem Header="_New Connection" Click="NewConnection_Click" />
+				<MenuItem Header="_Manage Connections" Click="ManageConnections_Click" />
+				<Separator />
+				<MenuItem Header="_Settings" Click="SettingsMenuItem_Click"/>
+				<Separator />
 				<MenuItem Header="_Exit" />
 			</MenuItem>
 			<MenuItem Header="Test Commands">
 				<MenuItem Header="NewWindow" Click="NewWindowButton_OnClick" />
-                <MenuItem Header="gRPC Connect" Click="gRPCConnect_OnClick" />
-                <MenuItem Header="Test Event" Click="TestEvent_OnClick" />
-            </MenuItem>
+				<MenuItem Header="gRPC Connect" Click="gRPCConnect_OnClick" />
+				<MenuItem Header="Test Event" Click="TestEvent_OnClick" />
+			</MenuItem>
 		</Menu>
 		<wpf:MapControl x:Name="MapControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 	</DockPanel>
