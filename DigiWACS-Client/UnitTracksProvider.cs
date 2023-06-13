@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,25 +27,51 @@ namespace DigiWACS.Client;
 internal sealed class UnitTracksProvider : MemoryProvider, IDynamic, IDisposable
 {
     public event DataChangedEventHandler? DataChanged;
-
+    private ConcurrentBag<IFeature> features = new ConcurrentBag<IFeature>();
+    private readonly object balanceLock = new object();  
     private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+    private readonly PeriodicTimer _refrsh = new PeriodicTimer(TimeSpan.FromSeconds(5));
 
-    public UnitTracksProvider()
-    {
+    public UnitTracksProvider() {
         Catch.TaskRun(RunTimerAsync);
+
+	    var thread = new Thread(new ThreadStart(this.RefreshData));
+	    thread.IsBackground = true;
+	    thread.Start();
     }
 
-    private (double Lon, double Lat) _prevCoords = (24.945831, 60.192059);
+    private (double Lon, double Lat) _prevCoords = (37.359, 45.006);
+
+    private void RefreshData() {
+        while(true) {
+        var input = new QueryRequest { Statement = "SELECT id, st_x(st_transform(POSITION::geometry, 4326)) AS long, st_y(st_transform(POSITION::geometry, 4326)) AS lat, altitude, TYPE, NAME, callsign, player, group_name, coalition, heading, speed, updated_at FROM PUBLIC.units WHERE coalition = 3" };
+        using (var channel = GrpcChannel.ForAddress("http://192.168.90.1:50051")) {
+            var client = new Postgres.PostgresClient(channel);
+            using (var reply = client.Query(input)) {
+	            Console.WriteLine("Connected");
+                var rows = reply.ResponseStream.ReadAllAsync().ToBlockingEnumerable();
+	   	        Console.WriteLine("test");
+	   	        foreach (var row in rows) {
+	   	           PointFeature a = new PointFeature(SphericalMercator.FromLonLat(row.Fields["long"].NumberValue, row.Fields["lat"].NumberValue).ToMPoint());
+	   	           a["ID"] = row.Fields["id"].NumberValue;
+	   	           a["name"] = row.Fields["name"].StringValue;
+	   	           a["rotation"] = row.Fields["heading"].NumberValue - 180;
+	   	           lock (balanceLock)
+	   	           {
+	   	               this.features.Add(a);
+	   	           }
+	   	        }
+            }
+        }
+        }
+    }
+    
     private async Task RunTimerAsync()
     {
-        while (true)
-        {
+        while (true) {
 
             await _timer.WaitForNextTickAsync();
-
-            _prevCoords = (_prevCoords.Lon + 0.00005, _prevCoords.Lat + 0.00005);
-
-            OnDataChanged();
+                       OnDataChanged();
         }
     }
 
@@ -58,20 +86,6 @@ internal sealed class UnitTracksProvider : MemoryProvider, IDynamic, IDisposable
     }
 
     public override Task<IEnumerable<IFeature>> GetFeaturesAsync(FetchInfo fetchInfo) {  
-            var input = new QueryRequest { Statement = "SELECT id, st_x(st_transform(POSITION::geometry, 4326)) AS long, st_y(st_transform(POSITION::geometry, 4326)) AS lat, altitude, TYPE, NAME, callsign, player, group_name, coalition, heading, speed, updated_at, * FROM PUBLIC.units WHERE coalition = 3 LIMIT 150" };
-            var channel = GrpcChannel.ForAddress("http://sonic.local:50051");
-            var client = new Postgres.PostgresClient(channel);
-            List<PointFeature> features = new List<PointFeature>();
-            var reply = client.Query(input);
-            var rows = reply.ResponseStream.ReadAllAsync().ToBlockingEnumerable();
-            foreach (var row in rows) {
-                PointFeature a = new PointFeature(SphericalMercator.FromLonLat(row.Fields["long"].NumberValue, row.Fields["lat"].NumberValue).ToMPoint());
-                a["ID"] = row.Fields["id"].NumberValue;
-                a["name"] = row.Fields["name"].StringValue;
-                a["rotation"] = row.Fields["heading"].NumberValue - 180;
-                features.Add(a);
-            }
-
             return Task.FromResult((IEnumerable<IFeature>)features);
 
         //var input = new SingleUnitPositionRequest { Id = "1000263"};
