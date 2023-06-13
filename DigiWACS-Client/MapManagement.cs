@@ -16,9 +16,9 @@ namespace DigiWACS.Client {
 	public class MapManagement {
 		public Map InitializeMap() {
 			var map = new Map();	
-			map.Layers.Add( OpenStreetMap.CreateTileLayer() );
+			map!.Layers.Add( OpenStreetMap.CreateTileLayer() );
 			map.Layers.Add( CreateAnimatedPointLayer() );
-			map.Home = n => n.CenterOnAndZoomTo( map.Layers[ 1 ].Extent!.Centroid, n.Resolutions[ 5 ] );
+			map.Home = n => n.CenterOnAndZoomTo(new MPoint(2776952, 8442653), n.Resolutions[ 18 ] );
 
 			return map;
 		}
