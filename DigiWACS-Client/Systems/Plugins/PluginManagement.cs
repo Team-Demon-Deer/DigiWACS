@@ -22,11 +22,7 @@ namespace DigiWACS.Client {
 			Trace.WriteLine( "PluginManagement()" );
 			foreach (KnownPlugin knownplugin in PluginSection.KnownPlugins)
 			{
-				PluginInfo info = new PluginInfo(
-					info: knownplugin,
-					reference: 
-					);
-				_plugins.Add();
+				// populate the _plugins list.
 			}
 		}
 
