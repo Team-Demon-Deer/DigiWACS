@@ -15,7 +15,7 @@ public partial class MainWindow : Window {
 	public MainWindow() {
 		Trace.WriteLine("MainWindow() Start");
 		InitializeComponent();
-		MapControl1.Map = MapManager.InitializeMap();
+		MapControl.Map = MapManager.InitializeMap();
 		var Event_Test = new Event_Test();
 		TestedEvent += Event_Test.OnTestedEvent;
 		//MapControl1.Map?.Layers.Add( TestEntity );
@@ -28,7 +28,7 @@ public partial class MainWindow : Window {
 
 	private void gRPCConnect_OnClick( object sender, RoutedEventArgs e) {
 		try {
-			//string reply = gRPC_Client.GreeterMessage( "https://localhost:7001" ).ToString();
+			//string reply = gRPC_Client.GreeterMessage( "http://sonic.local:8001" ).ToString();
 			//Trace.WriteLine( reply );
 		}
 		catch (Exception exception) {

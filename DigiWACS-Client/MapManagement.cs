@@ -10,28 +10,30 @@ using System.IO;
 using System;
 using System.Linq;
 using System.Reflection;
+using Mapsui.Layers.AnimatedLayers;
 
 namespace DigiWACS.Client {
 	public class MapManagement {
 		public Map InitializeMap() {
 			var map = new Map();	
 			map.Layers.Add( OpenStreetMap.CreateTileLayer() );
-			map.Layers.Add( CreatePointLayer() );
+			map.Layers.Add( CreateAnimatedPointLayer() );
 			map.Home = n => n.CenterOnAndZoomTo( map.Layers[ 1 ].Extent!.Centroid, n.Resolutions[ 5 ] );
 
 			return map;
 		}
 
-		private MemoryLayer CreatePointLayer() {
-			return new MemoryLayer {
-				Name = "Points",
-				IsMapInfoLayer = true,
-				Features = GetCitiesFromEmbeddedResource(),
-				Style = CreateBitmapStyle()
-			};
-		}
+        private static ILayer CreateAnimatedPointLayer()
+        {
+            return new AnimatedPointLayer(new UnitTracksProvider())
+            {
+                Name = "Animated Points",
+                Style = CreateBitmapStyle()
+            };
+        }
 
-		private IEnumerable<IFeature> GetCitiesFromEmbeddedResource() {
+
+        private IEnumerable<IFeature> GetCitiesFromEmbeddedResource() {
 			var path = "C:\\ProgramData\\DigiWACS\\DigiWACS-Client\\Resources\\Cities.json";
 			var stream = File.OpenRead( path );
 			var cities = DeserializeFromStream<City>( stream );

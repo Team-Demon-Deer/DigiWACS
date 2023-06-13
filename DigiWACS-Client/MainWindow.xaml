@@ -26,6 +26,6 @@
                 <MenuItem Header="Test Event" Click="TestEvent_OnClick" />
             </MenuItem>
 		</Menu>
-		<wpf:MapControl Binding="MapControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+		<wpf:MapControl x:Name="MapControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 	</DockPanel>
 </Window>
