@@ -9,7 +9,7 @@ service Units {
 }
 
 message SingleUnitPositionRequest {
-    int32 id = 1;
+    string id = 1;
 }
 
 message SingleUnitPositionReply {
@@ -19,4 +19,8 @@ message SingleUnitPositionReply {
     double speed = 4;
     double heading = 5;
     string unitName = 6;
+}
+
+message MultiUnitPositionReply {
+    repeated SingleUnitPositionReply units = 1;
 }

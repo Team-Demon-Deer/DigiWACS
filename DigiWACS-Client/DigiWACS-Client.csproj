@@ -33,7 +33,6 @@
 			</None>
 
 		<Folder Include="Plugins\" />
-		
 		<Protobuf Include="..\Protos\**\*.proto" GrpcServices="Client" link="Protos\%(RecursiveDir)%(Filename)%(Extension)" />
 		
 		<Content Include="Resources\DigiWACS-icon.ico" />

@@ -11,70 +11,46 @@ using System;
 using System.Linq;
 using System.Reflection;
 using Mapsui.Layers.AnimatedLayers;
+using System.Drawing;
+using Mapsui.Styles.Thematics;
+using System.Resources;
 
 namespace DigiWACS.Client {
 	public class MapManagement {
 		public Map InitializeMap() {
-			var map = new Map();	
-			map!.Layers.Add( OpenStreetMap.CreateTileLayer() );
-			map.Layers.Add( CreateAnimatedPointLayer() );
+                var image = File.OpenRead("C:\\ProgramData\\DigiWACS\\DigiWACS-Client\\Resources\\home.png");
+                int bitmapid = BitmapRegistry.Instance.Register(image);
+				var map = new Map();
+				map!.Layers.Add( OpenStreetMap.CreateTileLayer() );
+
+			map.Layers.Add(CreateAnimatedPointLayer(new LabelStyle
+			{
+				ForeColor = Mapsui.Styles.Color.Black,
+				BackColor = new Mapsui.Styles.Brush(Mapsui.Styles.Color.Transparent),
+				LabelColumn = "name",
+			}));
+			map.Layers.Add( CreateAnimatedPointLayer(new ThemeStyle ( f => { return CreateBitmapStyle(f, bitmapid); })));
 			map.Home = n => n.CenterOnAndZoomTo(new MPoint(2776952, 8442653), n.Resolutions[ 18 ] );
 
 			return map;
 		}
 
-        private static ILayer CreateAnimatedPointLayer()
+        private static ILayer CreateAnimatedPointLayer(Style s)
         {
             return new AnimatedPointLayer(new UnitTracksProvider())
             {
                 Name = "Animated Points",
-                Style = CreateBitmapStyle()
-            };
+                Style = s
+        };
         }
-
-
-        private IEnumerable<IFeature> GetCitiesFromEmbeddedResource() {
-			var path = "C:\\ProgramData\\DigiWACS\\DigiWACS-Client\\Resources\\Cities.json";
-			var stream = File.OpenRead( path );
-			var cities = DeserializeFromStream<City>( stream );
-
-			return cities.Select( c => {
-				var feature = new PointFeature(SphericalMercator.FromLonLat(c.Lng, c.Lat).ToMPoint());
-				feature[ "name" ] = c.Name;
-				feature[ "country" ] = c.Country;
-				return feature;
-			} );
-		}
-
-		private class City {
-			public string Country { get; set; }
-			public string Name { get; set; }
-			public double Lat { get; set; }
-			public double Lng { get; set; }
-		}
-
-		public static IEnumerable<T> DeserializeFromStream<T>( Stream stream ) {
-			var serializer = new JsonSerializer();
-
-			using ( var sr = new StreamReader( stream ) )
-			using ( var jsonTextReader = new JsonTextReader( sr ) ) {
-				return serializer.Deserialize<List<T>>( jsonTextReader );
-			}
-		}
-
-		private static SymbolStyle CreateBitmapStyle() {
+		private static SymbolStyle CreateBitmapStyle(IFeature feature, int bitmapid) {
 			// For this sample we get the bitmap from an embedded resouce
 			// but you could get the data stream from the web or anywhere
 			// else.
-			var path = "C:\\ProgramData\\DigiWACS\\DigiWACS-Client\\Resources\\home.png"; // Designed by Freepik http://www.freepik.com
-			var bitmapId = GetBitmapIdForEmbeddedResource( path );
 			var bitmapHeight = 176; // To set the offset correct we need to know the bitmap height
-			return new SymbolStyle { BitmapId = bitmapId, SymbolScale = 0.20, SymbolOffset = new Offset( 0, bitmapHeight * 0.5 ) };
-		}
-
-		private static int GetBitmapIdForEmbeddedResource( string imagePath ) {
-			var image = File.OpenRead( imagePath );
-			return BitmapRegistry.Instance.Register( image );
+			return new SymbolStyle { BitmapId = bitmapid, SymbolScale = 0.20, SymbolOffset = new Offset( 0, bitmapHeight * 0.5 ) ,
+                SymbolRotation = (double)feature["rotation"]!
+            };
 		}
 	}
 }
