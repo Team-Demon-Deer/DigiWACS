@@ -23,24 +23,13 @@ public partial class MainWindow : Window {
 
 
 	private void NewWindowButton_OnClick(object sender, RoutedEventArgs e) {
-		Trace.WriteLine("NewWindowButton_OnClick()");
 	}
 
 	private void gRPCConnect_OnClick( object sender, RoutedEventArgs e) {
-		try {
-			//string reply = gRPC_Client.GreeterMessage( "https://localhost:7001" ).ToString();
-			//Trace.WriteLine( reply );
-		}
-		catch (Exception exception) {
-			Console.WriteLine(exception);
-			throw;
-		}
 	}
 
 	private void TestEvent_OnClick( object sender, RoutedEventArgs e ) {
-		OnTestedEvent();
 	}
-	protected virtual void OnTestedEvent() { if( TestedEvent != null) TestedEvent( this, EventArgs.Empty); }
 
 	private void Reconnect_Click( object sender, RoutedEventArgs e ) {
 
