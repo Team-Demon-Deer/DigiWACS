@@ -39,16 +39,16 @@ internal sealed class UnitTracksProvider : MemoryProvider, IDynamic, IDisposable
 	    var thread = new Thread(new ThreadStart(this.RefreshData));
 	    thread.IsBackground = true;
 	    thread.Start();
-	    var thread2 = new Thread(new ThreadStart(this.RenderTracks));
+	    var thread2 = new Thread(new ThreadStart(this.RefreshTracks));
 	    thread2.IsBackground = true;
 	    thread2.Start();
     }
 
     private (double Lon, double Lat) _prevCoords = (37.359, 45.006);
 
-    private void RefreshData() {
+    private async void RefreshData() {
         while(true) {
-    	_timer.WaitForNextTickAsync().Wait();
+    	await _timer.WaitForNextTickAsync();
         var input = new QueryRequest { Statement = "SELECT id, st_x(st_transform(POSITION::geometry, 4326)) AS long, st_y(st_transform(POSITION::geometry, 4326)) AS lat, altitude, TYPE, NAME, callsign, player, group_name, coalition, heading, speed, updated_at FROM PUBLIC.units WHERE coalition = 3" };
             using (var channel = GrpcChannel.ForAddress("http://192.168.90.1:50051")) {
                 var client = new Postgres.PostgresClient(channel);
@@ -72,13 +72,14 @@ internal sealed class UnitTracksProvider : MemoryProvider, IDynamic, IDisposable
             }
         }
     }
-    private void RefreshTracks() {
+    private async void RefreshTracks() {
         while(true) {
-            Task.Delay()
-           foreach (var track in renderFeatures) {
+           await _tick.WaitForNextTickAsync();
+           foreach (var track in renderFeatures.Values.ToList<IFeature>()) {
                lock (renderLock) {
                     track.CoordinateVisitor((x, y, func) => {    
-                        var (xO, yO) = ((i,j) => {return (i+343*0.05, j);})(x,y);
+                        double xO = (i) => {return i+343*0.05;})(x);
+			yO = y;
                         func(xO, yO);
                     });
                }
