@@ -61,9 +61,12 @@ internal sealed class UnitTracksProvider : MemoryProvider, IDynamic, IDisposable
             var input = new QueryRequest { Statement = "SELECT id, st_x(st_transform(POSITION::geometry, 4326)) AS long, st_y(st_transform(POSITION::geometry, 4326)) AS lat, altitude, TYPE, NAME, callsign, player, group_name, coalition, heading, speed, updated_at, * FROM PUBLIC.units WHERE coalition = 3 LIMIT 150" };
             var channel = GrpcChannel.ForAddress("http://sonic.local:50051");
             var client = new Postgres.PostgresClient(channel);
+
             List<PointFeature> features = new List<PointFeature>();
+
             var reply = client.Query(input);
             var rows = reply.ResponseStream.ReadAllAsync().ToBlockingEnumerable();
+
             foreach (var row in rows) {
                 PointFeature a = new PointFeature(SphericalMercator.FromLonLat(row.Fields["long"].NumberValue, row.Fields["lat"].NumberValue).ToMPoint());
                 a["ID"] = row.Fields["id"].NumberValue;
