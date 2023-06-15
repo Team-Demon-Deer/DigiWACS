@@ -1,33 +1,30 @@
+using System.ComponentModel;
+
 namespace DigiWACS.PluginBase;
 
+
 public interface IDigiWACSPlugin {
-	public DigiWACSPluginInfo Info { get; }
-	void OnPluginLoad();
+	public void OnPluginLoad();
 }
 
-public struct DigiWACSPluginInfo {
+public interface IDigiWACSPluginMetadata {
+
+	//Required
 	public string Name { get; }
-	public string Description { get; }
 	public PluginType Type { get; }
-	public string Author { get; }
+
+	//Optional
+	[DefaultValue( "0.0.0" )]
 	public string Version { get; }
+
+	[DefaultValue("No Description")]
+	public string Description { get; }
+
+	[DefaultValue( "No Author" )]
+	public string Author { get; }
+
+	[DefaultValue( "No URL" )]
 	public string AuthorUrl { get; }
-
-	//Contstructor
-	public DigiWACSPluginInfo ( string name,
-							string description,
-							PluginType type,
-							string author,
-							string version,
-							string authorURL ) {
-		Name = name; 
-		Description = description; 
-		Type = type; 
-		Author = author; 
-		Version = version; 
-		AuthorUrl = authorURL;
-	}
-
 }
 public enum PluginType {
 	Client,

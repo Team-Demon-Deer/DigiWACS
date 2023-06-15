@@ -21,7 +21,6 @@ public partial class MainWindow : Window {
 		//MapControl1.Map?.Layers.Add( TestEntity );
 	}
 
-
 	private void NewWindowButton_OnClick(object sender, RoutedEventArgs e) {
 	}
 

@@ -6,19 +6,19 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "TestPlugin/1.0.0": {
+      "MeasurementTool/1.0.0": {
         "dependencies": {
           "DigiWACS-PluginBase": "1.0.0"
         },
         "runtime": {
-          "TestPlugin.dll": {}
+          "MeasurementTool.dll": {}
         }
       },
       "System.ComponentModel.Composition/7.0.0": {}
     }
   },
   "libraries": {
-    "TestPlugin/1.0.0": {
+    "MeasurementTool/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

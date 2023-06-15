@@ -8,28 +8,28 @@ using System.Threading.Tasks;
 namespace DigiWACS.Client.Properties;
 
 //The over all structure
-public struct AppSettingsStruct {
-	public ConfigSectionPlugin ConfigSectionPlugin;
-	public ConfigSectionServerConnections ConfigSectionServerConnections;
+public sealed class DigiWACSSettings {
+	public Plugins Plugins { get; set; }
+	public List<ServerConnections> ServerConnections { get; set; }
 }
 
 //Plugins Section
-public struct ConfigSectionPlugin {
-	public string[] pluginpaths;
-	public KnownPlugin[] KnownPlugins;
+public sealed class Plugins {
+	public List<string> pluginpaths { get; set; }
+	public List<KnownPlugins> knownPlugins { get; set; }
 }
-public struct KnownPlugin {
-	public string pluginEnabled;
-	public string pluginName;
-	public string pluginPath;
+public sealed class KnownPlugins {
+	public string pluginIsEnabled { get; set; }
+	public string pluginName { get; set; }
+	public int hash { get; set; }
 }
 
 //Server Connections Section
-public struct ConfigSectionServerConnections {
-	public string connectionName;
-	public string displayName;
-	public string connectionURL;
-	public string port;
-	public string insecurePassword;
-	public string coalition;
+public sealed class ServerConnections {
+	public string connectionName { get; set; }
+	public string displayName { get; set; }
+	public string connectionURL { get; set; }
+	public string port { get; set; }
+	public string insecurePassword { get; set; }
+	public string coalition { get; set; }
 }

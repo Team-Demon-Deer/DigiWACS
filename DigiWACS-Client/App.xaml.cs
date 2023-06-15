@@ -16,13 +16,8 @@ namespace DigiWACS.Client;
 ///     Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application {
-	internal AppSettingsStruct config = new ConfigurationBuilder()
-		.SetBasePath( Directory.GetCurrentDirectory() )
-		.AddEnvironmentVariables()
-		.AddJsonFile( "Properties/appsettings.json" )
-		.AddUserSecrets( Assembly.GetExecutingAssembly(), true ) //must be last in builder so it overrides appsettings.json
-		.Build()
-		.Get<AppSettingsStruct>();
+	internal IConfiguration config;
+	public DigiWACSSettings Settings = new();
 	/*
 	public static readonly GenericPluginLoader<IDigiWACSPlugin> ClientPluginLoader = new();
 	public static List<IDigiWACSPlugin> LoadedClientPlugins { get; private set; } =
@@ -30,9 +25,15 @@ public partial class App : Application {
 	*/
 
 	public App() {
-		
+		config = new ConfigurationManager()
+		.SetBasePath( Directory.GetCurrentDirectory() )
+		.AddEnvironmentVariables()
+		.AddJsonFile( "Properties/appsettings.json" )
+		.AddUserSecrets( Assembly.GetExecutingAssembly(), true ) //must be last in builder so it overrides appsettings.json
+		.Build();
+		config.GetSection( nameof( DigiWACSSettings ) ).Bind( Settings );
 
-		new PluginManagement( config.ConfigSectionPlugin );
+		new PluginManagement( Settings.Plugins );
 		//new PluginManagement().PluginLoader( Config.GetConnectionString( "PluginsPath" ) );
 	}
 }

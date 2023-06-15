@@ -1,21 +1,19 @@
-﻿using DigiWACS.PluginBase;
-using System;
+﻿using System.ComponentModel.Composition;
+using DigiWACS.PluginBase;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace MeasurementTool {
-	public class MeasurementTool : IDigiWACSPlugin {
-		public DigiWACSPluginInfo Info => new DigiWACSPluginInfo(
-		name: "Measurement Tool",
-		description: "A Basic measurement tool",
-		type: PluginType.Client,
-		author: "DigiWACS Team",
-		version: "0.0.1",
-		authorURL: "https://github.com/Team-Demon-Deer/DigiWACS"
-		);
+namespace MeasurementTool;
 
-		public void OnPluginLoad() {
-			Trace.WriteLine( $"{Assembly.GetExecutingAssembly().GetName()} : OnPluginLoad()" );
-		}
+[Export( typeof( IDigiWACSPlugin ) ),
+	ExportMetadata( "Name", "Measurement Tool" ),
+	ExportMetadata( "Type", PluginType.Client ),
+	ExportMetadata( "Version", "0.0.1" ),
+	ExportMetadata( "Description", "A Basic measurement tool" ),
+	ExportMetadata( "Author", "DigiWACS Team" ),
+	ExportMetadata( "AuthorUrl", "https://github.com/Team-Demon-Deer/DigiWACS" )]
+public class MeasurementTool : IDigiWACSPlugin {
+	public void OnPluginLoad() {
+		Trace.WriteLine( $"{Assembly.GetExecutingAssembly().GetName()} : OnPluginLoad()" );
 	}
 }
