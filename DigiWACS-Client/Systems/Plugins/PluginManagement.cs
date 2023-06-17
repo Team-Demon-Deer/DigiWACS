@@ -8,52 +8,52 @@ using System.ComponentModel.Composition;
 using System.Reflection;
 using System.Linq;
 using System.IO;
+using System.Collections;
+using System.ComponentModel.Composition.Primitives;
 
-namespace DigiWACS.Client {
-	internal class PluginManagement {
+namespace DigiWACS.Client;
+internal class PluginManagement {
+	private Plugins _settings;
+	internal CompositionContainer compositionContainer;
 
-		[ImportMany]
-		public IEnumerable<Lazy<IDigiWACSPlugin, IDigiWACSPluginMetadata>> allPossiblePlugins;
+	// This uses the Managed Exstensibility Framework (MEF)
+	// https://learn.microsoft.com/en-us/dotnet/framework/mef/
+	// When tryin to find documentation, a good starting point is:
+	// https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.composition
+	[ImportMany]
+	public IEnumerable<Lazy<IDigiWACSPlugin, IDigiWACSPluginMetadata>> allPossiblePlugins;
 
-		public IEnumerable<IDigiWACSPlugin> LoadedPlugins;
+	internal AggregateCatalog allPossiblePluginsCatalog = new AggregateCatalog();
 
-		private Plugins _settings;
-		/*
-		 * We want to try and load all the plugins that we remember in Appsettings.json,
-		 * set their state to what we remember, and call the OnPluginLoad() in the enabled ones
-		 * We also add any new ones and save those to our Appsettings.json if its new.
-		*/
-		public PluginManagement(Plugins configurationSection) {
-			Trace.WriteLine( "PluginManagement()" );
-			_settings = configurationSection;
+	internal AggregateCatalog enabledPluginCatalog = new AggregateCatalog();
+	internal CompositionBatch compositionBatch = new CompositionBatch();
 
-			AggregateCatalog agregateCatalog = new AggregateCatalog();
-			CompositionContainer compositionContainer = new CompositionContainer( agregateCatalog );
-			CompositionBatch compositionBatch = new CompositionBatch();
-			compositionBatch.AddPart( this );
+	public PluginManagement(Plugins configurationSection) {
+		Trace.WriteLine( "PluginManagement()" );
+		_settings = configurationSection;
 
-			agregateCatalog.Catalogs.Add( new AssemblyCatalog( Assembly.GetExecutingAssembly() ) );
+		SearchForAllPluginsAndAddToCatalog( _settings.pluginpaths );
+		enabledPluginCatalog.Catalogs.Add( new AssemblyCatalog( Assembly.GetExecutingAssembly() ) );
 
-			foreach (string pathToSearch in _settings.pluginpaths)
-			{
-				string[] subpaths = Directory.GetDirectories( pathToSearch, "*", SearchOption.AllDirectories );
-				foreach ( string subpath in subpaths ) { 
-					agregateCatalog.Catalogs.Add( new DirectoryCatalog( subpath ) ); 
-				}
-			}
+		compositionBatch.AddPart( this );
+		compositionContainer = new CompositionContainer( enabledPluginCatalog );
+		compositionContainer.Compose( compositionBatch );
+	}
 
-			compositionContainer.Compose( compositionBatch );
+	internal void EnablePlugins() {
+		//future logic to only select which ones are enabled
+		enabledPluginCatalog = allPossiblePluginsCatalog;
+	}
 
-			Trace.WriteLine( $"Plugins in list: {allPossiblePlugins.Count()}" );
-
-			foreach ( Lazy<IDigiWACSPlugin, IDigiWACSPluginMetadata> PossiblePlugin in allPossiblePlugins ) {
-				string name = PossiblePlugin.Metadata.Name;
-				int hash = PossiblePlugin.Metadata.GetHashCode();
-				Trace.WriteLine( $"Plugin {name} : hash {hash}" );
+	internal void SearchForAllPluginsAndAddToCatalog(List<string> PathsToSearch) {
+		//Recersive Directory Search
+		foreach ( string pathToSearch in PathsToSearch ) {
+			string[] subpaths = Directory.GetDirectories( pathToSearch, "*", SearchOption.AllDirectories );
+			foreach ( string subpath in subpaths ) {
+				allPossiblePluginsCatalog.Catalogs.Add( new DirectoryCatalog( subpath ) );
 			}
 		}
 
-		public void LoadPlugin(string pathToPlugin) {
-		}
+		Debug.WriteLine( $"Plugins added to Catalog: {allPossiblePluginsCatalog.Count()}" );
 	}
 }
