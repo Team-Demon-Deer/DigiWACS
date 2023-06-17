@@ -6,13 +6,8 @@ using System.ComponentModel.Composition.Hosting;
 using System;
 using System.ComponentModel.Composition;
 using System.Reflection;
-using System.Diagnostics.Metrics;
 using System.Linq;
-using System.Windows;
 using System.IO;
-using System.Configuration;
-using Microsoft.Extensions.Configuration;
-using System.Windows.Shapes;
 
 namespace DigiWACS.Client {
 	internal class PluginManagement {
