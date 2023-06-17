@@ -18,11 +18,6 @@ namespace DigiWACS.Client;
 public partial class App : Application {
 	internal IConfiguration config;
 	public DigiWACSSettings Settings = new();
-	/*
-	public static readonly GenericPluginLoader<IDigiWACSPlugin> ClientPluginLoader = new();
-	public static List<IDigiWACSPlugin> LoadedClientPlugins { get; private set; } =
-		ClientPluginLoader.LoadAll(Config.GetConnectionString("PluginsPath"));
-	*/
 
 	public App() {
 		config = new ConfigurationManager()
@@ -34,6 +29,5 @@ public partial class App : Application {
 		config.GetSection( nameof( DigiWACSSettings ) ).Bind( Settings );
 
 		new PluginManagement( Settings.Plugins );
-		//new PluginManagement().PluginLoader( Config.GetConnectionString( "PluginsPath" ) );
 	}
 }
