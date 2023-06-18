@@ -21,7 +21,6 @@ public class TestPlugin : IDigiWACSPlugin {
 		OnPluginLoaded += OnPluginLoad;
 	}
 
-
 	protected virtual void OnPluginLoad( object sender, EventArgs e ) {
 		Trace.WriteLine( $"{Assembly.GetExecutingAssembly().GetName()} : OnPluginLoad()" );
 	}
