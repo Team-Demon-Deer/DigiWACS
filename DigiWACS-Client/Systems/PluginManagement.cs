@@ -38,9 +38,9 @@ internal class PluginManagement
 		enabledPluginCatalog.Catalogs.Add(new AssemblyCatalog(Assembly.GetExecutingAssembly()));
 		EnablePlugin();
 
-		compositionBatch.AddPart(this);
 		compositionContainer = new CompositionContainer(enabledPluginCatalog);
 		compositionContainer.Compose(compositionBatch);
+
 
 	}
 
@@ -48,7 +48,7 @@ internal class PluginManagement
 	{
 		//future logic to only select which ones are enabled
 		enabledPluginCatalog = allPossiblePluginsCatalog;
-		//seudo code: return plugin.where( w => w.hash == RequestedHash).FirstOrDefault();
+		//seudo code: return plugins.where( p => p.hash == RequestedHash).FirstOrDefault();
 	}
 
 	internal void SearchForAllPluginsAndAddToCatalog(List<string> PathsToSearch)
