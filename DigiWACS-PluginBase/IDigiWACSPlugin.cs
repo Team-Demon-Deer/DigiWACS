@@ -1,10 +1,11 @@
 using System.ComponentModel;
+using System.ComponentModel.Composition;
 
 namespace DigiWACS.PluginBase;
 
 
 public interface IDigiWACSPlugin {
-	public void OnPluginLoad();
+	event EventHandler OnPluginLoaded;
 }
 
 public interface IDigiWACSPluginMetadata {

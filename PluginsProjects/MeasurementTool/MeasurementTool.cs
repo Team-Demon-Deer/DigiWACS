@@ -2,6 +2,7 @@
 using DigiWACS.PluginBase;
 using System.Diagnostics;
 using System.Reflection;
+using System;
 
 namespace MeasurementTool;
 
@@ -13,7 +14,11 @@ namespace MeasurementTool;
 	ExportMetadata( "Author", "DigiWACS Team" ),
 	ExportMetadata( "AuthorUrl", "https://github.com/Team-Demon-Deer/DigiWACS" )]
 public class MeasurementTool : IDigiWACSPlugin {
-	public void OnPluginLoad() {
+	public event EventHandler OnPluginLoaded;
+
+	public MeasurementTool() {
 		Trace.WriteLine( $"{Assembly.GetExecutingAssembly().GetName()} : OnPluginLoad()" );
 	}
+
+
 }
