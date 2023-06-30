@@ -1,18 +1,21 @@
-using DigiWACS.Services;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-// Additional configuration is required to successfully run gRPC on macOS.
-// For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
-// Add services to the container.
-builder.Services.AddGrpc();
-builder.Services.AddGrpcReflection();
+namespace DigiWACS.Server {
+    public class Program {
+      public static void Main(string[] args) {
+        CreateHostBuilder(args).Build().Run();
+      }
 
-var app = builder.Build();
-app.Urls.Add("http://0.0.0.0:8001");
-// Configure the HTTP request pipeline.
-app.MapGrpcService<UnitsService>();
-app.MapGrpcReflectionService();
-app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
-
-app.Run();
+      public static IHostBuilder CreateHostBuilder(string[] args) {
+        return Host.CreateDefaultBuilder(args)
+          .ConfigureWebHostDefaults(webBuilder => {webBuilder.UseStartup<Startup>(); });
+      }
+    }
+}

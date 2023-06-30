@@ -1,13 +1,24 @@
 syntax = "proto3";
 
-option csharp_namespace = "DigiWACS";
+option csharp_namespace = "DigiWACS.Protos";
 
 package DigiWACS;
 
 service Units {
     rpc GetPosition (SingleUnitPositionRequest) returns (SingleUnitPositionReply);
 }
+service Authentication {
+    rpc Authenticate(Credential) returns (JwtToken);
+}
 
+message Credential {
+    string user = 1;
+    string pass = 2;
+}
+
+message JwtToken {
+    string jwtToken = 1;
+}
 message SingleUnitPositionRequest {
     string id = 1;
 }

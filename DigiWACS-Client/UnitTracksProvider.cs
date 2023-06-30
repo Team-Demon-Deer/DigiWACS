@@ -35,7 +35,7 @@ internal sealed class UnitTracksProvider : MemoryProvider, IDynamic, IDisposable
     private readonly PeriodicTimer _refrsh = new PeriodicTimer(TimeSpan.FromSeconds(2));
     private readonly PeriodicTimer _tick = new PeriodicTimer(TimeSpan.FromSeconds(0.05));
     public UnitTracksProvider() {
-            Catch.TaskRun(RunTimerAsync);
+        Catch.TaskRun(RunTimerAsync);
 	    var thread = new Thread(new ThreadStart(this.RefreshData));
 	    thread.IsBackground = true;
 	    thread.Start();
@@ -72,6 +72,7 @@ internal sealed class UnitTracksProvider : MemoryProvider, IDynamic, IDisposable
             }
         }
     }
+
     private async void RefreshTracks() {
         while(true) {
            await _tick.WaitForNextTickAsync();
