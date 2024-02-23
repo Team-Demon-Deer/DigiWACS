@@ -9,7 +9,7 @@ namespace DigiWACS.Client {
 	internal class Event_Test {
 
 		public void OnTestedEvent(object sender, EventArgs e) {
-			Trace.WriteLine("OnTestedEvent Triggered");
+			Debug.Print( "OnTestedEvent Triggered" );
 		}
 	}
 }
