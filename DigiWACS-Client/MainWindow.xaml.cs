@@ -13,7 +13,7 @@ public partial class MainWindow : Window {
 	private MapManagement MapManager = new MapManagement();
 
 	public MainWindow() {
-		Trace.WriteLine("MainWindow() Start");
+		Debug.Print( "MainWindow() Start" );
 		InitializeComponent();
 		MapControl.Map = MapManager.InitializeMap();
 		var Event_Test = new Event_Test();
@@ -28,6 +28,7 @@ public partial class MainWindow : Window {
 	}
 
 	private void TestEvent_OnClick( object sender, RoutedEventArgs e ) {
+		TestedEvent?.Invoke( sender, e );
 	}
 
 	private void Reconnect_Click( object sender, RoutedEventArgs e ) {
