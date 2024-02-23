@@ -8,6 +8,7 @@ using System.ComponentModel.Composition;
 using System.Reflection;
 using System.Linq;
 using System.IO;
+using System.Xml.Linq;
 
 namespace DigiWACS.Client.Systems;
 internal class PluginManagement
@@ -31,7 +32,7 @@ internal class PluginManagement
 
 	public PluginManagement(Plugins configurationSection)
 	{
-		Trace.WriteLine("PluginManagement()");
+		Debug.Print("PluginManagement()");
 		_settings = configurationSection;
 
 		SearchForAllPluginsAndAddToCatalog(_settings.pluginpaths);
@@ -62,5 +63,10 @@ internal class PluginManagement
 		}
 
 		Debug.WriteLine($"Plugins added to Catalog: {allPossiblePluginsCatalog.Count()}");
-	}
+		Debug.Print( $"Plugins in Catalog: " );
+        foreach (var item in allPossiblePluginsCatalog)
+		{
+			Debug.Print($"{item.Metadata.TryGetValue}");
+        }
+    }
 }
