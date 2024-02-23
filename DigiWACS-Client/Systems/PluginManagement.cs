@@ -40,8 +40,6 @@ internal class PluginManagement
 
 		compositionContainer = new CompositionContainer(enabledPluginCatalog);
 		compositionContainer.Compose(compositionBatch);
-
-
 	}
 
 	internal void EnablePlugin()
