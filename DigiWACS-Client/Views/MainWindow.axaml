@@ -3,6 +3,7 @@
         xmlns:vm="using:DigiWACS_Client.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MpsuWindow="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DigiWACS_Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -34,9 +35,7 @@
 		<up:DockingHost>
 			<up:DockingTabControl DockPanel.Dock="Bottom" Height="200">
 				<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
-					<StackPanel>
-						<TextBlock Text="This is tab 4.1 content" />
-					</StackPanel>
+					<MpsuWindow:MapControl x:Name="MapControl" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding MapControl}" />
 				</up:ClosableTabItem>
 			</up:DockingTabControl>
 			<up:DockingTabControl DockPanel.Dock="Right" Width="400">
