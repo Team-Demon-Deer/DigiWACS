@@ -1,6 +1,5 @@
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
-using DigiWACS;
 using Grpc.Net.Client;
 using System.Data.SqlClient;
 using Postgr;
