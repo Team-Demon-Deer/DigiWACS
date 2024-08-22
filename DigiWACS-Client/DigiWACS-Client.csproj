@@ -44,4 +44,10 @@
         <Link>Protos\postgres.proto</Link>
       </Content>
     </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Avalonia.UpDock">
+        <HintPath>..\..\Avalonia.UpDock\Avalonia.UpDock\bin\Debug\net8.0\Avalonia.UpDock.dll</HintPath>
+      </Reference>
+    </ItemGroup>
 </Project>
