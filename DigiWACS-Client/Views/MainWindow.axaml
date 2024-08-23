@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:MpsuWindow="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
         x:Class="DigiWACS_Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -33,17 +33,29 @@
 			</MenuItem>
 		</Menu>
 		<up:DockingHost>
-			<up:DockingTabControl DockPanel.Dock="Bottom" Height="200">
-				<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
+			<up:DockingTabControl DockPanel.Dock="Left" Width="1000">
+				<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
 					<MpsuWindow:MapControl x:Name="MapControl" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding MapControl}" />
-				</up:ClosableTabItem>
+				</TabItem>
 			</up:DockingTabControl>
-			<up:DockingTabControl DockPanel.Dock="Right" Width="400">
-				<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
-					<StackPanel>
-						<TextBlock Text="This is tab 4.1 content" />
-					</StackPanel>
-				</up:ClosableTabItem>
+			<up:DockingTabControl DockPanel.Dock="Right">
+				<up:ClosableTabItem Header="Tab 1.1" HeaderTemplate="{DynamicResource TabTemplate}">
+				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
+					<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
+						<StackPanel>
+							<TextBlock Text="This is tab 4.1 content" />
+						</StackPanel>
+					</up:ClosableTabItem>
+					<up:ClosableTabItem Closing="UnclosableTab_Closing" Header="Tab 2.1 (unclosable)" HeaderTemplate="{DynamicResource TabTemplate}" >
+						<StackPanel Margin="5">
+							<TextBlock Text="This is tab 2.1 content" />
+							<TextBlock Opacity="0.5">
+								This tab will <Span FontWeight="Bold">refuse</Span> to close
+							</TextBlock>
+						</StackPanel>
+					</up:ClosableTabItem>
+				</up:SplitPanel>
+					</up:ClosableTabItem>
 			</up:DockingTabControl>
 			<up:DockingTabControl DockPanel.Dock="Bottom">
 				<up:ClosableTabItem Header="Tab 4.1" HeaderTemplate="{DynamicResource TabTemplate}">
@@ -61,14 +73,7 @@
 					</up:ClosableTabItem>
 				</up:DockingTabControl>
 				<up:DockingTabControl>
-					<up:ClosableTabItem Closing="UnclosableTab_Closing" Header="Tab 2.1 (unclosable)" HeaderTemplate="{DynamicResource TabTemplate}" >
-						<StackPanel Margin="5">
-							<TextBlock Text="This is tab 2.1 content" />
-							<TextBlock Opacity="0.5">
-								This tab will <Span FontWeight="Bold">refuse</Span> to close
-							</TextBlock>
-						</StackPanel>
-					</up:ClosableTabItem>
+					
 					<up:ClosableTabItem Header="Tab 2.2" HeaderTemplate="{DynamicResource TabTemplate}">
 						<TextBlock Margin="5">This is tab 2.2 content</TextBlock>
 					</up:ClosableTabItem>
