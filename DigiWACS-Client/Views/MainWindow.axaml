@@ -7,7 +7,7 @@
         mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
         x:Class="DigiWACS_Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/DigiWACS-icon.ico"
         Title="DigiWACS_Client"
         xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
         MinWidth="800" MinHeight="600">
@@ -33,21 +33,24 @@
 
 			</MenuItem>
 		</Menu>
+		
+		
 		<up:DockingHost>
-			<up:SplitPanel Fractions="1, 1" Orientation="Horizontal">
+			<up:SplitPanel Fractions="4, 1" Orientation="Horizontal">
 				<up:DockingTabControl>
 					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
 						<mpsuWindow:MapControl x:Name="MapControl" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding MapControl}" />
 					</TabItem>
-				</up:DockingTabControl>
-				<up:DockingTabControl DockPanel.Dock="Right">
-					<up:ClosableTabItem Header="Tab 1.1" HeaderTemplate="{DynamicResource TabTemplate}">
-						<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
+					</up:DockingTabControl>
+					<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
+						<up:DockingTabControl>
 							<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
-								<StackPanel>
+								<StackPanel Margin="5">
 									<TextBlock Text="This is tab 5.1 content" />
 								</StackPanel>
 							</up:ClosableTabItem>
+						</up:DockingTabControl>
+						<up:DockingTabControl>
 							<up:ClosableTabItem Closing="UnclosableTab_Closing" Header="Tab 2.1 (unclosable)" HeaderTemplate="{DynamicResource TabTemplate}" >
 								<StackPanel Margin="5">
 									<TextBlock Text="This is tab 2.1 content" />
@@ -56,9 +59,8 @@
 									</TextBlock>
 								</StackPanel>
 							</up:ClosableTabItem>
-						</up:SplitPanel>
-					</up:ClosableTabItem>
-				</up:DockingTabControl>
+						</up:DockingTabControl>
+					</up:SplitPanel>
 			</up:SplitPanel>
 		</up:DockingHost>
 	</DockPanel>
