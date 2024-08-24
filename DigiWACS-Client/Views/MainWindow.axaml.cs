@@ -16,7 +16,6 @@ public partial class MainWindow : Window
 		MainWindowViewModel.MapControl.Map?.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
 	}
 	
-	
 	private void UnclosableTab_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
 	{
 		e.Cancel = true;
