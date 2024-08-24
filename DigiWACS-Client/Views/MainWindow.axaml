@@ -33,23 +33,22 @@
 
 			</MenuItem>
 		</Menu>
+		<!--
 		<ContentControl>
 			<mpsuWindow:MapControl x:Name="AreaMap" 
 	           VerticalAlignment="Stretch" 
-	           HorizontalAlignment="Stretch" 
-	           Content="{Binding MapControl}" />
+	           HorizontalAlignment="Stretch"
+	           Content="{Binding AreaMap}" />
 		</ContentControl>
-
-		
-		<!-- 
+		-->
 		<up:DockingHost>
 			<up:SplitPanel Fractions="4, 1" Orientation="Horizontal">
 				<up:DockingTabControl>
 					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
-						<mpsuWindow:MapControl x:Name="AreaMap" 
-						                       VerticalAlignment="Stretch" 
-						                       HorizontalAlignment="Stretch" 
-						                       Content="{Binding MapControl}" />
+									<mpsuWindow:MapControl x:Name="AreaMap" 
+	           VerticalAlignment="Stretch" 
+	           HorizontalAlignment="Stretch"
+	           Content="{Binding AreaMap}" />
 					</TabItem>
 				</up:DockingTabControl>
 				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
@@ -72,7 +71,6 @@
 					</up:DockingTabControl>
 				</up:SplitPanel>
 			</up:SplitPanel>
-		</up:DockingHost> 
-		-->
+		</up:DockingHost>
 	</DockPanel>
 </Window>
