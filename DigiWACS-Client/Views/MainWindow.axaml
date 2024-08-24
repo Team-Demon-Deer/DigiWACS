@@ -45,10 +45,10 @@
 			<up:SplitPanel Fractions="4, 1" Orientation="Horizontal">
 				<up:DockingTabControl>
 					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
-									<mpsuWindow:MapControl x:Name="AreaMap" 
-	           VerticalAlignment="Stretch" 
-	           HorizontalAlignment="Stretch"
-	           Content="{Binding AreaMap}" />
+						<mpsuWindow:MapControl x:Name="AreaMap" 
+				           VerticalAlignment="Stretch" 
+				           HorizontalAlignment="Stretch"
+				           Content="{Binding AreaMap}" />
 					</TabItem>
 				</up:DockingTabControl>
 				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
