@@ -55,7 +55,7 @@
 					<up:DockingTabControl>
 						<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
 							<StackPanel Margin="5">
-								<TextBlock Text="This is tab 5.1 content" />
+								<TextBlock x:Name="HookPrimaryTextBlock" Text="{Binding HookPrimary}" />
 							</StackPanel>
 						</up:ClosableTabItem>
 					</up:DockingTabControl>
