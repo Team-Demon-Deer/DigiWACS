@@ -2,16 +2,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
-        xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
         xmlns:views1="clr-namespace:DigiWACS_Client.Views"
         mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
         x:Class="DigiWACS_Client.Views.MainWindow"
         Icon="/Assets/DigiWACS-icon.ico"
         Title="DigiWACS Client"
         MinWidth="800" MinHeight="600">
-
- 
 	
 	<Window.Resources>
 		<DataTemplate DataType="x:String" x:Key="TabTemplate">

@@ -47,8 +47,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="Avalonia.UpDock">
-        <HintPath>..\..\Avalonia.UpDock\Avalonia.UpDock\bin\Debug\net8.0\Avalonia.UpDock.dll</HintPath>
-      </Reference>
+      <ProjectReference Include="..\..\Avalonia.UpDock\Avalonia.UpDock\Avalonia.UpDock.csproj" />
     </ItemGroup>
 </Project>
