@@ -13,12 +13,12 @@ public partial class MainWindowViewModel : ViewModelBase
 
 	public string Greeting => "Welcome to Avalonia!";
 
-	private Map _areaMap = new Map();
+	private Map _areaMap;
 	
-	[ObservableProperty] private Coordinate _hookPrimary = new Coordinate();
+	[ObservableProperty] private Coordinate _hookPrimary;
 	[ObservableProperty] private Coordinate _hookSecondary;
 	
-	private GenericCollectionLayer<List<IFeature>> _hookLayer = new GenericCollectionLayer<List<IFeature>>();
+	private GenericCollectionLayer<List<IFeature>> _hookLayer;
 	
 	public Map AreaMap
 	{
@@ -34,6 +34,8 @@ public partial class MainWindowViewModel : ViewModelBase
 	
 	public MainWindowViewModel()
 	{
+		AreaMap = new Map();
+		HookLayer = new GenericCollectionLayer<List<IFeature>>();
 		HookLayer.Style = SymbolStyles.CreatePinStyle();
 	}
 	

@@ -10,12 +10,13 @@ namespace DigiWACS_Client.Views;
 
 public partial class MainWindow : Window
 {
+	private MainWindowViewModel? dContext;
+	
 	public MainWindow()
 	{
 		InitializeComponent();
-		MainWindowViewModel? dContext = (MainWindowViewModel)DataContext;
+		dContext = (MainWindowViewModel)DataContext;
 		MapControl.Map = dContext.AreaMap;
-		HookPrimaryTextBlock.Text = dContext.HookPrimary.ToString();
 		
 		dContext.AreaMap.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
 		dContext.AreaMap.Layers.Add(dContext.HookLayer);
