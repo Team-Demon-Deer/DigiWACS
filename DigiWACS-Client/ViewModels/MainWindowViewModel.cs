@@ -1,38 +1,42 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Mapsui.UI.Avalonia;
+﻿using System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
+using Mapsui;
+using Mapsui.Layers;
+using Mapsui.Styles;
 using NetTopologySuite.Geometries;
-using ReactiveUI;
 
 namespace DigiWACS_Client.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
 #pragma warning disable CA1822 // Mark members as static
-	
+
 	public string Greeting => "Welcome to Avalonia!";
 
-	private MapControl areaMap;
-
-	public MapControl AreaMap
+	private Map _areaMap = new Map();
+	
+	[ObservableProperty] private Coordinate _hookPrimary = new Coordinate();
+	[ObservableProperty] private Coordinate _hookSecondary;
+	
+	private GenericCollectionLayer<List<IFeature>> _hookLayer = new GenericCollectionLayer<List<IFeature>>();
+	
+	public Map AreaMap
 	{
-		get => areaMap;
-		set => areaMap = value;
-	}
-
-	private Coordinate hookPrimary;
-	private Coordinate hookSecondary;
-
-	public Coordinate HookPrimary
-	{
-		get => hookPrimary;
-		set => hookPrimary = value;
+		get => _areaMap;
+		set => SetProperty(ref _areaMap, value);
 	}
 	
-	public Coordinate HookSecondary
+	public GenericCollectionLayer<List<IFeature>> HookLayer
 	{
-		get => hookSecondary;
-		set => hookSecondary = value;
+		get => _hookLayer;
+		set => _hookLayer = value;
 	}
 	
+	public MainWindowViewModel()
+	{
+		HookLayer.Style = SymbolStyles.CreatePinStyle();
+	}
+	
+
 #pragma warning restore CA1822 // Mark members as static
 }

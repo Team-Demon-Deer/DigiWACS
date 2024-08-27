@@ -1,16 +1,10 @@
-using System.Collections.Generic;
-using System.Diagnostics;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
-using Mapsui;
-using Mapsui.Layers;
-using Mapsui.Nts;
-using Mapsui.Styles;
-using Point = NetTopologySuite.Geometries.Point;
-using NetTopologySuite.Geometries;
+using DigiWACS_Client.ViewModels;
+using DigiWACS_Client.Models;
 
 namespace DigiWACS_Client.Views;
 
@@ -19,41 +13,17 @@ public partial class MainWindow : Window
 	public MainWindow()
 	{
 		InitializeComponent();
+		MainWindowViewModel? dContext = (MainWindowViewModel)DataContext;
+		MapControl.Map = dContext.AreaMap;
+		HookPrimaryTextBlock.Text = dContext.HookPrimary.ToString();
 		
-		
-		var layer = new GenericCollectionLayer<List<IFeature>>
-		{
-			Style = SymbolStyles.CreatePinStyle()
-		};
-		
-		
-		
-		AreaMap.Map?.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
-		AreaMap.Map?.Layers.Add(layer);
-		
-		AreaMap.Info += (s, e) =>
-		{
-			if (e.MapInfo?.WorldPosition == null) return;
+		dContext.AreaMap.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
+		dContext.AreaMap.Layers.Add(dContext.HookLayer);
 
-			Debug.Print(new Point(e.MapInfo.WorldPosition.X, e.MapInfo.WorldPosition.Y).ToString());
-
-			HookPrimaryTextBlock.Text = new Coordinate(e.MapInfo.WorldPosition.X, e.MapInfo.WorldPosition.Y).ToString();
-			
-			// Add a point to the layer using the Info position
-			layer?.Features.Add(new GeometryFeature
-			{
-				Geometry = new Point(e.MapInfo.WorldPosition.X, e.MapInfo.WorldPosition.Y)
-			});
-			
-			// To notify the map that a redraw is needed.
-			layer?.DataHasChanged();
-			return;
-		};
+		dContext.AreaMap.Info += (s, e) => 
+			HookControl.PlacePrimaryHook(s, e, ref dContext);
 	}
-	
-	
-	
-	
+
 	private void UnclosableTab_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
 	{
 		e.Cancel = true;

@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
-        xmlns:mpsuWindow="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
+        xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
+        xmlns:viewModels="clr-namespace:DigiWACS_Client.ViewModels"
         mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
         x:Class="DigiWACS_Client.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -17,7 +18,11 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
+	
+	<Window.DataContext>
+		<vm:MainWindowViewModel/>
+	</Window.DataContext>
+	
 	<Window.Resources>
 		<DataTemplate DataType="x:String" x:Key="TabTemplate">
 			<StackPanel Orientation="Horizontal">
@@ -45,17 +50,16 @@
 			<up:SplitPanel Fractions="4, 1" Orientation="Horizontal">
 				<up:DockingTabControl>
 					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
-						<mpsuWindow:MapControl x:Name="AreaMap" 
-				           VerticalAlignment="Stretch" 
-				           HorizontalAlignment="Stretch"
-				           Content="{Binding AreaMap}" />
+						<mapsui:MapControl x:Name="MapControl" 
+						                   VerticalAlignment="Stretch" 
+						                   HorizontalAlignment="Stretch"/>
 					</TabItem>
 				</up:DockingTabControl>
 				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
 					<up:DockingTabControl>
 						<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
 							<StackPanel Margin="5">
-								<TextBlock x:Name="HookPrimaryTextBlock" Text="{Binding HookPrimary}" />
+								<TextBlock x:Name="HookPrimaryTextBlock" />
 							</StackPanel>
 						</up:ClosableTabItem>
 					</up:DockingTabControl>
