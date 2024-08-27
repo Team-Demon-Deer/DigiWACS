@@ -1,4 +1,5 @@
-﻿using DigiWACS_Client.ViewModels;
+﻿using System.Diagnostics;
+using DigiWACS_Client.ViewModels;
 using Mapsui;
 using Mapsui.Nts;
 using NetTopologySuite.Geometries;
@@ -15,6 +16,8 @@ public class HookControl
 
 		dContext.HookPrimary = new Coordinate(e.MapInfo.WorldPosition.X, e.MapInfo.WorldPosition.Y);
 
+		Debug.Print(dContext.HookPrimary.ToString());
+		
 		// Add a point to the layer using the Info position
 		dContext.HookLayer?.Features.Clear();
 
