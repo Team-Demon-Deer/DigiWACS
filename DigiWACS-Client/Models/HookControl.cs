@@ -8,7 +8,7 @@ namespace DigiWACS_Client.Models;
 
 public class HookControl
 {
-	public static void PlacePrimaryHook(object? s, MapInfoEventArgs e, ref MainWindowViewModel dContext)
+	public static void PlacePrimaryHook(object? s, MapInfoEventArgs e, ref MainViewModel dContext)
 	{
 		if (e.MapInfo?.WorldPosition == null) return;
 
@@ -19,13 +19,9 @@ public class HookControl
 		Debug.Print(dContext.HookPrimary.ToString());
 		
 		// Add a point to the layer using the Info position
-		dContext.HookLayer?.Features.Clear();
-
-		dContext.HookLayer?.Features.Add(new GeometryFeature
-		{
-			Geometry = new Point(e.MapInfo.WorldPosition.X, e.MapInfo.WorldPosition.Y)
-		}); 
-
+		dContext.HookLayer?.ObservableCollection?.Clear();
+		dContext.HookLayer?.ObservableCollection?.Add(dContext.HookPrimary);
+		
 		// To notify the map that a redraw is needed.
 		dContext.HookLayer?.DataHasChanged();
 	}

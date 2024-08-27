@@ -1,0 +1,66 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
+        xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
+        xmlns:vm="using:DigiWACS_Client.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+        x:Class="DigiWACS_Client.Views.MainView"
+        x:DataType="vm:MainViewModel">
+	
+	
+	
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+	</Design.DataContext>
+	
+	<DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="File">
+
+			</MenuItem>
+		</Menu>
+		<!--
+		<ContentControl>
+			<mpsuWindow:MapControl x:Name="AreaMap" 
+	           VerticalAlignment="Stretch" 
+	           HorizontalAlignment="Stretch"
+	           Content="{Binding AreaMap}" />
+		</ContentControl>
+		-->
+		<up:DockingHost>
+			<up:SplitPanel Fractions="4, 1" Orientation="Horizontal">
+				<up:DockingTabControl>
+					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
+						<mapsui:MapControl x:Name="MapControl" 
+						                   VerticalAlignment="Stretch" 
+						                   HorizontalAlignment="Stretch"/>
+					</TabItem>
+				</up:DockingTabControl>
+				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
+					<up:DockingTabControl>
+						<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
+							<StackPanel Margin="5">
+								<TextBlock x:Name="HookPrimaryTextBlock" Text="{Binding HookPrimary}" />
+							</StackPanel>
+						</up:ClosableTabItem>
+					</up:DockingTabControl>
+					<up:DockingTabControl>
+						<up:ClosableTabItem Closing="UnclosableTab_Closing" Header="Tab 2.1 (unclosable)" HeaderTemplate="{DynamicResource TabTemplate}" >
+							<StackPanel Margin="5">
+								<TextBlock Text="This is tab 2.1 content" />
+								<TextBlock Opacity="0.5">
+									This tab will <Span FontWeight="Bold">refuse</Span> to close
+								</TextBlock>
+							</StackPanel>
+						</up:ClosableTabItem>
+					</up:DockingTabControl>
+				</up:SplitPanel>
+			</up:SplitPanel>
+		</up:DockingHost>
+	</DockPanel>
+</UserControl>
