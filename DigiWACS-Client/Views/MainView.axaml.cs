@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System.Diagnostics;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -6,6 +7,7 @@ using Avalonia.Layout;
 using DigiWACS_Client.ViewModels;
 using DigiWACS_Client.Models;
 using Mapsui;
+using NetTopologySuite.Utilities;
 
 namespace DigiWACS_Client.Views;
 
@@ -26,6 +28,16 @@ public partial class MainView : UserControl {
             WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner
         };
         popup.ShowDialog(Avalonia.VisualTree.VisualExtensions.GetVisualParent<Window>(this));
+    }
+
+    private void asd(object? sender, Avalonia.Input.PointerPressedEventArgs e)
+    {
+        
+        if (e.GetCurrentPoint(sender as Control).Properties.IsMiddleButtonPressed)
+        {
+            Debug.Print("wahoo!");
+        }
+        
     }
 }
 public class MessagePopup : Window {

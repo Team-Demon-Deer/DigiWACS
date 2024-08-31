@@ -37,7 +37,7 @@
 					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
 						<mapsui:MapControl x:Name="MapControl" 
 						                   VerticalAlignment="Stretch" 
-						                   HorizontalAlignment="Stretch"/>
+						                   HorizontalAlignment="Stretch" PointerPressed="asd"/>
 					</TabItem>
 				</up:DockingTabControl>
 				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
