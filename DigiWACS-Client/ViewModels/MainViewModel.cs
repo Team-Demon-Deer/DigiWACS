@@ -77,7 +77,7 @@ public partial class MainViewModel : ViewModelBase {
 	private void InitializeMapsuiCustomization(Map aMap, Dictionary<string, int> assetDictionary)
 	{
 		AreaMap.BackColor = Color.Black;
-		AreaMap.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
+		//AreaMap.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
 		var AnimatedHookLayer = new AnimatedPointLayer(HookProviderService)
 		{
 			Easing = Easing.Linear,
