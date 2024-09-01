@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CoordinateSharp;
 using Mapsui;
 using Mapsui.Layers;
+using Mapsui.Nts.Extensions;
 using ReactiveUI;
 
 namespace DigiWACS_Client.Models;
@@ -20,12 +22,11 @@ public class HookModel : ModelBase
         get => _hookedTarget;
         private set => SetProperty(ref _hookedTarget, value);
     }
-    
-    private MPoint _hookedTargetPoint;
 
-    public MPoint HookedTargetPoint {
-        get => _hookedTargetPoint;
-        private set => SetProperty(ref _hookedTargetPoint, value);
+    private Coordinate hookCoordinate;
+    public Coordinate HookedCoordinate {
+        get => hookCoordinate;
+        private set => SetProperty(ref hookCoordinate, value);
     }
 
     /// <summary>
@@ -48,7 +49,7 @@ public class HookModel : ModelBase
     }
 
     public void updateTargetPoint(MPoint point) {
-        HookedTargetPoint = point;
-        OnPropertyChanged(nameof(HookedTargetPoint));
+        hookCoordinate = WebMercator.ConvertWebMercatortoLatLong(new(point.X, point.Y));
+        OnPropertyChanged(nameof(HookedCoordinate));
     }
 }
