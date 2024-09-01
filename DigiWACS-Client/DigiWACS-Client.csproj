@@ -8,13 +8,15 @@
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
         <RootNamespace>DigiWACS_Client</RootNamespace>
         <AssemblyVersion>0.1</AssemblyVersion>
-        <ApplicationIcon>Assets\DigiWACS-icon.ico</ApplicationIcon>
+        <ApplicationIcon>Assets\Avalonia\DigiWACS-icon.ico</ApplicationIcon>
         <PackageIcon>Assets\DigiWACS-icon.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
-        <AvaloniaResource Include="Assets\**"/>
-        <EmbeddedResource Include="Assets\**"></EmbeddedResource>
+        <AvaloniaResource Include="Assets\Avalonia\**"/>
+        <Content Include="Assets\**" Exclude="Assets\Avalonia\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
