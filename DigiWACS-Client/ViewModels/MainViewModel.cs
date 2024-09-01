@@ -83,7 +83,7 @@ public partial class MainViewModel : ViewModelBase {
 			Easing = Easing.Linear,
 			AnimationDuration = 1
 		};
-		AnimatedHookLayer.Style = new StyleCollection() { Styles = { new SymbolStyle() { BitmapId = assetDictionary["DigiWACS_Client.Assets.PrimaryHook.svg"], SymbolScale = .25, Opacity = 0.5f }}};
+		AnimatedHookLayer.Style = new StyleCollection() { Styles = { new SymbolStyle() { BitmapId = assetDictionary["PrimaryHook"], SymbolScale = .25, Opacity = 0.5f }}};
 
 		AreaMap.Layers.Add(AnimatedHookLayer);
 		AreaMap.Layers.Add((new AnimatedPointLayer(new BusPointProviderService())

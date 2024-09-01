@@ -17,7 +17,7 @@ static class MilitarySymbolConverter
         
         var assembly = typeof(MilitarySymbolConverter).GetTypeInfo().Assembly;
         var nut = assembly.GetManifestResourceNames();
-            var stream =  assembly.GetManifestResourceStream("DigiWACS_Client.Assets.milsymbol.min.js");
+            var stream =  assembly.GetManifestResourceStream("DigiWACS_Client.Assets.Embedded.milsymbol.min.js");
         using (var reader = new StreamReader(stream))
         {
             _jsEngine = new Engine().Execute(reader.ReadToEnd());

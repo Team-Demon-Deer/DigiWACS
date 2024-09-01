@@ -14,9 +14,10 @@
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\Avalonia\**"/>
-        <Content Include="Assets\**" Exclude="Assets\Avalonia\**">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <Content Include="Assets\**" Exclude="Assets\Avalonia\**;Assets\Embedded\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <EmbeddedResource Include="Assets\Embedded\**"/>
     </ItemGroup>
 
     <ItemGroup>

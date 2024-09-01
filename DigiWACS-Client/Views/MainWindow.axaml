@@ -5,7 +5,7 @@
         xmlns:views1="clr-namespace:DigiWACS_Client.Views"
         mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
         x:Class="DigiWACS_Client.Views.MainWindow"
-        Icon="/Assets/DigiWACS-icon.ico"
+        Icon="/Assets/Avalonia/DigiWACS-icon.ico"
         Title="DigiWACS Client"
         MinWidth="800" MinHeight="600">
 	

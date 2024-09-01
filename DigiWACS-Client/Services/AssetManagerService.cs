@@ -26,15 +26,11 @@ public static class AssetManagerService {
 	/// <returns></returns>
 	public static Dictionary<string, int> Initialize() {
 		Dictionary<string, int> assets = new();
-		var assembly = typeof(AssetManagerService).GetTypeInfo().Assembly;
-		var resourceNames = assembly.GetManifestResourceNames();
-		foreach (var file in resourceNames) {
-			if (file.EndsWith(".svg")) {
-				Stream assetStream = assembly?.GetManifestResourceStream(file);
-				SKPicture picture = SvgHelper.LoadSvgPicture(assetStream);
-				int bitmapId = BitmapRegistry.Instance.Register((object)picture, file);
-				assets.Add(file, bitmapId);
-			}
+		foreach (var file in _localAssetFilenames) {
+			Stream assetStream = File.OpenRead("Assets/MapIcons/"+file+".svg");
+			SKPicture picture = SvgHelper.LoadSvgPicture(assetStream);
+			int bitmapId = BitmapRegistry.Instance.Register((object)picture, file);
+			assets.Add(file, bitmapId);
 		}
 		return assets;
 	}
