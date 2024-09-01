@@ -21,38 +21,22 @@ using Color = Mapsui.Styles.Color;
 
 namespace DigiWACS_Client.ViewModels;
 
-public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
+public partial class MainViewModel : ViewModelBase {
 	//public string Greeting => "Welcome to Avalonia!";
 
 	public Map AreaMap;
-	
-	/*
-	private PointFeature? _hookPrimary;
-	public PointFeature HookPrimary
-	{
-		get => _hookPrimary;
-		set => this.RaiseAndSetIfChanged(ref _hookPrimary, value);
-	}
-	
-	private PointFeature? _hookSecondary;
-	public PointFeature HookSecondary
-	{
-		get => _hookSecondary;
-		set => this.RaiseAndSetIfChanged(ref _hookSecondary, value);
-	}
-	*/
 
 	private HookProviderService _hookProviderService;
 	public HookProviderService HookProviderService
 	{
 		get => _hookProviderService;
-		set => this.RaiseAndSetIfChanged(ref _hookProviderService, value);
+		set => SetProperty(ref _hookProviderService, value);
 	}
 	
 	private HookModel _primaryHook;
 	public HookModel PrimaryHook {
 		get => _primaryHook;
-		set => this.RaiseAndSetIfChanged(ref _primaryHook, value);
+		set => SetProperty(ref _primaryHook, value);
 	}
 	
 	public HookModel SecondaryHook { get; set; }
@@ -66,7 +50,7 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 		HookModelObservableCollection = new();
 		HookModelObservableCollection.AddRange([
 			PrimaryHook =  new HookModel(HookModel.HookTypes.Primary), 
-		//	SecondaryHook = new HookModel(HookModel.HookTypes.Secondary),
+			//	SecondaryHook = new HookModel(HookModel.HookTypes.Secondary),
 		]);
 		
 		HookProviderService = new HookProviderService(this);
@@ -100,23 +84,6 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 			AnimationDuration = 1
 		};
 		AnimatedHookLayer.Style = new StyleCollection() { Styles = { new SymbolStyle() { BitmapId = assetDictionary["DigiWACS_Client.Assets.PrimaryHook.svg"], SymbolScale = .25, Opacity = 0.5f }}};
-			// new ThemeStyle(_feature =>
-		// {
-		// 	SymbolStyle style = new();
-		// 	switch (((HookFeature)_feature).HookType)
-		// 	{
-		// 		case HookFeature.HookTypes.Primary:
-		// 			style.BitmapId = assetDictionary["PrimaryHook"];
-		// 			break;
-		// 		case HookFeature.HookTypes.Secondary:
-		// 			style.BitmapId = assetDictionary["SecondaryHook"];
-		// 			break;
-		//
-		// 		default:
-		// 			break;
-		// 	}
-		// 	return style;
-		// });
 
 		AreaMap.Layers.Add(AnimatedHookLayer);
 		AreaMap.Layers.Add((new AnimatedPointLayer(new BusPointProviderService())
@@ -125,21 +92,6 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 			Easing = Easing.Linear,
 			Style = new ThemeStyle(f =>
 			{
-				// if (f == HookPrimary)
-				//
-				// 	return new StyleCollection
-				// 	{
-				// 		Styles = {
-				// 			// With the StyleCollection you can use the same symbol as when not selected but 
-				// 			// put something in the background to indicate it is selected.
-				// 			// new SymbolStyle { Fill = new Brush(Color.Cyan) { FillStyle = FillStyle.Hollow}, SymbolScale = 1.2 },
-				// 			new SymbolStyle() {
-				// 				SymbolType = SymbolType.Image,
-				// 				BitmapId = i
-				// 			}
-				// 		}
-				// 	};
-
 				return new SymbolStyle() {
 					SymbolType = SymbolType.Image,
 					BitmapId = assetDictionary["symbology"]
@@ -152,11 +104,5 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 		AreaMap.Navigator.Limiter = new ViewportLimiterKeepWithinExtent();
 		AreaMap.Navigator.OverridePanBounds = AreaMap.Extent;
 		AreaMap.Home = n => n.ZoomToBox(AreaMap.Extent);
-	}
-
-	public event PropertyChangedEventHandler? PropertyChanged;
-	protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-	{
-		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 	}
 }
