@@ -72,6 +72,7 @@ public partial class MainViewModel : ViewModelBase {
 		AreaMap.Info += (s, e) =>
 		{
 			HookProvider.PlacePrimaryHook(s, e, this);
+			
 		};
 	}
 
@@ -84,7 +85,7 @@ public partial class MainViewModel : ViewModelBase {
 			Easing = Easing.Linear,
 			AnimationDuration = 1
 		};
-		AnimatedHookLayer.Style = new StyleCollection() { Styles = { new SymbolStyle() { BitmapId = assetDictionary["PrimaryHook"] } }};
+		AnimatedHookLayer.Style = new StyleCollection() { Styles = { new SymbolStyle() { BitmapId = assetDictionary["PrimaryHook"], SymbolScale = .25, Opacity = 0.5f }}};
 			// new ThemeStyle(_feature =>
 		// {
 		// 	SymbolStyle style = new();

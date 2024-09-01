@@ -19,7 +19,7 @@ public class HookProvider : MemoryProvider, IDynamic, IDisposable
 	
 	public HookProvider()
 	{
-		PrimaryHook = PrimaryHookDefinition(new HookFeature(0, 0));
+		PrimaryHook = new HookFeature(0, 0);
 		Catch.TaskRun(RunTimerAsync);
 	}
 
@@ -45,22 +45,10 @@ public class HookProvider : MemoryProvider, IDynamic, IDisposable
 
 	public override Task<IEnumerable<IFeature>> GetFeaturesAsync(FetchInfo fetchInfo) {
 
-		return Task.FromResult((IEnumerable<IFeature>) [PrimaryHookDefinition(new HookFeature(PrimaryHook.HookTarget))]);
+		return Task.FromResult((IEnumerable<IFeature>) [ new HookFeature(PrimaryHook.HookTarget)]);
 	}
 
-	private static HookFeature PrimaryHookDefinition(HookFeature hookFeature)
-	{
-		hookFeature.HookType = HookFeature.HookTypes.Primary;
-		hookFeature["ID"] = "primaryHook"; 
-		return hookFeature;
-	}
 
-	private static HookFeature SecondaryHookDefinition(HookFeature hookFeature)
-	{
-		hookFeature.HookType = HookFeature.HookTypes.Secondary;
-		hookFeature["ID"] = "secondaryHook";
-		return hookFeature;
-	}
 	
 	private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.01));
 
