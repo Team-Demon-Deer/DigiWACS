@@ -14,7 +14,7 @@
 
     <ItemGroup>
         <AvaloniaResource Include="Assets\**"/>
-        <EmbeddedResource Include="Assets/milsymbol.min.js"></EmbeddedResource>
+        <EmbeddedResource Include="Assets\**"></EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -6,6 +9,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using CommunityToolkit.Mvvm.ComponentModel;
 using DigiWACS_Client.Models;
+using DynamicData;
 using Mapsui;
 using Mapsui.Animations;
 using Mapsui.Layers;
@@ -47,19 +51,27 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 		get => _hookProvider;
 		set => this.RaiseAndSetIfChanged(ref _hookProvider, value);
 	}
-
-	private HookFeature primaryHook;
-	public HookFeature PrimaryHook
-	{
-		get => primaryHook;
-		set => this.RaiseAndSetIfChanged(ref primaryHook, value);
+	
+	private HookModel _primaryHook;
+	public HookModel PrimaryHook {
+		get => _primaryHook;
+		set => this.RaiseAndSetIfChanged(ref _primaryHook, value);
 	}
 	
+	public HookModel SecondaryHook { get; set; }
+	public ObservableCollection<HookModel> HookModelObservableCollection { get; set; }
+
 	/// <summary>
 	/// ViewModel Constructor
 	/// </summary>
 	public MainViewModel() {
 		AreaMap = new Map();
+		HookModelObservableCollection = new();
+		HookModelObservableCollection.AddRange([
+			PrimaryHook =  new HookModel(HookModel.HookTypes.Primary), 
+			SecondaryHook = new HookModel(HookModel.HookTypes.Secondary),
+		]);
+		
 		HookProvider = new HookProvider(this);
 		var assetDictionary = AssetManager.Initialize(); //Load the DigiWACS exclusive assets
 		SKPicture s = SvgHelper.LoadSvgPicture((Stream)(MilitarySymbolConverter.Convert(10000100001101000408)));
@@ -70,7 +82,17 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 		// Delegate Event
 		AreaMap.Info += (s, e) =>
 		{
-			HookProvider.PlacePrimaryHook(s, e, this);
+			if (e.MapInfo?.WorldPosition == null) return;
+		
+			if (e.MapInfo.Feature == null) {
+				PrimaryHook.Place(e.MapInfo.WorldPosition);
+			} else {
+				PrimaryHook.Place((PointFeature)e.MapInfo.Feature);
+			}
+			Console.WriteLine(PrimaryHook.HookedTarget.Point.ToString());
+			//OnPropertyChanged(nameof(PrimaryHook));
+			// HookProvider.PlacePrimaryHook(s, e, this);
+
 		};
 	}
 
@@ -83,7 +105,7 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 			Easing = Easing.Linear,
 			AnimationDuration = 1
 		};
-		AnimatedHookLayer.Style = new StyleCollection() { Styles = { new SymbolStyle() { BitmapId = assetDictionary["PrimaryHook"], SymbolScale = .25, Opacity = 0.5f }}};
+		AnimatedHookLayer.Style = new StyleCollection() { Styles = { new SymbolStyle() { BitmapId = assetDictionary["DigiWACS_Client.Assets.PrimaryHook.svg"], SymbolScale = .25, Opacity = 0.5f }}};
 			// new ThemeStyle(_feature =>
 		// {
 		// 	SymbolStyle style = new();

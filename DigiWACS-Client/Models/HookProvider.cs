@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -13,31 +14,11 @@ using Mapsui.Providers;
 
 namespace DigiWACS_Client.Models;
 
-public class HookProvider : MemoryProvider, IDynamic, IDisposable, INotifyPropertyChanged
-{
-	private HookFeature primaryHook;
-
-	public HookFeature PrimaryHook
-	{
-		get => primaryHook;
-		set {
-			if (primaryHook != value)
-			{
-				primaryHook = value;
-				OnPropertyChanged();
-			}
-		}
-	}
+public class HookProvider : MemoryProvider, IDynamic, IDisposable, INotifyPropertyChanged {
+	private MainViewModel DataContext { get; } // Only gettable. if DataContext needs to be written, inject it in the method.
 	
-	public HookFeature? SecondaryHook { get; set; }
-	
-	public HookProvider(MainViewModel dContext)
-	{
-
-		
-		
-		PrimaryHook = new HookFeature(0, 0);
-		
+	public HookProvider(MainViewModel dContext) {
+		DataContext = dContext;
 		Catch.TaskRun(RunTimerAsync);
 	}
 
@@ -45,41 +26,19 @@ public class HookProvider : MemoryProvider, IDynamic, IDisposable, INotifyProper
 		while (true) {
 			await _timer.WaitForNextTickAsync();
 			OnDataChanged();
+			OnPropertyChanged();
 		}
 	}
-	
-	public void PlacePrimaryHook(object? s, MapInfoEventArgs e, MainViewModel dContext) {
-		if (e.MapInfo?.WorldPosition == null) return;
-		
-		if (e.MapInfo.Feature == null) {
-			PrimaryHook.HookTarget = new PointFeature(e.MapInfo.WorldPosition);
-		} else {
-			PrimaryHook.HookTarget = ((PointFeature)e.MapInfo.Feature);
-		}
-		
 
-		Console.WriteLine(PrimaryHook.HookTarget.Point.ToString());
-		OnDataChanged();
-	}
-
-	public override Task<IEnumerable<IFeature>> GetFeaturesAsync(FetchInfo fetchInfo) {
-
-		return Task.FromResult((IEnumerable<IFeature>) [ new HookFeature(PrimaryHook.HookTarget)]);
-	}
-
-	public HookFeature GetHook(HookFeature.HookTypes HookType)
+	public override Task<IEnumerable<IFeature>> GetFeaturesAsync(FetchInfo fetchInfo)
 	{
-		switch (HookType)
-		{
-			case HookFeature.HookTypes.Primary:
-				return PrimaryHook;
-			case HookFeature.HookTypes.Secondary:
-				return SecondaryHook;
+		Collection<IFeature> features = new();
+		foreach (var hook in DataContext.HookModelObservableCollection) {
+			features.Add(new PointFeature(hook.HookedTarget) {["ID"] = hook.HookType});
+			
 		}
-		return null;
+		return Task.FromResult((IEnumerable<IFeature>) features);
 	}
-	
-	
 
 	// Sets the refresh rate of the HookProvider
 	private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.01));

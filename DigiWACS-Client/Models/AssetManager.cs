@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using Mapsui.Styles;
 using Mapsui.Utilities;
 using SkiaSharp;
@@ -25,12 +26,15 @@ public static class AssetManager {
 	/// <returns></returns>
 	public static Dictionary<string, int> Initialize() {
 		Dictionary<string, int> assets = new();
-		foreach (var file in _localAssetFilenames)
-		{
-				Stream assetStream = File.OpenRead("Assets/"+file+".svg");
+		var assembly = typeof(AssetManager).GetTypeInfo().Assembly;
+		var resourceNames = assembly.GetManifestResourceNames();
+		foreach (var file in resourceNames) {
+			if (file.EndsWith(".svg")) {
+				Stream assetStream = assembly?.GetManifestResourceStream(file);
 				SKPicture picture = SvgHelper.LoadSvgPicture(assetStream);
 				int bitmapId = BitmapRegistry.Instance.Register((object)picture, file);
 				assets.Add(file, bitmapId);
+			}
 		}
 		return assets;
 	}
