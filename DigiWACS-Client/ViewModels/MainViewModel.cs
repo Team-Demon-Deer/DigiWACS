@@ -66,7 +66,7 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 		HookModelObservableCollection = new();
 		HookModelObservableCollection.AddRange([
 			PrimaryHook =  new HookModel(HookModel.HookTypes.Primary), 
-			SecondaryHook = new HookModel(HookModel.HookTypes.Secondary),
+		//	SecondaryHook = new HookModel(HookModel.HookTypes.Secondary),
 		]);
 		
 		HookProviderService = new HookProviderService(this);
@@ -87,9 +87,6 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 				PrimaryHook.Place((PointFeature)e.MapInfo.Feature);
 			}
 			Console.WriteLine(PrimaryHook.HookedTarget.Point.ToString());
-			//OnPropertyChanged(nameof(PrimaryHook));
-			// HookProvider.PlacePrimaryHook(s, e, this);
-
 		};
 	}
 

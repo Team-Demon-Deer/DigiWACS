@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using DigiWACS_Client.ViewModels;
+using DynamicData.Binding;
 using Mapsui;
 using Mapsui.Extensions;
 using Mapsui.Fetcher;
@@ -26,6 +27,7 @@ public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotif
         while (true) {
             await _timer.WaitForNextTickAsync();
             OnDataChanged();
+            DataContext.HookModelObservableCollection.ObserveCollectionChanges();
         }
     }
     
@@ -34,13 +36,14 @@ public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotif
         Collection<IFeature> features = new();
         foreach (var hook in DataContext.HookModelObservableCollection) {
             features.Add(new PointFeature(hook.HookedTarget) {["ID"] = hook.HookType});
-			
+            hook.updateTargetPoint(hook.HookedTarget.Point);
+            Console.WriteLine(hook.HookedTarget.Point);
         }
         return Task.FromResult((IEnumerable<IFeature>) features);
     }
 
     // Sets the refresh rate of the HookProvider
-    private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.01));
+    private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.1));
 
     // Implementing the Boiler plate Required things for MemoryProvider, IDynamic, IDisposable, & INotifyPropertyChanged
     public event DataChangedEventHandler? DataChanged;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Mapsui;
@@ -9,9 +8,6 @@ using Mapsui.Fetcher;
 using Mapsui.Layers;
 using Mapsui.Projections;
 using Mapsui.Providers;
-using Mapsui.Styles;
-using Mapsui.Utilities;
-using Mapsui.Rendering.Skia;
 
 namespace DigiWACS_Client.Models;
 
@@ -31,7 +27,7 @@ internal sealed class BusPointProviderService : MemoryProvider, IDynamic, IDispo
     private async Task RunTimerAsync() {
         while (true) {
             await _timer.WaitForNextTickAsync();
-            _previousCoordinates = (_previousCoordinates.Lon + 0.00005, _previousCoordinates.Lat + 0.00005);
+            _previousCoordinates = (_previousCoordinates.Lon + 0.005, _previousCoordinates.Lat - 0.005);
             OnDataChanged();
         }
     }

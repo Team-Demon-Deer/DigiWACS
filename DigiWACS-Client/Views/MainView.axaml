@@ -44,7 +44,7 @@
 					<up:DockingTabControl>
 						<up:ClosableTabItem Header="Tab 5.1" HeaderTemplate="{DynamicResource TabTemplate}">
 							<StackPanel Margin="5">
-								<TextBlock x:Name="HookPrimaryTextBlock" Text="{Binding  PrimaryHook.HookedTarget.Point}" />
+								<TextBlock x:Name="HookPrimaryTextBlock" Text="{Binding  PrimaryHook.HookedTargetPoint}" />
 							</StackPanel>
 						</up:ClosableTabItem>
 					</up:DockingTabControl>
