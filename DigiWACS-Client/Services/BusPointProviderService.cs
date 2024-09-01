@@ -15,13 +15,13 @@ using Mapsui.Rendering.Skia;
 
 namespace DigiWACS_Client.Models;
 
-internal sealed class BusPointProvider : MemoryProvider, IDynamic, IDisposable
+internal sealed class BusPointProviderService : MemoryProvider, IDynamic, IDisposable
 {
     public event DataChangedEventHandler DataChanged;
 
     private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
 
-    public BusPointProvider()
+    public BusPointProviderService()
     {
         Catch.TaskRun(RunTimerAsync);
     }

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Runtime.CompilerServices;
-using CommunityToolkit.Mvvm.ComponentModel;
 using DigiWACS_Client.Models;
+using DigiWACS_Client.Services;
 using DynamicData;
 using Mapsui;
 using Mapsui.Animations;
@@ -45,11 +42,11 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 	}
 	*/
 
-	private HookProvider _hookProvider;
-	public HookProvider HookProvider
+	private HookProviderService _hookProviderService;
+	public HookProviderService HookProviderService
 	{
-		get => _hookProvider;
-		set => this.RaiseAndSetIfChanged(ref _hookProvider, value);
+		get => _hookProviderService;
+		set => this.RaiseAndSetIfChanged(ref _hookProviderService, value);
 	}
 	
 	private HookModel _primaryHook;
@@ -72,8 +69,8 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 			SecondaryHook = new HookModel(HookModel.HookTypes.Secondary),
 		]);
 		
-		HookProvider = new HookProvider(this);
-		var assetDictionary = AssetManager.Initialize(); //Load the DigiWACS exclusive assets
+		HookProviderService = new HookProviderService(this);
+		var assetDictionary = AssetManagerService.Initialize(); //Load the DigiWACS exclusive assets
 		SKPicture s = SvgHelper.LoadSvgPicture((Stream)(MilitarySymbolConverter.Convert(10000100001101000408)));
 		var i = BitmapRegistry.Instance.Register((object)s, "symbology");
 		assetDictionary.Add("symbology", i);
@@ -100,7 +97,7 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 	{
 		AreaMap.BackColor = Color.Black;
 		AreaMap.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
-		var AnimatedHookLayer = new AnimatedPointLayer(HookProvider)
+		var AnimatedHookLayer = new AnimatedPointLayer(HookProviderService)
 		{
 			Easing = Easing.Linear,
 			AnimationDuration = 1
@@ -125,7 +122,7 @@ public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 		// });
 
 		AreaMap.Layers.Add(AnimatedHookLayer);
-		AreaMap.Layers.Add((new AnimatedPointLayer(new BusPointProvider())
+		AreaMap.Layers.Add((new AnimatedPointLayer(new BusPointProviderService())
 		{
 			IsMapInfoLayer = true,
 			Easing = Easing.Linear,

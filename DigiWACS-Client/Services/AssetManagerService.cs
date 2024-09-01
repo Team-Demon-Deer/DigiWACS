@@ -8,7 +8,7 @@ using SkiaSharp;
 
 namespace DigiWACS_Client.Models;
 
-public static class AssetManager {
+public static class AssetManagerService {
 	
 	/// <summary>
 	/// A static list of assets to be loaded at start up.
@@ -26,7 +26,7 @@ public static class AssetManager {
 	/// <returns></returns>
 	public static Dictionary<string, int> Initialize() {
 		Dictionary<string, int> assets = new();
-		var assembly = typeof(AssetManager).GetTypeInfo().Assembly;
+		var assembly = typeof(AssetManagerService).GetTypeInfo().Assembly;
 		var resourceNames = assembly.GetManifestResourceNames();
 		foreach (var file in resourceNames) {
 			if (file.EndsWith(".svg")) {
