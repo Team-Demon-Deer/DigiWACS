@@ -7,7 +7,7 @@ using Avalonia.Data.Converters;
 
 namespace DigiWACS_Client.Models;
 using Jint;
-class MilitarySymbolConverter : IValueConverter
+static class MilitarySymbolConverter
 {
     private static readonly string BasePath = AppDomain.CurrentDomain.BaseDirectory;
     private static Engine _jsEngine; 
@@ -25,9 +25,7 @@ class MilitarySymbolConverter : IValueConverter
         
     }
         
-    public object Convert(object? value, Type? targetType, object? parameter, CultureInfo? culture)
-    {
-        ulong code = 10000100001101000408;
+    public static Stream Convert(ulong code) {
         
         if (_jsEngine == null)
         {
@@ -36,10 +34,5 @@ class MilitarySymbolConverter : IValueConverter
 
         var svgString = _jsEngine.Evaluate($"new ms.Symbol(\"{code}\", {{ size: 50, fill: false }}).asSVG();").ToString();
         return new MemoryStream(Encoding.UTF8.GetBytes(svgString));
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        throw new NotImplementedException();
     }
 }
