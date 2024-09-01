@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Runtime.CompilerServices;
 using CommunityToolkit.Mvvm.ComponentModel;
 using DigiWACS_Client.Models;
 using Mapsui;
@@ -18,7 +20,7 @@ using Color = Mapsui.Styles.Color;
 
 namespace DigiWACS_Client.ViewModels;
 
-public partial class MainViewModel : ViewModelBase {
+public partial class MainViewModel : ViewModelBase, INotifyPropertyChanged {
 	//public string Greeting => "Welcome to Avalonia!";
 
 	public Map AreaMap;
@@ -46,22 +48,19 @@ public partial class MainViewModel : ViewModelBase {
 		set => this.RaiseAndSetIfChanged(ref _hookProvider, value);
 	}
 
-	public HookFeature HookPrimary
+	private HookFeature primaryHook;
+	public HookFeature PrimaryHook
 	{
-		get => _hookProvider.PrimaryHook;
+		get => primaryHook;
+		set => this.RaiseAndSetIfChanged(ref primaryHook, value);
 	}
-	public HookFeature HookSecondary
-	{
-		get => _hookProvider.SecondaryHook;
-	}
-
-
+	
 	/// <summary>
 	/// ViewModel Constructor
 	/// </summary>
 	public MainViewModel() {
 		AreaMap = new Map();
-		HookProvider = new HookProvider();
+		HookProvider = new HookProvider(this);
 		var assetDictionary = AssetManager.Initialize(); //Load the DigiWACS exclusive assets
 		SKPicture s = SvgHelper.LoadSvgPicture((Stream)(MilitarySymbolConverter.Convert(10000100001101000408)));
 		var i = BitmapRegistry.Instance.Register((object)s, "symbology");
@@ -72,7 +71,6 @@ public partial class MainViewModel : ViewModelBase {
 		AreaMap.Info += (s, e) =>
 		{
 			HookProvider.PlacePrimaryHook(s, e, this);
-			
 		};
 	}
 
@@ -138,5 +136,11 @@ public partial class MainViewModel : ViewModelBase {
 		AreaMap.Navigator.Limiter = new ViewportLimiterKeepWithinExtent();
 		AreaMap.Navigator.OverridePanBounds = AreaMap.Extent;
 		AreaMap.Home = n => n.ZoomToBox(AreaMap.Extent);
+	}
+
+	public event PropertyChangedEventHandler? PropertyChanged;
+	protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+	{
+		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 	}
 }

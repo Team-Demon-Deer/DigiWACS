@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using DigiWACS_Client.ViewModels;
@@ -12,14 +13,31 @@ using Mapsui.Providers;
 
 namespace DigiWACS_Client.Models;
 
-public class HookProvider : MemoryProvider, IDynamic, IDisposable
+public class HookProvider : MemoryProvider, IDynamic, IDisposable, INotifyPropertyChanged
 {
-	public HookFeature PrimaryHook { get; set; }
+	private HookFeature primaryHook;
+
+	public HookFeature PrimaryHook
+	{
+		get => primaryHook;
+		set {
+			if (primaryHook != value)
+			{
+				primaryHook = value;
+				OnPropertyChanged();
+			}
+		}
+	}
+	
 	public HookFeature? SecondaryHook { get; set; }
 	
-	public HookProvider()
+	public HookProvider(MainViewModel dContext)
 	{
+
+		
+		
 		PrimaryHook = new HookFeature(0, 0);
+		
 		Catch.TaskRun(RunTimerAsync);
 	}
 
@@ -39,7 +57,8 @@ public class HookProvider : MemoryProvider, IDynamic, IDisposable
 			PrimaryHook.HookTarget = ((PointFeature)e.MapInfo.Feature);
 		}
 		
-		Debug.WriteLine(PrimaryHook.Point.ToString());
+
+		Console.WriteLine(PrimaryHook.HookTarget.Point.ToString());
 		OnDataChanged();
 	}
 
@@ -48,19 +67,46 @@ public class HookProvider : MemoryProvider, IDynamic, IDisposable
 		return Task.FromResult((IEnumerable<IFeature>) [ new HookFeature(PrimaryHook.HookTarget)]);
 	}
 
-
+	public HookFeature GetHook(HookFeature.HookTypes HookType)
+	{
+		switch (HookType)
+		{
+			case HookFeature.HookTypes.Primary:
+				return PrimaryHook;
+			case HookFeature.HookTypes.Secondary:
+				return SecondaryHook;
+		}
+		return null;
+	}
 	
+	
+
+	// Sets the refresh rate of the HookProvider
 	private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.01));
 
-	// Implementing the Required things for MemoryProvider, IDynamic, & IDisposable
+	// Implementing the Boiler plate Required things for MemoryProvider, IDynamic, IDisposable, & INotifyPropertyChanged
 	public event DataChangedEventHandler? DataChanged;
+	public event PropertyChangedEventHandler? PropertyChanged;
 	void IDynamic.DataHasChanged() {
 		OnDataChanged();
 	}
 	public void OnDataChanged() {
 		DataChanged?.Invoke(this, new DataChangedEventArgs());
 	}
+	protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+	{
+		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+	}
+
+	protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
+	{
+		if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+		field = value;
+		OnPropertyChanged(propertyName);
+		return true;
+	}
 	public void Dispose() {
 		_timer.Dispose();
 	}
+
 }

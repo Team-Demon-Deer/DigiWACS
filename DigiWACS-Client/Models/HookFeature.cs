@@ -12,7 +12,7 @@ public class HookFeature : PointFeature {
 		Secondary
 	}
 	public HookTypes HookType { get; set; }
-	public PointFeature HookTarget;
+	public PointFeature HookTarget { get; set; }
 	public bool Visible;
 	
 	public HookFeature(PointFeature pointFeature, HookTypes hookType = HookTypes.Primary) : base(pointFeature)
