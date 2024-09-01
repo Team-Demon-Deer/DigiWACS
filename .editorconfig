@@ -1,0 +1,5 @@
+
+[*]
+
+# Microsoft .NET properties
+csharp_preferred_modifier_order = public, new, protected, internal, file, override, private, abstract, virtual, sealed, static, readonly, extern, unsafe, volatile, async, required:suggestion
