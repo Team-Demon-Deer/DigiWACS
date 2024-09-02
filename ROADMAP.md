@@ -6,4 +6,6 @@
   - [ ] Name a bullseye
 - [ ] see Cursor position relative to active bullseye
   - [ ] See Cursor position relative to Primary and Secondary Hook.
-  
+
+## Wishlist
+- [ ] Faster map/graphics engine. (Mapsui seems to never use all ~~~~available resources)
