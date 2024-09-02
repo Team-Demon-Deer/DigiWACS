@@ -1,0 +1,20 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+             x:Class="DigiWACS_Client.Views.PropertiesView">
+    
+    <up:SplitPanel Fractions="1, 1" Orientation="Horizontal">
+        <StackPanel Margin="5">
+            <TextBlock>Primary Hook</TextBlock>
+            <TextBlock x:Name="HookPrimaryLine1"/>
+            <TextBlock x:Name="HookPrimaryLine2"/>
+            <TextBlock x:Name="HookPrimaryLine3"/>
+        </StackPanel>
+        <StackPanel Margin="5">
+            <TextBlock>Secondary Hook</TextBlock>
+        </StackPanel>
+    </up:SplitPanel>
+</UserControl>

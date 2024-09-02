@@ -14,7 +14,7 @@ namespace DigiWACS_Client.Views;
 public partial class MainView : UserControl {
     public MainView() {
         InitializeComponent();
-        this.Loaded += (s, e) => { MapControl.Map = ((MainViewModel)DataContext).AreaMap; };
+        //this.Loaded += (s, e) => { MapControl.Map = ((MainViewModel)DataContext).AreaMap; };
     }
     
     private void InitializeComponent() {

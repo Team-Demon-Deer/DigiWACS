@@ -22,7 +22,7 @@ namespace DigiWACS_Client.Services;
 
 public class ShapefileProviderService: MemoryProvider, IDynamic {
 	private MainViewModel DataContext { get; } // Only gettable. if DataContext needs to be written, inject it in the method.
-	const string _shapeFilePath = "Assets/gshhg-shp-2.3.7/GSHHS_shp/h/GSHHS_h_L1.shp";
+	const string _shapeFilePath = "Assets/gshhg-shp-2.3.7/GSHHS_shp/l/GSHHS_l_L1.shp";
 	private IPersistentCache<byte[]> LayerCache;
 	
 	public ShapefileProviderService(MainViewModel injectedDataContext, string shapefilepath = _shapeFilePath) {

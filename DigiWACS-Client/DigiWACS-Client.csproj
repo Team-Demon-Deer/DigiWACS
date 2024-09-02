@@ -58,4 +58,15 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Avalonia.UpDock\Avalonia.UpDock\Avalonia.UpDock.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Controls\PropertiesView.axaml.cs">
+        <DependentUpon>PropertiesPanel.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ViewModels\Controls\" />
+    </ItemGroup>
 </Project>
