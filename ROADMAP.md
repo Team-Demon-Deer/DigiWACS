@@ -12,4 +12,4 @@
 - [ ] Faster map/graphics engine. (Mapsui seems to never use all available resources)
 
 ## Immediate Todo's
-- [ ] Fix Properties panel maintaining data when popped out.~~~~
+- [ ] Fix Properties panel maintaining data when popped out.
