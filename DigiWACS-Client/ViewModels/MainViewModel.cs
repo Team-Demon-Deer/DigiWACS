@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.IO;
-using System.Runtime.CompilerServices;
 using DigiWACS_Client.Models;
 using DigiWACS_Client.Services;
 using DynamicData;
@@ -12,10 +10,16 @@ using Mapsui.Animations;
 using Mapsui.Layers;
 using Mapsui.Layers.AnimatedLayers;
 using Mapsui.Limiting;
+using Mapsui.Nts.Providers;
+using Mapsui.Nts.Providers.Shapefile;
+using Mapsui.Projections;
+using Mapsui.Providers;
+using Mapsui.Rendering;
 using Mapsui.Styles;
 using Mapsui.Styles.Thematics;
+using Mapsui.Tiling.Layers;
+using Mapsui.Tiling.Provider;
 using Mapsui.Utilities;
-using ReactiveUI;
 using SkiaSharp;
 using Color = Mapsui.Styles.Color;
 
@@ -32,6 +36,7 @@ public partial class MainViewModel : ViewModelBase {
 		get => _hookProviderService;
 		set => SetProperty(ref _hookProviderService, value);
 	}
+	public ShapefileProviderService ShapefileProviderService;
 	
 	private HookModel _primaryHook;
 	public HookModel PrimaryHook {
@@ -46,7 +51,8 @@ public partial class MainViewModel : ViewModelBase {
 	/// ViewModel Constructor
 	/// </summary>
 	public MainViewModel() {
-		AreaMap = new Map();
+		AreaMap = new Map(){ CRS = "EPSG:4326"};
+		ShapefileProviderService = new ShapefileProviderService(this);
 		HookModelObservableCollection = new();
 		HookModelObservableCollection.AddRange([
 			PrimaryHook =  new HookModel(HookModel.HookTypes.Primary), 
@@ -74,10 +80,10 @@ public partial class MainViewModel : ViewModelBase {
 		};
 	}
 
-	private void InitializeMapsuiCustomization(Map aMap, Dictionary<string, int> assetDictionary)
-	{
+	private void InitializeMapsuiCustomization(Map aMap, Dictionary<string, int> assetDictionary) {
 		AreaMap.BackColor = Color.Black;
-		//AreaMap.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
+		var openStreeMapLayer = Mapsui.Tiling.OpenStreetMap.CreateTileLayer();
+		//AreaMap.Layers.Add(openStreeMapLayer);
 		var AnimatedHookLayer = new AnimatedPointLayer(HookProviderService)
 		{
 			Easing = Easing.Linear,

@@ -37,13 +37,12 @@ public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotif
         foreach (var hook in DataContext.HookModelObservableCollection) {
             features.Add(new PointFeature(hook.HookedTarget) {["ID"] = hook.HookType});
             hook.updateTargetPoint(hook.HookedTarget.Point);
-            Console.WriteLine(hook.HookedTarget.Point);
         }
         return Task.FromResult((IEnumerable<IFeature>) features);
     }
 
     // Sets the refresh rate of the HookProvider
-    private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.1));
+    private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.01));
 
     // Implementing the Boiler plate Required things for MemoryProvider, IDynamic, IDisposable, & INotifyPropertyChanged
     public event DataChangedEventHandler? DataChanged;
