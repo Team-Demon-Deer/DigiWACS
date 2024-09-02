@@ -1,20 +1,29 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
-             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
-             x:Class="DigiWACS_Client.Views.PropertiesView">
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
+                xmlns:vm="using:DigiWACS_Client.ViewModels"
+                mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+                x:Class="DigiWACS_Client.Views.PropertiesView"
+                x:DataType="vm:MainViewModel"
+                x:Name="PropertiesControl">
     
-    <up:SplitPanel Fractions="1, 1" Orientation="Horizontal">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+			 to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+    
+    <StackPanel Orientation="Horizontal">
         <StackPanel Margin="5">
             <TextBlock>Primary Hook</TextBlock>
-            <TextBlock x:Name="HookPrimaryLine1"/>
-            <TextBlock x:Name="HookPrimaryLine2"/>
-            <TextBlock x:Name="HookPrimaryLine3"/>
+            <TextBlock x:Name="HookPrimaryLine1" Text="{Binding PrimaryHook.HookedCoordinate.MGRS}"/>
+            <TextBlock x:Name="HookPrimaryLine2" Text="{Binding PrimaryHook.HookedCoordinate.Latitude}"/>
+            <TextBlock x:Name="HookPrimaryLine3" Text="{Binding PrimaryHook.HookedCoordinate.Longitude}"/>
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock>Secondary Hook</TextBlock>
         </StackPanel>
-    </up:SplitPanel>
+    </StackPanel>
 </UserControl>

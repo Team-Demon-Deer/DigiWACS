@@ -2,19 +2,19 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Interactivity;
 using Avalonia.Layout;
+using Avalonia.UpDock.Controls;
 using DigiWACS_Client.ViewModels;
-using DigiWACS_Client.Models;
-using Mapsui;
-using NetTopologySuite.Utilities;
 
 namespace DigiWACS_Client.Views;
 
 public partial class MainView : UserControl {
     public MainView() {
         InitializeComponent();
-        //this.Loaded += (s, e) => { MapControl.Map = ((MainViewModel)DataContext).AreaMap; };
+        this.Loaded += (s, e) => {
+            MapControl.Map = ((MainViewModel)DataContext).AreaMap;
+            //PropertiesView.DataContext = (MainViewModel)DataContext; 
+        };
     }
     
     private void InitializeComponent() {

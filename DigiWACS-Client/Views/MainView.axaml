@@ -4,13 +4,11 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
 		xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
-		xmlns:local="using:DigiWACS_Client.Controls"
+		xmlns:local="using:DigiWACS_Client.Views"
 		xmlns:vm="using:DigiWACS_Client.ViewModels"
 		mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
 		x:Class="DigiWACS_Client.Views.MainView"
 		x:DataType="vm:MainViewModel">
-	
-	
 	
 	<Design.DataContext>
 		<!-- This only sets the DataContext for the previewer in an IDE,
@@ -29,21 +27,17 @@
 			<up:SplitPanel Fractions="4, 1" Orientation="Horizontal">
 				<up:DockingTabControl>
 					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
-						<local:CustomDrawingExampleControl/>
+						<!-- <local:CustomDrawingExampleControl/> -->
 						
-						<!-- <mapsui:MapControl x:Name="MapControl" 
+						<mapsui:MapControl x:Name="MapControl" 
 						                   VerticalAlignment="Stretch"
-						                   HorizontalAlignment="Stretch" PointerPressed="asd"/> -->
+						                   HorizontalAlignment="Stretch" PointerPressed="asd"/>
 					</TabItem>
 				</up:DockingTabControl>
 				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">
 					<up:DockingTabControl>
 						<up:ClosableTabItem Header="Properties" HeaderTemplate="{DynamicResource TabTemplate}">
-							<StackPanel Margin="5">
-								<TextBlock x:Name="HookPrimaryTextBlock" Text="{Binding  PrimaryHook.HookedCoordinate.MGRS}" />
-							</StackPanel>
-							
-							<!-- <local:PropertiesView/> -->
+							<local:PropertiesView x:Name="Properties" DockPanel.Dock="Top"/>
 						</up:ClosableTabItem>
 					</up:DockingTabControl>
 					<up:DockingTabControl>

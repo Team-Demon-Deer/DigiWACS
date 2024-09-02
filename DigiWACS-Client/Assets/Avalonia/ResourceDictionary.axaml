@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <DataTemplate DataType="x:String" x:Key="TabTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Ellipse Width="10" Height="10" Fill="Green"/>
+            <TextBlock Text="{Binding}" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>
