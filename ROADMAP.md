@@ -1,6 +1,6 @@
 # Roadmap, in no particular order
 - [ ] see Server Tackfiles
-  - [ ] see relivant Trackfile Details/attributes 
+  - [ ] see relevant Trackfile Details/attributes 
 - [ ] draw a BRAA line
 - [ ] Place/Activate a Bullseye
   - [ ] Name a bullseye
