@@ -4,7 +4,7 @@ using System.IO;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Layout;
-using DigiWACS_Client.Services;
+using DigiWACS_Client.Services.Mapsui;
 using DigiWACS_Client.ViewModels;
 using Mapsui;
 using Mapsui.Animations;
