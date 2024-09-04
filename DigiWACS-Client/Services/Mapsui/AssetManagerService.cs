@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using Mapsui.Styles;
 using Mapsui.Utilities;
 using SkiaSharp;
 
-namespace DigiWACS_Client.Models;
+namespace DigiWACS_Client.Services.Mapsui;
 
 public static class AssetManagerService {
 	

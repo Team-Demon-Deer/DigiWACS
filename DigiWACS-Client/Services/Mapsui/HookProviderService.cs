@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using DigiWACS_Client.Models;
-using DigiWACS_Client.ViewModels;
-using DynamicData.Binding;
 using Mapsui;
 using Mapsui.Extensions;
 using Mapsui.Fetcher;
 using Mapsui.Layers;
 using Mapsui.Providers;
 
-namespace DigiWACS_Client.Services;
+namespace DigiWACS_Client.Services.Mapsui;
 
 public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotifyPropertyChanged {
 

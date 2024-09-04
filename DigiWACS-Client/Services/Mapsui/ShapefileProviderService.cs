@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Threading;
-using System.Threading.Tasks;
-using BruTile;
-using BruTile.Cache;
+﻿using BruTile.Cache;
 using DigiWACS_Client.ViewModels;
 using Mapsui;
-using Mapsui.Extensions;
 using Mapsui.Fetcher;
 using Mapsui.Layers;
 using Mapsui.Nts.Providers.Shapefile;
@@ -18,7 +10,7 @@ using Mapsui.Styles;
 using Mapsui.Tiling.Layers;
 using Mapsui.Tiling.Provider;
 
-namespace DigiWACS_Client.Services;
+namespace DigiWACS_Client.Services.Mapsui;
 
 public class ShapefileProviderService: MemoryProvider, IDynamic {
 	private MainViewModel DataContext { get; } // Only gettable. if DataContext needs to be written, inject it in the method.

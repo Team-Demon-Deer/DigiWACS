@@ -9,7 +9,7 @@ using Mapsui.Layers;
 using Mapsui.Projections;
 using Mapsui.Providers;
 
-namespace DigiWACS_Client.Models;
+namespace DigiWACS_Client.Services.Mapsui;
 
 internal sealed class BusPointProviderService : MemoryProvider, IDynamic, IDisposable
 {
