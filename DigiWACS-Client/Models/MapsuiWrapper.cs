@@ -74,28 +74,27 @@ public class MapsuiWrapper : IMapInterface {
 		AreaMap.Navigator.OverridePanBounds = AreaMap.Extent;
 		AreaMap.Home = n => n.ZoomToBox(AreaMap.Extent);
 		
-		// Delegate Event
-		AreaMap.Info += (s, e) =>
-		{
-			if (e.MapInfo?.WorldPosition == null) return;
 		
-			if (e.MapInfo.Feature == null) {
-				mainViewModel.PrimaryHook.Place(e.MapInfo.WorldPosition);
-			} else {
-				mainViewModel.PrimaryHook.Place((PointFeature)e.MapInfo.Feature);
-			}
-			Console.WriteLine(mainViewModel.PrimaryHook.HookedTarget.Point.ToString());
-		};
-		MapInterfaceControl.PointerPressed += (object s, PointerPressedEventArgs e) => asd(s, e);
+		AreaMap.Info += (object S, MapInfoEventArgs e) => MapInterfaceControl_PointerPressed(s, e, mainViewModel);
+		MapInterfaceControl.PointerPressed += (object s, PointerPressedEventArgs e) => MiddleClickTest(s, e);
 	}
 	
-	private void asd(object? sender, Avalonia.Input.PointerPressedEventArgs e)
+	private void MiddleClickTest(object? sender, Avalonia.Input.PointerPressedEventArgs e)
 	{
-        
 		if (e.GetCurrentPoint(sender as Control).Properties.IsMiddleButtonPressed)
 		{
 			Debug.Print("wahoo!");
 		}
-        
+	}
+
+	private void MapInterfaceControl_PointerPressed(object sender, MapInfoEventArgs e, MainViewModel context) {
+		if (e.MapInfo?.WorldPosition == null) return;
+		
+		if (e.MapInfo.Feature == null) {
+			context.PrimaryHook.Place(e.MapInfo.WorldPosition);
+		} else {
+			context.PrimaryHook.Place((PointFeature)e.MapInfo.Feature);
+		}
+		Console.WriteLine(context.PrimaryHook.HookedTarget.Point.ToString());
 	}
 }
