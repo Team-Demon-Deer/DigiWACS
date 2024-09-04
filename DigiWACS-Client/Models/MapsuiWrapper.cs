@@ -1,6 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Layout;
 using DigiWACS_Client.Services;
 using DigiWACS_Client.ViewModels;
 using Mapsui;
@@ -10,6 +13,7 @@ using Mapsui.Layers.AnimatedLayers;
 using Mapsui.Limiting;
 using Mapsui.Styles;
 using Mapsui.Styles.Thematics;
+using Mapsui.UI.Avalonia;
 using Mapsui.Utilities;
 using SkiaSharp;
 
@@ -17,11 +21,18 @@ namespace DigiWACS_Client.Models;
 
 public class MapsuiWrapper : IMapInterface {
 	
+	public UserControl MapInterfaceControl { get; set; }
 	public Map AreaMap { get; set; }
 	public ShapefileProviderService ShapefileProviderService { get; set; }
 	public HookProviderService HookProviderService { get; set; }
 	
 	public MapsuiWrapper(MainViewModel mainViewModel) {
+		MapInterfaceControl = new MapControl() {
+			Name = "MapControl",
+			VerticalAlignment = VerticalAlignment.Stretch,
+			HorizontalAlignment = HorizontalAlignment.Stretch,
+		};
+		
 		AreaMap = new Map(){ CRS = "EPSG:4326"};
 		
 		ShapefileProviderService = new ShapefileProviderService(AreaMap);
@@ -74,5 +85,16 @@ public class MapsuiWrapper : IMapInterface {
 			}
 			Console.WriteLine(mainViewModel.PrimaryHook.HookedTarget.Point.ToString());
 		};
+		MapInterfaceControl.PointerPressed += (object s, PointerPressedEventArgs e) => asd(s, e);
+	}
+	
+	private void asd(object? sender, Avalonia.Input.PointerPressedEventArgs e)
+	{
+        
+		if (e.GetCurrentPoint(sender as Control).Properties.IsMiddleButtonPressed)
+		{
+			Debug.Print("wahoo!");
+		}
+        
 	}
 }
