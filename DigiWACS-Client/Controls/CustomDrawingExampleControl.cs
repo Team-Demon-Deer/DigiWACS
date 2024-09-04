@@ -8,6 +8,7 @@ using Avalonia.Media;
 using Avalonia.Input;
 using Avalonia.Threading;
 using Avalonia.Controls.Shapes;
+using Avalonia.Interactivity;
 
 namespace DigiWACS_Client.Controls
 {
@@ -45,7 +46,7 @@ namespace DigiWACS_Client.Controls
 
         public CustomDrawingExampleControl()
         {
-            _pen = new Pen(new SolidColorBrush(Colors.Black), lineCap: PenLineCap.Round);
+            _pen = new Pen(new SolidColorBrush(Colors.DarkRed), lineCap: PenLineCap.Round);
 
             var _arc = new ArcSegment()
             {
@@ -68,6 +69,16 @@ namespace DigiWACS_Client.Controls
 
         private Geometry _smileGeometry;
 
+        protected override void OnPointerEntered(PointerEventArgs e) {
+            base.OnPointerEntered(e);
+            Cursor = new Cursor(StandardCursorType.None);
+        }
+        
+        protected override void OnPointerExited(PointerEventArgs e) {
+            base.OnPointerExited(e);
+            Cursor = new Cursor(StandardCursorType.Arrow);
+        }
+        
         protected override void OnPointerMoved(PointerEventArgs e)
         {
             base.OnPointerMoved(e);
@@ -122,7 +133,7 @@ namespace DigiWACS_Client.Controls
         {
             var localBounds = new Rect(new Size(this.Bounds.Width, this.Bounds.Height));
             var clip = context.PushClip(this.Bounds);
-            context.DrawRectangle(Brushes.Black, _pen, localBounds, 1.0d);
+            context.DrawRectangle(Brushes.White, _pen, localBounds, 1.0d);
 
             var halfMax = Math.Max(this.Bounds.Width / 2.0d, this.Bounds.Height / 2.0d) * Math.Sqrt(2.0d);
             var halfMin = Math.Min(this.Bounds.Width / 2.0d, this.Bounds.Height / 2.0d) / 1.3d;
