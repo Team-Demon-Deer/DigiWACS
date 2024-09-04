@@ -1,12 +1,10 @@
-﻿using BruTile.Cache;
-using DigiWACS_Client.ViewModels;
+﻿using DigiWACS_Client.ViewModels;
 using Mapsui;
 using Mapsui.Fetcher;
 using Mapsui.Layers;
 using Mapsui.Nts.Providers.Shapefile;
 using Mapsui.Providers;
 using Mapsui.Rendering;
-using Mapsui.Rendering.Skia;
 using Mapsui.Styles;
 using Mapsui.Tiling.Layers;
 using Mapsui.Tiling.Provider;
