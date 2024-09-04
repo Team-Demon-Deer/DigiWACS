@@ -26,12 +26,7 @@
 		<up:DockingHost>
 			<up:SplitPanel Fractions="4, 1" Orientation="Horizontal">
 				<up:DockingTabControl>
-					<TabItem Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
-						<!-- <local:CustomDrawingExampleControl/> -->
-						
-						<mapsui:MapControl x:Name="MapControl" 
-						                   VerticalAlignment="Stretch"
-						                   HorizontalAlignment="Stretch" PointerPressed="asd"/>
+					<TabItem x:Name="MapContainer" Header="Map" HeaderTemplate="{DynamicResource TabTemplate}">
 					</TabItem>
 				</up:DockingTabControl>
 				<up:SplitPanel Fractions="1, 1" Orientation="Vertical">

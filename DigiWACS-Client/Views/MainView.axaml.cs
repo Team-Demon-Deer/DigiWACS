@@ -3,17 +3,37 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Layout;
-using Avalonia.UpDock.Controls;
 using DigiWACS_Client.ViewModels;
+using DigiWACS_Client.Controls;
+using Mapsui.UI.Avalonia;
 
 namespace DigiWACS_Client.Views;
 
 public partial class MainView : UserControl {
+    private const bool CustomDrawControl = true;
+    
     public MainView() {
         InitializeComponent();
         this.Loaded += (s, e) => {
-            MapControl.Map = ((MainViewModel)DataContext).AreaMap;
-            //PropertiesView.DataContext = (MainViewModel)DataContext; 
+            if (CustomDrawControl) {
+                MapContainer.Content = new CustomDrawingExampleControl() {
+                    Name = "MapControl"
+                };
+            }
+            else {
+                MapContainer.Content = new MapControl() {
+                    Name = "MapControl",
+                    Map = ((MainViewModel)DataContext).AreaMap,
+                    VerticalAlignment = VerticalAlignment.Stretch,
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
+                    
+                };
+                ((MapControl)MapContainer.Content).PointerPressed += (object s, PointerPressedEventArgs e) => asd(s, e);
+                //PropertiesView.DataContext = (MainViewModel)DataContext; 
+            }
+            
+            
+            
         };
     }
     
