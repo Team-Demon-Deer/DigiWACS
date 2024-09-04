@@ -27,13 +27,14 @@ public class MapsuiWrapper : IMapInterface {
 	public HookProviderService HookProviderService { get; set; }
 	
 	public MapsuiWrapper(MainViewModel mainViewModel) {
+		AreaMap = new Map(){ CRS = "EPSG:4326"};
+		
 		MapInterfaceControl = new MapControl() {
 			Name = "MapControl",
+			Map = AreaMap,
 			VerticalAlignment = VerticalAlignment.Stretch,
 			HorizontalAlignment = HorizontalAlignment.Stretch,
 		};
-		
-		AreaMap = new Map(){ CRS = "EPSG:4326"};
 		
 		ShapefileProviderService = new ShapefileProviderService(AreaMap);
 		HookProviderService = new HookProviderService(mainViewModel.PrimaryHook, mainViewModel.SecondaryHook);
