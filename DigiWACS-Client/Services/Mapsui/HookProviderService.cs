@@ -13,11 +13,11 @@ using Mapsui.Providers;
 
 namespace DigiWACS_Client.Services.Mapsui;
 
-public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotifyPropertyChanged {
+public class HookProviderService : MemoryProvider, IDynamic, IDisposable {
     HookModel[] HookArray { get; set; }
     
-    public HookProviderService(HookModel Primary, HookModel Secondary) {
-        HookArray = [ Primary, Secondary ];
+    public HookProviderService(HookModel primary, HookModel secondary) {
+        HookArray = [ primary, secondary ];
         
         Catch.TaskRun(RunTimerAsync);
     }
@@ -44,7 +44,6 @@ public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotif
 
     // Implementing the Boiler plate Required things for MemoryProvider, IDynamic, IDisposable, & INotifyPropertyChanged
     public event DataChangedEventHandler? DataChanged;
-    public event PropertyChangedEventHandler? PropertyChanged;
     void IDynamic.DataHasChanged() {
         OnDataChanged();
     }
