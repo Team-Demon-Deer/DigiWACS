@@ -14,9 +14,6 @@ using Mapsui.Providers;
 namespace DigiWACS_Client.Services.Mapsui;
 
 public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotifyPropertyChanged {
-
-    private HookModel Primary {get; set; }
-    private HookModel Secondary { get; set; }
     HookModel[] HookArray { get; set; }
     
     public HookProviderService(HookModel Primary, HookModel Secondary) {
