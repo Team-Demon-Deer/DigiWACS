@@ -31,25 +31,7 @@ public class MapsuiWrapper : IMapInterface {
 		SKPicture s = SvgHelper.LoadSvgPicture((Stream)(MilitarySymbolConverter.Convert(10000100001101000408)));
 		var i = BitmapRegistry.Instance.Register((object)s, "symbology");
 		assetDictionary.Add("symbology", i);
-		InitializeMapsuiCustomization(AreaMap, assetDictionary);
-		
-		// Delegate Event
-		AreaMap.Info += (s, e) =>
-		{
-			if (e.MapInfo?.WorldPosition == null) return;
-		
-			if (e.MapInfo.Feature == null) {
-				mainViewModel.PrimaryHook.Place(e.MapInfo.WorldPosition);
-			} else {
-				mainViewModel.PrimaryHook.Place((PointFeature)e.MapInfo.Feature);
-			}
-			Console.WriteLine(mainViewModel.PrimaryHook.HookedTarget.Point.ToString());
-		};
-	}
 
-	
-	
-	private void InitializeMapsuiCustomization(Map aMap, Dictionary<string, int> assetDictionary) {
 		AreaMap.BackColor = Color.Black;
 		var openStreeMapLayer = Mapsui.Tiling.OpenStreetMap.CreateTileLayer();
 		//AreaMap.Layers.Add(openStreeMapLayer);
@@ -79,5 +61,18 @@ public class MapsuiWrapper : IMapInterface {
 		AreaMap.Navigator.Limiter = new ViewportLimiterKeepWithinExtent();
 		AreaMap.Navigator.OverridePanBounds = AreaMap.Extent;
 		AreaMap.Home = n => n.ZoomToBox(AreaMap.Extent);
+		
+		// Delegate Event
+		AreaMap.Info += (s, e) =>
+		{
+			if (e.MapInfo?.WorldPosition == null) return;
+		
+			if (e.MapInfo.Feature == null) {
+				mainViewModel.PrimaryHook.Place(e.MapInfo.WorldPosition);
+			} else {
+				mainViewModel.PrimaryHook.Place((PointFeature)e.MapInfo.Feature);
+			}
+			Console.WriteLine(mainViewModel.PrimaryHook.HookedTarget.Point.ToString());
+		};
 	}
 }
