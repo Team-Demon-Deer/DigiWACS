@@ -25,15 +25,14 @@ public class ShapefileProviderService: MemoryProvider, IDynamic {
 	const string _shapeFilePath = "Assets/gshhg-shp-2.3.7/GSHHS_shp/l/GSHHS_l_L1.shp";
 	private IPersistentCache<byte[]> LayerCache;
 	
-	public ShapefileProviderService(MainViewModel injectedDataContext, string shapefilepath = _shapeFilePath) {
-		DataContext = injectedDataContext;
+	public ShapefileProviderService(Map areaMap, string shapefilepath = _shapeFilePath) {
 		var _shapefile = new ShapeFile(shapefilepath, true, true) { CRS = "EPSG:4326"};
 		var _rasterizingTileProvider = new RasterizingTileProvider(shapefileLayer(_shapefile), 
 			persistentCache: LayerCache, 
 			renderFormat: RenderFormat.Skp);
 		var _shapeLayer = new TileLayer(_rasterizingTileProvider);
 
-		injectedDataContext.AreaMap.Layers.Add(_shapeLayer);
+		areaMap.Layers.Add(_shapeLayer);
 	}
 	
 	private static ILayer shapefileLayer(IProvider shapefileProvider) {

@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using DigiWACS_Client.Models;
 using DigiWACS_Client.ViewModels;
 using DynamicData.Binding;
 using Mapsui;
@@ -16,10 +18,14 @@ using Mapsui.Providers;
 namespace DigiWACS_Client.Services;
 
 public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotifyPropertyChanged {
-    private MainViewModel DataContext { get; } // Only gettable. if DataContext needs to be written, inject it in the method.
-	
-    public HookProviderService(MainViewModel injectedDataContext) {
-        DataContext = injectedDataContext;
+
+    private HookModel Primary {get; set; }
+    private HookModel Secondary { get; set; }
+    HookModel[] HookArray { get; set; }
+    
+    public HookProviderService(HookModel Primary, HookModel Secondary) {
+        HookArray = [ Primary, Secondary ];
+        
         Catch.TaskRun(RunTimerAsync);
     }
 
@@ -27,14 +33,13 @@ public class HookProviderService : MemoryProvider, IDynamic, IDisposable, INotif
         while (true) {
             await _timer.WaitForNextTickAsync();
             OnDataChanged();
-            DataContext.HookModelObservableCollection.ObserveCollectionChanges();
         }
     }
     
     public override Task<IEnumerable<IFeature>> GetFeaturesAsync(FetchInfo fetchInfo)
     {
         Collection<IFeature> features = new();
-        foreach (var hook in DataContext.HookModelObservableCollection) {
+        foreach (var hook in HookArray) {
             features.Add(new PointFeature(hook.HookedTarget) {["ID"] = hook.HookType});
             hook.updateTargetPoint(hook.HookedTarget.Point);
         }

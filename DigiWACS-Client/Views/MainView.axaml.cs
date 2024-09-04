@@ -10,7 +10,7 @@ using Mapsui.UI.Avalonia;
 namespace DigiWACS_Client.Views;
 
 public partial class MainView : UserControl {
-    private const bool CustomDrawControl = true;
+    private const bool CustomDrawControl = false;
     
     public MainView() {
         InitializeComponent();
@@ -23,7 +23,7 @@ public partial class MainView : UserControl {
             else {
                 MapContainer.Content = new MapControl() {
                     Name = "MapControl",
-                    Map = ((MainViewModel)DataContext).AreaMap,
+                    Map = ((MainViewModel)DataContext).MapInterface.AreaMap,
                     VerticalAlignment = VerticalAlignment.Stretch,
                     HorizontalAlignment = HorizontalAlignment.Stretch,
                     
@@ -31,9 +31,6 @@ public partial class MainView : UserControl {
                 ((MapControl)MapContainer.Content).PointerPressed += (object s, PointerPressedEventArgs e) => asd(s, e);
                 //PropertiesView.DataContext = (MainViewModel)DataContext; 
             }
-            
-            
-            
         };
     }
     

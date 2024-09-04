@@ -9,6 +9,7 @@ using Avalonia.Input;
 using Avalonia.Threading;
 using Avalonia.Controls.Shapes;
 using Avalonia.Interactivity;
+using Avalonia.Rendering;
 
 namespace DigiWACS_Client.Controls
 {
