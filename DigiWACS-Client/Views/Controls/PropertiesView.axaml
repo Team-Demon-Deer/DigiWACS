@@ -24,6 +24,9 @@
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock>Secondary Hook</TextBlock>
+            <TextBlock x:Name="HookSecondaryLine1" Text="{Binding SecondaryHook.HookedCoordinate.MGRS}"/>
+            <TextBlock x:Name="HookSecondaryLine2" Text="{Binding SecondaryHook.HookedCoordinate.Latitude}"/>
+            <TextBlock x:Name="HookSecondaryLine3" Text="{Binding SecondaryHook.HookedCoordinate.Longitude}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

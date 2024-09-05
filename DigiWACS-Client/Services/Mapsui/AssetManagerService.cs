@@ -7,8 +7,10 @@ using SkiaSharp;
 
 namespace DigiWACS_Client.Services.Mapsui;
 
-public static class AssetManagerService {
+public class AssetManagerService {
 	
+	public Dictionary<string, int> Assets { get; set; }
+
 	/// <summary>
 	/// A static list of assets to be loaded at start up.
 	/// </summary>
@@ -16,6 +18,10 @@ public static class AssetManagerService {
 		"PrimaryHook", 
 		"SecondaryHook"
 	];
+
+	public AssetManagerService() {
+		Assets = Initialize();
+	}
 	
 	/// <summary>
 	/// initializes & registers SVG's to Mapsui's BitmapRegistry singleton for assets that will always be needed.

@@ -1,47 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    width="512"
    height="512"
    viewBox="0 0 512 512"
    version="1.1"
    id="svg1"
-   sodipodi:docname="PrimaryHook.svg"
-   inkscape:export-filename="PrimaryHook.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#505050"
-     inkscape:zoom="2.2910156"
-     inkscape:cx="255.78176"
-     inkscape:cy="256"
-     inkscape:window-width="3440"
-     inkscape:window-height="1369"
-     inkscape:window-x="1072"
-     inkscape:window-y="461"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
-  <defs
-     id="defs1" />
   <ellipse
-     style="display:inline;mix-blend-mode:normal;fill:none;stroke:#2d2ca4;stroke-width:31.5195;stroke-dasharray:none;stroke-opacity:1"
+     style="display:inline;mix-blend-mode:normal;fill:none;stroke:#2d2ca4;stroke-width:30;stroke-dasharray:none;stroke-opacity:1"
      id="path15"
-     cx="268.96667"
-     cy="268.96671"
-     rx="240.12346"
-     ry="240.12347"
-     transform="matrix(0.95220425,0,0,0.95220425,-0.111215,-0.111231)" />
+     cx="256"
+     cy="256"
+     rx="241"
+     ry="241"
+  />
 </svg>

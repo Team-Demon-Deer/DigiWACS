@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 using DigiWACS_Client.Models;
@@ -10,14 +9,18 @@ using Mapsui.Extensions;
 using Mapsui.Fetcher;
 using Mapsui.Layers;
 using Mapsui.Providers;
+using Mapsui.Styles;
 
 namespace DigiWACS_Client.Services.Mapsui;
 
 public class HookProviderService : MemoryProvider, IDynamic, IDisposable {
+    private AssetManagerService AssetManagerService { get; }
+    
     HookModel[] HookArray { get; set; }
     
-    public HookProviderService(HookModel primary, HookModel secondary) {
+    public HookProviderService(HookModel primary, HookModel secondary, AssetManagerService assetManagerService) {
         HookArray = [ primary, secondary ];
+        AssetManagerService = assetManagerService;
         
         Catch.TaskRun(RunTimerAsync);
     }
@@ -33,7 +36,10 @@ public class HookProviderService : MemoryProvider, IDynamic, IDisposable {
     {
         Collection<IFeature> features = new();
         foreach (var hook in HookArray) {
-            features.Add(new PointFeature(hook.HookedTarget) {["ID"] = hook.HookType});
+            
+            features.Add(new PointFeature(hook.HookedTarget) {
+                ["ID"] = hook.HookType
+            });
             hook.updateTargetPoint(hook.HookedTarget.Point);
         }
         return Task.FromResult((IEnumerable<IFeature>) features);
