@@ -13,7 +13,7 @@ using Avalonia.Rendering;
 
 namespace DigiWACS_Client.Controls
 {
-    public class CustomDrawingExampleControl : Control
+    public class CustomDrawingExampleControl : UserControl
     {
         private Point _cursorPoint;
 

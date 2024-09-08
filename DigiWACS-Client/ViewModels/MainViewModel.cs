@@ -1,4 +1,5 @@
-﻿using DigiWACS_Client.Models;
+﻿using DigiWACS_Client.Controls;
+using DigiWACS_Client.Models;
 
 namespace DigiWACS_Client.ViewModels;
 
@@ -21,7 +22,8 @@ public partial class MainViewModel : ViewModelBase {
 	public MainViewModel() {
 		PrimaryHook = new HookModel(HookModel.HookTypes.Primary);
 		SecondaryHook = new HookModel(HookModel.HookTypes.Secondary);
-		
-		MapInterface =  new MapsuiWrapper(this);
+
+		MapInterface = new HomeBrewMapWrapper(this);
+		//new MapsuiWrapper(this);
 	}
 }
