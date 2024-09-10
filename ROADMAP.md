@@ -10,6 +10,7 @@
 
 ## Wishlist
 - [ ] Faster map/graphics engine. (Mapsui seems to never use all available resources)
+- [ ] Hook flash so that a track can be easily communicated to another controller.
 
 ## Immediate Todo's
 - [ ] Fix Properties panel maintaining data when popped out.
