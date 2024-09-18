@@ -1,4 +1,5 @@
-﻿using DigiWACS_Client.Controls;
+﻿using System;
+using DigiWACS_Client.Controls;
 using DigiWACS_Client.Models;
 
 namespace DigiWACS_Client.ViewModels;
@@ -19,11 +20,15 @@ public partial class MainViewModel : ViewModelBase {
 	/// <summary>
 	/// ViewModel Constructor
 	/// </summary>
-	public MainViewModel() {
+	public MainViewModel(Settings settings) {
 		PrimaryHook = new HookModel(HookModel.HookTypes.Primary);
 		SecondaryHook = new HookModel(HookModel.HookTypes.Secondary);
 
 		MapInterface = new HomeBrewMapWrapper(this);
 		//new MapsuiWrapper(this);
+		
+		Console.WriteLine($"KeyOne = {settings?.KeyOne}");
+		Console.WriteLine($"KeyTwo = {settings?.KeyTwo}");
+		Console.WriteLine($"KeyThree:Message = {settings?.KeyThree?.Message}");
 	}
 }
