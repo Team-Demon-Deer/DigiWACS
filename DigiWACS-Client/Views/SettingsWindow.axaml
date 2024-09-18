@@ -8,6 +8,7 @@
         x:DataType="vm:SettingsViewModel"
         Title="Settings">
     
+    
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
 			 to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -18,18 +19,16 @@
         <TabItem Header="Item 1">
             <StackPanel Margin="5">
                 <TextBlock>test</TextBlock>
-                <DataGrid Margin="20" 
-                          ItemsSource="{Binding Settings.ServerConnections}"
-                          IsReadOnly="True"
-                          GridLinesVisibility="All">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Connection Name" Binding="{Binding ConnectionName}"/>
-                    <DataGridTextColumn Header="URLIP Address" Binding="{Binding Host}"/>
-                    <DataGridTextColumn Header="Port" Binding="{Binding Port}"/>
-                    <DataGridTextColumn Header="Username" Binding="{Binding Username}" />
-                    <DataGridTextColumn Header="Insecure Password" Binding="{Binding Password}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+                <DataGrid Margin="5" 
+                          ItemsSource="{Binding Settings.ServerConnections}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Connection Name" Binding="{Binding ConnectionName}"/>
+                        <DataGridTextColumn Header="URLIP Address" Binding="{Binding Host}"/>
+                        <DataGridTextColumn Header="Port" Binding="{Binding Port}"/>
+                        <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
+                        <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </TabItem>
         <TabItem Header="Item 2">

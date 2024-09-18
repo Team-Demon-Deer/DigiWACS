@@ -1,13 +1,13 @@
-﻿using DigiWACS_Client.Models;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using DigiWACS_Client.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace DigiWACS_Client.ViewModels;
 
 public class SettingsViewModel : ViewModelBase {
-	public SettingsModel Settings {
-		get; set;
-	}
-	
+	public SettingsModel Settings { get; set; }
+
 	public SettingsViewModel(SettingsModel settings) {
 		Settings = settings;
 	}
