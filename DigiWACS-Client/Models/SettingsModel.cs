@@ -13,11 +13,11 @@ public sealed class NestedSettingsModel {
 	public required string Message { get; set; } = null!;
 }
 
-public sealed class ServerConnectionsModel(string connectionName, string host, int port, string username, string password) {
-	public required string ConnectionName { get; set; } = connectionName;
-	public required string Host { get; set; } = host; 
-	public required int Port { get; set; } = port;
-	public required string Username { get; set; } = username;
-	public required string Password { get; set; } = password;
+public sealed class ServerConnectionsModel {
+	public required string ConnectionName { get; set; }
+	public required string Host { get; set; }
+	public required int Port { get; set; }
+	public required string Username { get; set; }
+	public required string Password { get; set; }
 
 }
