@@ -20,7 +20,7 @@ public partial class MainViewModel : ViewModelBase {
 	/// <summary>
 	/// ViewModel Constructor
 	/// </summary>
-	public MainViewModel(Settings settings) {
+	public MainViewModel(SettingsModel settings) {
 		PrimaryHook = new HookModel(HookModel.HookTypes.Primary);
 		SecondaryHook = new HookModel(HookModel.HookTypes.Secondary);
 

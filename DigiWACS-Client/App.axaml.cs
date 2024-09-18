@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using DigiWACS_Client.Models;
 using DigiWACS_Client.ViewModels;
 using DigiWACS_Client.Views;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +16,7 @@ public partial class App : Application
 		.AddEnvironmentVariables()
 		.Build();
 
-	private static Settings? Settings = _configuration.GetRequiredSection("Settings").Get<Settings>();
+	private static SettingsModel? Settings = _configuration.GetRequiredSection("Settings").Get<SettingsModel>();
 	
 	public override void Initialize()
 	{
