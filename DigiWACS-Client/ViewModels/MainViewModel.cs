@@ -6,7 +6,13 @@ namespace DigiWACS_Client.ViewModels;
 
 public partial class MainViewModel : ViewModelBase {
 	//public string Greeting => "Welcome to Avalonia!";
-
+	
+	private SettingsModel _settings;
+	public SettingsModel Settings {
+		get => _settings;
+		set => SetProperty(ref _settings, value); 
+	}
+	
 	public IMapInterface MapInterface;
 	
 	private HookModel _primaryHook;
@@ -21,6 +27,7 @@ public partial class MainViewModel : ViewModelBase {
 	/// ViewModel Constructor
 	/// </summary>
 	public MainViewModel(SettingsModel settings) {
+		Settings = settings;
 		PrimaryHook = new HookModel(HookModel.HookTypes.Primary);
 		SecondaryHook = new HookModel(HookModel.HookTypes.Secondary);
 
@@ -30,5 +37,9 @@ public partial class MainViewModel : ViewModelBase {
 		Console.WriteLine($"KeyOne = {settings?.KeyOne}");
 		Console.WriteLine($"KeyTwo = {settings?.KeyTwo}");
 		Console.WriteLine($"KeyThree:Message = {settings?.KeyThree?.Message}");
+	}
+
+	public SettingsModel GetSetting() {
+		return Settings;
 	}
 }

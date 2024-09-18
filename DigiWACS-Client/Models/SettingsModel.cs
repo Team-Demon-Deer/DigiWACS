@@ -3,18 +3,19 @@
 public sealed class SettingsModel {
 	public required int KeyOne { get; set; }
 	public required bool KeyTwo { get; set; }
-	public required NestedSettings KeyThree { get; set; } = null!;
-	public required ServerConnections[] ServerConnections { get; set; }
+	public required NestedSettingsModel KeyThree { get; set; } = null!;
+	public required ServerConnectionsModel[] ServerConnections { get; set; }
 }
 
-public sealed class NestedSettings {
+public sealed class NestedSettingsModel {
 	public required string Message { get; set; } = null!;
 }
 
-public sealed class ServerConnections {
-	public required string ConnectionName { get; set; }
-	public required string Host { get; set; } = null!;
-	public required int Port { get; set; }
-	public required string Username { get; set; } = null!;
-	public required string Password { get; set; } = null!;
+public sealed class ServerConnectionsModel(string connectionName, string host, int port, string username, string password) {
+	public required string ConnectionName { get; set; } = connectionName;
+	public required string Host { get; set; } = host;
+	public required int Port { get; set; } = port;
+	public required string Username { get; set; } = username;
+	public required string Password { get; set; } = password;
+
 }

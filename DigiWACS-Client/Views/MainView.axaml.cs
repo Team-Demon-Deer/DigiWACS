@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.Layout;
 using DigiWACS_Client.ViewModels;
 
@@ -12,6 +13,7 @@ public partial class MainView : UserControl {
         InitializeComponent();
         this.Loaded += (s, e) => {
             MapContainer.Content = ((MainViewModel)DataContext).MapInterface.MapInterfaceControl;
+            SettingsMenuItem.DataContext = new SettingsViewModel(((MainViewModel)DataContext).Settings);
             };
             
             //PropertiesView.DataContext = (MainViewModel)DataContext; 
@@ -20,6 +22,13 @@ public partial class MainView : UserControl {
     private void InitializeComponent() {
         InitializeComponent(true);
     }
+
+    private void OnSettingsButtonClick(object sender, RoutedEventArgs e) {
+        var settings = new SettingsView() {
+            WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner
+        };
+        settings.ShowDialog(Parent as Window);
+    }
     
     private void UnclosableTab_Closing(object? sender, global::System.ComponentModel.CancelEventArgs e) {
         e.Cancel = true;
@@ -27,7 +36,8 @@ public partial class MainView : UserControl {
         var popup = new global::DigiWACS_Client.Views.MessagePopup("You can't close this tab.\nMaybe there's unsaved work or something idk")  {
             WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner
         };
-        popup.ShowDialog(Avalonia.VisualTree.VisualExtensions.GetVisualParent<Window>(this));
+        popup.ShowDialog(Parent as Window);
+        //Avalonia.VisualTree.VisualExtensions.GetVisualParent<Window>(this)
     }
 }
 public class MessagePopup : Window {
