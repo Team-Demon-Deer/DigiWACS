@@ -33,13 +33,5 @@ public partial class MainViewModel : ViewModelBase {
 
 		MapInterface = new MapsuiWrapper(this);
 			//new HomeBrewMapWrapper(this);
-		
-		Console.WriteLine($"KeyOne = {settings?.KeyOne}");
-		Console.WriteLine($"KeyTwo = {settings?.KeyTwo}");
-		Console.WriteLine($"KeyThree:Message = {settings?.KeyThree?.Message}");
-	}
-
-	public SettingsModel GetSetting() {
-		return Settings;
 	}
 }

@@ -8,14 +8,20 @@ using DigiWACS_Client.ViewModels;
 namespace DigiWACS_Client.Views;
 
 public partial class MainView : UserControl {
+    private Window _settingsWindow;
     
     public MainView() {
         InitializeComponent();
+        
+        _settingsWindow = new SettingsWindow() {
+            WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner,
+        };
+        
         this.Loaded += (s, e) => {
             var dataContext = DataContext as MainViewModel;
             
             MapContainer.Content = (dataContext.MapInterface.MapInterfaceControl);
-            SettingsMenuItem.DataContext = new SettingsViewModel(dataContext.Settings);
+            _settingsWindow.DataContext = new SettingsViewModel(dataContext.Settings);
             };
             
             //PropertiesView.DataContext = (MainViewModel)DataContext; 
@@ -26,12 +32,7 @@ public partial class MainView : UserControl {
     }
 
     private void OnSettingsButtonClick(object sender, RoutedEventArgs e) {
-        var dataContext = DataContext as MainViewModel;
-        var settings = new SettingsView() {
-            DataContext = new SettingsViewModel(dataContext.Settings),
-            WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner
-        };
-        settings.ShowDialog(Parent as Window);
+        _settingsWindow.ShowDialog(Parent as Window);
     }
     
     private void UnclosableTab_Closing(object? sender, global::System.ComponentModel.CancelEventArgs e) {

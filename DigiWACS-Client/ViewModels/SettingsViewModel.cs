@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using DigiWACS_Client.Models;
+﻿using DigiWACS_Client.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace DigiWACS_Client.ViewModels;

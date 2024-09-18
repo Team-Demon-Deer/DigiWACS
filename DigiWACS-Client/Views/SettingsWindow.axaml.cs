@@ -2,8 +2,8 @@
 
 namespace DigiWACS_Client.Views;
 
-public partial class SettingsView : Window {
-	public SettingsView() {
+public partial class SettingsWindow : Window {
+	public SettingsWindow() {
 		InitializeComponent();
 		SizeToContent = SizeToContent.WidthAndHeight;
 	}

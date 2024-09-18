@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:DigiWACS_Client.ViewModels"
         mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
-        x:Class="DigiWACS_Client.Views.SettingsView"
+        x:Class="DigiWACS_Client.Views.SettingsWindow"
         x:DataType="vm:SettingsViewModel"
         Title="Settings">
     
