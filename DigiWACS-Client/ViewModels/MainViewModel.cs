@@ -30,5 +30,6 @@ public partial class MainViewModel : ViewModelBase {
 		Console.WriteLine($"KeyOne = {settings?.KeyOne}");
 		Console.WriteLine($"KeyTwo = {settings?.KeyTwo}");
 		Console.WriteLine($"KeyThree:Message = {settings?.KeyThree?.Message}");
+		Console.WriteLine($"KeyFour = {settings?.IPAddressRange?.Length}");
 	}
 }
