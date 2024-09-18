@@ -5,16 +5,9 @@ using Microsoft.Extensions.Configuration;
 namespace DigiWACS_Client.ViewModels;
 
 public class SettingsViewModel : ViewModelBase {
-	private SettingsModel _settings;
 	public SettingsModel Settings {
-		get => _settings;
-		set => SetProperty(ref _settings, value);
+		get; set;
 	}
-
-	public ServerConnectionsModel[] ServerConnections {
-		get => _settings.ServerConnections;
-	}
-	
 	
 	public SettingsViewModel(SettingsModel settings) {
 		Settings = settings;

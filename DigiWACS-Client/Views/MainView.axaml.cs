@@ -12,8 +12,10 @@ public partial class MainView : UserControl {
     public MainView() {
         InitializeComponent();
         this.Loaded += (s, e) => {
-            MapContainer.Content = ((MainViewModel)DataContext).MapInterface.MapInterfaceControl;
-            SettingsMenuItem.DataContext = new SettingsViewModel(((MainViewModel)DataContext).Settings);
+            var dataContext = DataContext as MainViewModel;
+            
+            MapContainer.Content = (dataContext.MapInterface.MapInterfaceControl);
+            SettingsMenuItem.DataContext = new SettingsViewModel(dataContext.Settings);
             };
             
             //PropertiesView.DataContext = (MainViewModel)DataContext; 
@@ -24,7 +26,9 @@ public partial class MainView : UserControl {
     }
 
     private void OnSettingsButtonClick(object sender, RoutedEventArgs e) {
+        var dataContext = DataContext as MainViewModel;
         var settings = new SettingsView() {
+            DataContext = new SettingsViewModel(dataContext.Settings),
             WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner
         };
         settings.ShowDialog(Parent as Window);

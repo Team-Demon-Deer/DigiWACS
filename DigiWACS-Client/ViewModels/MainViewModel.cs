@@ -31,8 +31,8 @@ public partial class MainViewModel : ViewModelBase {
 		PrimaryHook = new HookModel(HookModel.HookTypes.Primary);
 		SecondaryHook = new HookModel(HookModel.HookTypes.Secondary);
 
-		MapInterface = new HomeBrewMapWrapper(this);
-		//new MapsuiWrapper(this);
+		MapInterface = new MapsuiWrapper(this);
+			//new HomeBrewMapWrapper(this);
 		
 		Console.WriteLine($"KeyOne = {settings?.KeyOne}");
 		Console.WriteLine($"KeyTwo = {settings?.KeyTwo}");
