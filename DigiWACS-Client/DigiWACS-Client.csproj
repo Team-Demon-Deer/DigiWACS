@@ -11,7 +11,7 @@
         <ApplicationIcon>Assets\Avalonia\DigiWACS-icon.ico</ApplicationIcon>
         <PackageIcon>Assets\DigiWACS-icon.png</PackageIcon>
     </PropertyGroup>
-
+    
     <ItemGroup>
         <AvaloniaResource Include="Assets\Avalonia\**"/>
         <Content Include="Assets\**" Exclude="Assets\Avalonia\**;Assets\Embedded\**">
