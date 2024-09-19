@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -23,13 +24,18 @@ public partial class MainView : UserControl {
         InitializeComponent(true);
     }
 
-    private void OnSettingsButtonClick(object sender, RoutedEventArgs e) {
+    private void MenuSettings_OnClick(object sender, RoutedEventArgs e) {
         var settingsWindow = new SettingsWindow() {
             WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner,
             DataContext = DataContext as MainViewModel
         };
         
         settingsWindow.Show();
+    }
+    
+    private void MenuClose_OnClick(object? sender, RoutedEventArgs e) {
+        //todo: Close the Program
+        Console.Write("Program Close Requested");
     }
     
     private void UnclosableTab_Closing(object? sender, global::System.ComponentModel.CancelEventArgs e) {
@@ -41,6 +47,7 @@ public partial class MainView : UserControl {
         popup.ShowDialog(Parent as Window);
         //Avalonia.VisualTree.VisualExtensions.GetVisualParent<Window>(this)
     }
+
 }
 public class MessagePopup : Window {
     public MessagePopup(string message) {

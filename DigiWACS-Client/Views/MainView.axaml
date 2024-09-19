@@ -19,7 +19,9 @@
 	<DockPanel>
 		<Menu DockPanel.Dock="Top">
 			<MenuItem Header="File">
-				<MenuItem Header="Settings" Click="OnSettingsButtonClick" x:Name="SettingsMenuItem"></MenuItem>
+				<MenuItem Header="Settings" Click="MenuSettings_OnClick" x:Name="SettingsMenuItem" />
+				<Separator/>
+				<MenuItem Header="Exit" Click="MenuClose_OnClick"/>
 			</MenuItem>
 		</Menu>
 
