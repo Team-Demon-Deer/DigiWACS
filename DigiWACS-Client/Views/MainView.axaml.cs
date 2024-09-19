@@ -48,6 +48,14 @@ public partial class MainView : UserControl {
         //Avalonia.VisualTree.VisualExtensions.GetVisualParent<Window>(this)
     }
 
+    private void DrawBraaButton_OnClick(object? sender, RoutedEventArgs e) {
+        e.Handled = true;
+        ((MainViewModel)DataContext).DrawBraaline();
+    }
+    private void ClearBraaButton_OnClick(object? sender, RoutedEventArgs e) {
+        e.Handled = true;
+        ((MainViewModel)DataContext).ClearBraaline();
+    }
 }
 public class MessagePopup : Window {
     public MessagePopup(string message) {

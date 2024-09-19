@@ -50,4 +50,12 @@ public partial class MainViewModel : ViewModelBase {
 
 		MapInterface = new MapsuiWrapper(this);
 	}
+
+	public void DrawBraaline() {
+		MapInterface.DrawBRAALine(SecondaryHook, PrimaryHook);
+	}
+	
+	public void ClearBraaline() {
+		MapInterface.ClearBRAALine();
+	}
 }

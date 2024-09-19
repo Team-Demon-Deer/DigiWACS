@@ -18,7 +18,10 @@ using Mapsui.Styles.Thematics;
 using Mapsui.UI.Avalonia;
 using Mapsui.Utilities;
 using Mapsui;
+using Mapsui.Nts;
+using NetTopologySuite.Geometries;
 using SkiaSharp;
+using Coordinate = CoordinateSharp.Coordinate;
 
 namespace DigiWACS_Client.Models;
 
@@ -37,11 +40,12 @@ public class TouchEvent {
 }
 public class MapsuiWrapper : IMapInterface {
 	private AssetManagerService _assetManagerService;
-	
 	public UserControl MapInterfaceControl { get; set; }
 	public Map AreaMap { get; set; }
 	public ShapefileProviderService ShapefileProviderService { get; set; }
 	public HookProviderService HookProviderService { get; set; }
+	public MemoryLayer BRAALineLayer { get; set; }
+	
 	private readonly ConcurrentDictionary<long, TouchEvent> _touches = new();
 	
 	public MapsuiWrapper(MainViewModel mainViewModel) {
@@ -80,7 +84,17 @@ public class MapsuiWrapper : IMapInterface {
 			}) 
 		}));
 		
-
+		BRAALineLayer = new MemoryLayer {
+			Name = "BRAALineLayer",
+			Style = new VectorStyle {
+				Fill = null,
+				Outline = null,
+				Line = { Color = Color.FromString("YellowGreen"), Width = 10 }
+			}
+		};
+		AreaMap.Layers.Add(BRAALineLayer);
+		
+		
 		HookProviderService = new HookProviderService(mainViewModel.PrimaryHook, mainViewModel.SecondaryHook, _assetManagerService);
 		var animatedHookLayer = new AnimatedPointLayer(HookProviderService)
 		{
@@ -119,6 +133,21 @@ public class MapsuiWrapper : IMapInterface {
 		
 		AreaMap.Info += (object s, MapInfoEventArgs e) => MapInterfaceControl_PointerPressed(s, e, mainViewModel);
 		//MapInterfaceControl.PointerPressed += (object s, PointerPressedEventArgs e) => MiddleClickTest(s, e, mainViewModel);
+	}
+	
+	public void DrawBRAALine(HookModel from, HookModel to) {
+		var convertedFrom = new NetTopologySuite.Geometries.Coordinate(from.HookedTarget.Point.X, from.HookedTarget.Point.Y);
+		var covertedTo = new NetTopologySuite.Geometries.Coordinate(to.HookedTarget.Point.X, to.HookedTarget.Point.Y);
+		var lineString = new LineString(new[] { convertedFrom, covertedTo });
+		
+		BRAALineLayer.Features = new[] {
+			new GeometryFeature {
+				Geometry = lineString
+			}
+		};
+	}
+	public void ClearBRAALine() {
+		BRAALineLayer.Features = new GeometryFeature[0];
 	}
 	
 	private void MiddleClickTest(object? sender, Avalonia.Input.PointerPressedEventArgs e, MainViewModel context) {

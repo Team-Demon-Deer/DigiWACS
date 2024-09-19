@@ -46,7 +46,7 @@ public class HookProviderService : MemoryProvider, IDynamic, IDisposable {
     }
 
     // Sets the refresh rate of the HookProvider
-    private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromSeconds(0.01));
+    private readonly PeriodicTimer _timer = new PeriodicTimer(TimeSpan.FromMilliseconds(300));
 
     // Implementing the Boiler plate Required things for MemoryProvider, IDynamic, IDisposable, & INotifyPropertyChanged
     public event DataChangedEventHandler? DataChanged;

@@ -44,7 +44,8 @@
 								<TextBlock Opacity="0.5">
 									This tab will <Span FontWeight="Bold">refuse</Span> to close
 								</TextBlock>
-								<TextBlock Text="{Binding Settings.ServerConnections[0].ConnectionName}"></TextBlock>
+								<Button Name="DrawBraaButton" Click="DrawBraaButton_OnClick">Draw BRAA</Button>
+								<Button Name="ClearBraaButton" Click="ClearBraaButton_OnClick">Clear BRAA</Button>
 							</StackPanel>
 						</up:ClosableTabItem>
 					</up:DockingTabControl>

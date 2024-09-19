@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace DigiWACS_Client.Models;
 
-public sealed class SettingsModel : ModelBase{
+public sealed class SettingsModel : ModelBase {
 	public required int KeyOne { get; set; }
 	public required bool KeyTwo { get; set; }
 	public required NestedSettingsModel KeyThree { get; set; } = null!;
@@ -17,11 +17,11 @@ public sealed class SettingsModel : ModelBase{
 	}
 }
 
-public sealed class NestedSettingsModel {
+public sealed class NestedSettingsModel : ModelBase {
 	public required string Message { get; set; } = null!;
 }
 
-public sealed class ServerConnectionsModel {
+public sealed class ServerConnectionsModel : ModelBase {
 	public required string ConnectionName { get; set; }
 	public required string Host { get; set; }
 	public required int Port { get; set; }
