@@ -14,13 +14,4 @@ public partial class PropertiesView : UserControl {
 	public PropertiesView() {
 		InitializeComponent();
 	}
-
-	public void BindPrimaryHook(HookModel PrimaryHookModel) {
-		var PrimaryHookLine1Binding = new Binding {
-			Source = PrimaryHookModel,
-			Path = nameof(PrimaryHookModel.HookedCoordinate)
-		};
-		
-		//HookPrimaryLine1.Bind(HookPrimaryLine1.Text, PrimaryHookLine1Binding);
-	}
 }

@@ -21,12 +21,22 @@
             <TextBlock x:Name="HookPrimaryLine1" Text="{Binding PrimaryHook.HookedCoordinate.MGRS}"/>
             <TextBlock x:Name="HookPrimaryLine2" Text="{Binding PrimaryHook.HookedCoordinate.Latitude}"/>
             <TextBlock x:Name="HookPrimaryLine3" Text="{Binding PrimaryHook.HookedCoordinate.Longitude}"/>
+            <TextBlock>To Secondary</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="HookPrimaryToSecondaryLine1" HorizontalAlignment="Right">
+                </TextBlock>
+            </StackPanel>
+            
         </StackPanel>
         <StackPanel Margin="5">
             <TextBlock>Secondary Hook</TextBlock>
             <TextBlock x:Name="HookSecondaryLine1" Text="{Binding SecondaryHook.HookedCoordinate.MGRS}"/>
             <TextBlock x:Name="HookSecondaryLine2" Text="{Binding SecondaryHook.HookedCoordinate.Latitude}"/>
             <TextBlock x:Name="HookSecondaryLine3" Text="{Binding SecondaryHook.HookedCoordinate.Longitude}"/>
+            <TextBlock>To Primary</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="HookSecondaryToPrimaryLine1" HorizontalAlignment="Right"/>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
 </UserControl>
