@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using DigiWACS_Client.Controls;
 using DigiWACS_Client.Models;
 
