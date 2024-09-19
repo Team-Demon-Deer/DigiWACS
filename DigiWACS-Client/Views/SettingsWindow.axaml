@@ -3,10 +3,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:DigiWACS_Client.ViewModels"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
         x:Class="DigiWACS_Client.Views.SettingsWindow"
         x:DataType="vm:MainViewModel"
-        Title="Settings">
+        Title="Settings Window">
     
     
     <Design.DataContext>
@@ -15,27 +15,38 @@
         <vm:MainViewModel />
     </Design.DataContext>
     
-    <TabControl>
-        <TabItem Header="Item 1">
-            <StackPanel Margin="5">
-                <TextBlock>test</TextBlock>
+    <DockPanel>
+        <TabControl DockPanel.Dock="Top">
+            <TabItem Header="Connections">
                 <DataGrid Margin="5" 
-                          ItemsSource="{Binding Settings.ServerConnections}">
+                          ItemsSource="{Binding Settings.ServerConnections}"
+                          GridLinesVisibility="All"
+                          BorderThickness="1">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Connection Name" Binding="{Binding ConnectionName}"/>
-                        <DataGridTextColumn Header="URLIP Address" Binding="{Binding Host}"/>
+                        <DataGridTextColumn Header="URL/IP Address" Binding="{Binding Host}"/>
                         <DataGridTextColumn Header="Port" Binding="{Binding Port}"/>
                         <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
                         <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-            </StackPanel>
-        </TabItem>
-        <TabItem Header="Item 2">
-            <StackPanel Margin="5">
-                <TextBlock x:Name="Line1" Text="{Binding Settings.ServerConnections[0].ConnectionName}"/>
-                <TextBlock x:Name="Line2" Text="Test text"/>
-            </StackPanel>
-        </TabItem>
-    </TabControl>
+            </TabItem>
+            <TabItem Header="Settings">
+                <StackPanel Margin="5">
+                    <TextBlock x:Name="Line2" Text="Test text"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <DockPanel Margin="10" Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinHeight="50">
+            <Button Name="OkButton" Width="100" Click="OkButton_OnClick">
+                <TextBlock Text="Ok" HorizontalAlignment="Center"/>
+            </Button>
+            <Button Name="CancelButton" Width="100" Click="CancelButton_OnClick">
+                <TextBlock Text="Cancel" HorizontalAlignment="Center"/>
+            </Button>
+            <Button Name="ApplyButton" Width="100" Click="ApplyButton_OnClick">
+                <TextBlock Text="Apply" HorizontalAlignment="Center"/>
+            </Button>
+        </DockPanel>
+    </DockPanel>
 </Window>

@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using DigiWACS_Client.Controls;
 using DigiWACS_Client.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace DigiWACS_Client.ViewModels;
 
@@ -34,5 +35,19 @@ public partial class MainViewModel : ViewModelBase {
 
 		MapInterface = new MapsuiWrapper(this);
 			//new HomeBrewMapWrapper(this);
+	}
+	public MainViewModel() { 
+		IConfigurationRoot configuration = new ConfigurationBuilder()
+			.AddJsonFile("appsettings.json")
+			.AddEnvironmentVariables()
+			.Build();
+
+		SettingsModel? settings = configuration.GetRequiredSection("Settings").Get<SettingsModel>();
+		
+		Settings = settings;
+		PrimaryHook = new HookModel(HookModel.HookTypes.Primary);
+		SecondaryHook = new HookModel(HookModel.HookTypes.Secondary);
+
+		MapInterface = new MapsuiWrapper(this);
 	}
 }

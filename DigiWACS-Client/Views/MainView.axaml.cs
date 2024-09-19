@@ -24,10 +24,9 @@ public partial class MainView : UserControl {
     }
 
     private void OnSettingsButtonClick(object sender, RoutedEventArgs e) {
-        var dataContext = DataContext as MainViewModel;
         var settingsWindow = new SettingsWindow() {
             WindowStartupLocation = global::Avalonia.Controls.WindowStartupLocation.CenterOwner,
-            DataContext = dataContext
+            DataContext = DataContext as MainViewModel
         };
         
         settingsWindow.Show();

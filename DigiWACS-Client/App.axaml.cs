@@ -12,7 +12,7 @@ namespace DigiWACS_Client;
 public partial class App : Application
 {
 	private static IConfigurationRoot _configuration = new ConfigurationBuilder()
-		.AddJsonFile("appsettings.json")
+		.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
 		.AddEnvironmentVariables()
 		.Build();
 
