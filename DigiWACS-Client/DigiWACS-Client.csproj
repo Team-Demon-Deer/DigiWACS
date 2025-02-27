@@ -43,23 +43,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\Protos\google\api\annotations.proto">
-        <Link>Protos\google\api\annotations.proto</Link>
-      </Content>
-      <Content Include="..\Protos\google\api\google\api\http.proto">
-        <Link>Protos\google\api\google\api\http.proto</Link>
-      </Content>
-      <Content Include="..\Protos\google\api\http.proto">
-        <Link>Protos\google\api\http.proto</Link>
-      </Content>
-      <Content Include="..\Protos\google\rpc\error_details.proto">
-        <Link>Protos\google\rpc\error_details.proto</Link>
-      </Content>
-      <Content Include="..\Protos\Greet.proto">
-        <Link>Protos\Greet.proto</Link>
-      </Content>
-      <Content Include="..\Protos\postgres.proto">
-        <Link>Protos\postgres.proto</Link>
+      <Content Include="..\Protos\**">
+        <Link>Protos\**</Link>
       </Content>
     </ItemGroup>
 

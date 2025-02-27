@@ -56,6 +56,10 @@ public partial class MainView : UserControl {
         e.Handled = true;
         ((MainViewModel)DataContext).ClearBraaline();
     }
+    private void GRpcButton_OnClick(object? sender, RoutedEventArgs e) {
+        e.Handled = true;
+        throw new NotImplementedException();
+    }
 }
 public class MessagePopup : Window {
     public MessagePopup(string message) {

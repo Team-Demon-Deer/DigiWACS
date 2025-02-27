@@ -46,6 +46,7 @@
 								</TextBlock>
 								<Button Name="DrawBraaButton" Click="DrawBraaButton_OnClick">Draw BRAA</Button>
 								<Button Name="ClearBraaButton" Click="ClearBraaButton_OnClick">Clear BRAA</Button>
+								<Button Name="GRpcButton" Click="GRpcButton_OnClick">gRpcButton</Button>
 							</StackPanel>
 						</up:ClosableTabItem>
 					</up:DockingTabControl>
